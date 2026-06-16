@@ -37,37 +37,80 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  { name: 'Java', level: 95, icon: '☕', category: 'language' },
-  { name: 'Node.js', level: 92, icon: '🟢', category: 'language' },
-  { name: 'React', level: 90, icon: '⚛️', category: 'framework' },
-  { name: 'Vue', level: 85, icon: '🖖', category: 'framework' },
-  { name: 'Spring Boot', level: 92, icon: '🍃', category: 'framework' },
-  { name: 'TypeScript', level: 88, icon: 'TS', category: 'language' },
-  { name: 'Docker', level: 80, icon: '🐳', category: 'tool' },
-  { name: 'PostgreSQL', level: 85, icon: '🐘', category: 'tool' },
+  {
+    name: 'Java',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+    category: 'language'
+  },
+
+  {
+    name: 'Node.js',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
+    category: 'language'
+  },
+
+  {
+    name: 'React',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+    category: 'framework'
+  },
+
+  {
+    name: 'Vue',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg',
+    category: 'framework'
+  },
+
+  {
+    name: 'Jaca Script',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    category: 'framework'
+  },
+
+  {
+    name: 'TypeScript',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
+    category: 'language'
+  },
+
+  {
+    name: 'Docker',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
+    category: 'tool'
+  },
+
+  {
+    name: 'PostgreSQL',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',
+    category: 'tool'
+  },
 ];
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: 'Tech Solutions Global',
-    role: 'Desenvolvedor de Software',
-    period: '2021 - Presente',
+    company: 'SX&CO',
+    role: 'Desenvolvedor Júnior',
+    period: 'jun 2025 - presente',
     description: [
-      'Arquitetura de microsserviços com Spring Boot e Node.js para sistemas de alta disponibilidade.',
-      'Liderou a migração do frontend legado em jQuery para Vue 3 Composition API.',
-      'Reduziu o tempo de resposta do servidor em 40% através de estratégias de cache com Redis.'
+      'Desenvolvimento Full Stack: Criação de novas funcionalidades, desenvolvendo desde a interface do usuário até a lógica de negócios e estruturação de fluxos complexos, atuando em modelo ágil (Jira) com apoio de IA Generativa corporativa (Claude Code).',
+      'Stack Tecnológica: Construção e manutenção de aplicações modernas utilizando Node.js, Vue.js e React. Manutenção e evolução de bases de código legadas estruturadas em Golang.',
+      'Banco de Dados: Modelagem e gerenciamento de bancos de dados relacionais e não-relacionais, lidando com a estruturação de tabelas e manipulação de dados em PostgreSQL, MongoDB e SQL.',
+      'Qualidade de Software: Criação de scripts para automação de rotinas, levantamento de casos de uso (Use Cases) e execução rigorosa de testes de software antes dos deploys.',
+      'Infraestrutura e Cloud: Vivência inicial com serviços na nuvem (AWS) e backend as a service (Supabase). Orquestração de ambientes com Docker e suporte em configurações de infraestrutura web (domínios e registros DNS/MX).',
+      'Gestão de Identidades e Acessos (IAM): Administração contínua do ambiente corporativo através do dashboard do Microsoft Entra, gerenciando perfis de usuários, listas de transmissão e o controle hierárquico de acesso às ferramentas da empresa.',
     ]
   },
   {
-    company: 'Innovation Labs',
-    role: 'Desenvolvedor de Software',
-    period: '2018 - 2021',
+    company: 'SX&CO',
+    role: 'Estagiário',
+    period: 'fev 2025 - jun 2025',
     description: [
-      'Desenvolveu múltiplos produtos SaaS baseados em React lidando com milhares de usuários.',
-      'Projetou backends escaláveis em Java para processamento complexo de regras de negócio.',
-      'Implementou pipelines CI/CD utilizando GitHub Actions e Docker.'
+      'Atuação em suporte técnico (Help Desk), prestando atendimento aos usuários e realizando a manutenção preventiva e corretiva de desktops e notebooks.',
+      'Responsável por realizar a preparação de máquinas, incluindo formatação, configuração de sistemas operacionais e instalação de softwares corporativos (Pacote Office, etc.).',
+      'Apoio direto ao time de desenvolvimento na manutenção do sistema interno da empresa, atuando na implementação de novas funcionalidades de baixa complexidade, como criação de novos campos e pequenos ajustes, o que impulsionou a transição para a área de engenharia de software.',
+      'Suporte e Governança: Auxílio na administração de acessos corporativos utilizando o Microsoft Entra, atuando na criação de perfis de usuários, controle de permissões e gerenciamento de listas de transmissão da suíte Microsoft.'
     ]
-  }
+  },
 ];
 
-export const BIO = "Sou um Desenvolvedor Full Stack apaixonado, com mais de 7 anos de experiência construindo aplicações web escaláveis. Minha expertise abrange os ecossistemas robustos do Java e Spring Boot, bem como os modernos ambientes ágeis do Node.js, React e Vue. Tenho prazer em resolver problemas arquitetônicos complexos e entregar um código limpo e de fácil manutenção.";
+export const BIO = "Sou um Desenvolvedor Full Stack com foco na construção de aplicações web modernas e escaláveis. Com uma trajetória que evoluiu do suporte técnico para a desenvolvedor de software, possuo uma visão sistêmica completa do ciclo de vida das aplicações. Hoje atuo de ponta a ponta: desde a modelagem de bancos de dados e orquestração de infraestrutura com Docker, até a criação de interfaces com React e Vue. Tenho facilidade em atuar em ambientes ágeis, entregando soluções eficientes e código de fácil manutenção.";

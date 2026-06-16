@@ -39,7 +39,7 @@
 }
 const z = {},
   it = [],
-  Me = () => {},
+  Me = () => { },
   zr = () => !1,
   Qt = (e) =>
     e.charCodeAt(0) === 111 &&
@@ -149,7 +149,7 @@ function T(e) {
   return t.trim();
 }
 const qr =
-    "itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly",
+  "itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly",
   Yr = ks(qr);
 function zn(e) {
   return !!e || e === "";
@@ -170,11 +170,11 @@ const $n = (e) => !!(e && e.__v_isRef === !0),
       ? Vn(e, t.value)
       : ot(t)
         ? {
-            [`Map(${t.size})`]: [...t.entries()].reduce(
-              (s, [n, r], i) => ((s[us(n, i) + " =>"] = r), s),
-              {},
-            ),
-          }
+          [`Map(${t.size})`]: [...t.entries()].reduce(
+            (s, [n, r], i) => ((s[us(n, i) + " =>"] = r), s),
+            {},
+          ),
+        }
         : kn(t)
           ? { [`Set(${t.size})`]: [...t.values()].map((s) => us(s)) }
           : ze(t)
@@ -200,8 +200,8 @@ class Qr {
       (this._isPaused = !1),
       (this.parent = he),
       !t &&
-        he &&
-        (this.index = (he.scopes || (he.scopes = [])).push(this) - 1));
+      he &&
+      (this.index = (he.scopes || (he.scopes = [])).push(this) - 1));
   }
   get active() {
     return this._active;
@@ -339,15 +339,15 @@ function Hs() {
   if (--Kn > 0) return;
   if (yt) {
     let t = yt;
-    for (yt = void 0; t; ) {
+    for (yt = void 0; t;) {
       const s = t.next;
       ((t.next = void 0), (t.flags &= -9), (t = s));
     }
   }
   let e;
-  for (; _t; ) {
+  for (; _t;) {
     let t = _t;
-    for (_t = void 0; t; ) {
+    for (_t = void 0; t;) {
       const s = t.next;
       if (((t.next = void 0), (t.flags &= -9), t.flags & 1))
         try {
@@ -370,7 +370,7 @@ function Jn(e) {
   let t,
     s = e.depsTail,
     n = s;
-  for (; n; ) {
+  for (; n;) {
     const r = n.prevDep;
     (n.version === -1 ? (n === s && (s = r), zs(n), Zr(n)) : (t = n),
       (n.dep.activeLink = n.prevActiveLink),
@@ -417,8 +417,8 @@ function zs(e, t = !1) {
   const { dep: s, prevSub: n, nextSub: r } = e;
   if (
     (n && ((n.nextSub = r), (e.prevSub = void 0)),
-    r && ((r.prevSub = n), (e.nextSub = void 0)),
-    s.subs === e && ((s.subs = n), !n && s.computed))
+      r && ((r.prevSub = n), (e.nextSub = void 0)),
+      s.subs === e && ((s.subs = n), !n && s.computed))
   ) {
     s.computed.flags &= -5;
     for (let i = s.computed.deps; i; i = i.nextDep) zs(i, !0);
@@ -462,7 +462,7 @@ class ei {
         this.nextSub =
         this.prevSub =
         this.prevActiveLink =
-          void 0));
+        void 0));
   }
 }
 class $s {
@@ -554,7 +554,7 @@ function Re(e, t, s, n, r, i) {
       });
     } else
       switch (
-        ((s !== void 0 || o.has(void 0)) && l(o.get(s)), d && l(o.get(Mt)), t)
+      ((s !== void 0 || o.has(void 0)) && l(o.get(s)), d && l(o.get(Mt)), t)
       ) {
         case "add":
           a ? d && l(o.get("length")) : (l(o.get(Xe)), ot(e) && l(o.get(Es)));
@@ -665,8 +665,8 @@ function hs(e, t, s) {
     r = n[t]();
   return (
     n !== e &&
-      !me(e) &&
-      ((r._next = r.next),
+    !me(e) &&
+    ((r._next = r.next),
       (r.next = () => {
         const i = r._next();
         return (i.value && (i.value = s(i.value)), i);
@@ -687,12 +687,12 @@ function Oe(e, t, s, n, r, i) {
   o !== e &&
     (l
       ? (d = function (g, C) {
-          return s.call(this, ee(g), C, e);
-        })
+        return s.call(this, ee(g), C, e);
+      })
       : s.length > 2 &&
-        (d = function (g, C) {
-          return s.call(this, g, C, e);
-        }));
+      (d = function (g, C) {
+        return s.call(this, g, C, e);
+      }));
   const u = a.call(o, d, n);
   return l && r ? r(u) : u;
 }
@@ -701,14 +701,14 @@ function ln(e, t, s, n) {
   let i = s;
   return (
     r !== e &&
-      (me(e)
-        ? s.length > 3 &&
-          (i = function (o, l, a) {
-            return s.call(this, o, l, a, e);
-          })
-        : (i = function (o, l, a) {
-            return s.call(this, o, ee(l), a, e);
-          })),
+    (me(e)
+      ? s.length > 3 &&
+      (i = function (o, l, a) {
+        return s.call(this, o, l, a, e);
+      })
+      : (i = function (o, l, a) {
+        return s.call(this, o, ee(l), a, e);
+      })),
     r[t](i, ...n)
   );
 }
@@ -895,48 +895,48 @@ function fi(e, t) {
       s,
       e
         ? {
-            add: Ht("add"),
-            set: Ht("set"),
-            delete: Ht("delete"),
-            clear: Ht("clear"),
-          }
+          add: Ht("add"),
+          set: Ht("set"),
+          delete: Ht("delete"),
+          clear: Ht("clear"),
+        }
         : {
-            add(r) {
-              !t && !me(r) && !Ze(r) && (r = F(r));
-              const i = F(this);
-              return (
-                Nt(i).has.call(i, r) || (i.add(r), Re(i, "add", r, r)),
-                this
-              );
-            },
-            set(r, i) {
-              !t && !me(i) && !Ze(i) && (i = F(i));
-              const o = F(this),
-                { has: l, get: a } = Nt(o);
-              let d = l.call(o, r);
-              d || ((r = F(r)), (d = l.call(o, r)));
-              const u = a.call(o, r);
-              return (
-                o.set(r, i),
-                d ? Ne(i, u) && Re(o, "set", r, i) : Re(o, "add", r, i),
-                this
-              );
-            },
-            delete(r) {
-              const i = F(this),
-                { has: o, get: l } = Nt(i);
-              let a = o.call(i, r);
-              (a || ((r = F(r)), (a = o.call(i, r))), l && l.call(i, r));
-              const d = i.delete(r);
-              return (a && Re(i, "delete", r, void 0), d);
-            },
-            clear() {
-              const r = F(this),
-                i = r.size !== 0,
-                o = r.clear();
-              return (i && Re(r, "clear", void 0, void 0), o);
-            },
+          add(r) {
+            !t && !me(r) && !Ze(r) && (r = F(r));
+            const i = F(this);
+            return (
+              Nt(i).has.call(i, r) || (i.add(r), Re(i, "add", r, r)),
+              this
+            );
           },
+          set(r, i) {
+            !t && !me(i) && !Ze(i) && (i = F(i));
+            const o = F(this),
+              { has: l, get: a } = Nt(o);
+            let d = l.call(o, r);
+            d || ((r = F(r)), (d = l.call(o, r)));
+            const u = a.call(o, r);
+            return (
+              o.set(r, i),
+              d ? Ne(i, u) && Re(o, "set", r, i) : Re(o, "add", r, i),
+              this
+            );
+          },
+          delete(r) {
+            const i = F(this),
+              { has: o, get: l } = Nt(i);
+            let a = o.call(i, r);
+            (a || ((r = F(r)), (a = o.call(i, r))), l && l.call(i, r));
+            const d = i.delete(r);
+            return (a && Re(i, "delete", r, void 0), d);
+          },
+          clear() {
+            const r = F(this),
+              i = r.size !== 0,
+              o = r.clear();
+            return (i && Re(r, "clear", void 0, void 0), o);
+          },
+        },
     ),
     ["keys", "values", "entries", Symbol.iterator].forEach((r) => {
       s[r] = ai(r, e, t);
@@ -1047,7 +1047,7 @@ class _i {
       n = this.__v_isShallow || me(t) || Ze(t);
     ((t = n ? t : F(t)),
       Ne(t, s) &&
-        ((this._rawValue = t),
+      ((this._rawValue = t),
         (this._value = n ? t : ee(t)),
         this.dep.trigger()));
   }
@@ -1108,13 +1108,13 @@ function Ci(e, t = !1, s = qe) {
 }
 function Ei(e, t, s = z) {
   const {
-      immediate: n,
-      deep: r,
-      once: i,
-      scheduler: o,
-      augmentJob: l,
-      call: a,
-    } = s,
+    immediate: n,
+    deep: r,
+    once: i,
+    scheduler: o,
+    augmentJob: l,
+    call: a,
+  } = s,
     d = (O) => (r ? O : me(O) || r === !1 || r === 0 ? De(O, 1) : De(O));
   let u,
     g,
@@ -1140,24 +1140,24 @@ function Ei(e, t, s = z) {
             ? t
               ? (g = a ? () => a(e, 2) : e)
               : (g = () => {
-                  if (C) {
-                    Ve();
-                    try {
-                      C();
-                    } finally {
-                      Be();
-                    }
-                  }
-                  const O = qe;
-                  qe = u;
+                if (C) {
+                  Ve();
                   try {
-                    return a ? a(e, 3, [E]) : e(E);
+                    C();
                   } finally {
-                    qe = O;
+                    Be();
                   }
-                })
+                }
+                const O = qe;
+                qe = u;
+                try {
+                  return a ? a(e, 3, [E]) : e(E);
+                } finally {
+                  qe = O;
+                }
+              })
             : (g = Me),
-    t && r)
+      t && r)
   ) {
     const O = g,
       Q = r === !0 ? 1 / 0 : r;
@@ -1244,10 +1244,10 @@ function Ae(e, t, s, n) {
     const r = Rt(e, t, s, n);
     return (
       r &&
-        jn(r) &&
-        r.catch((i) => {
-          ns(i, t, s);
-        }),
+      jn(r) &&
+      r.catch((i) => {
+        ns(i, t, s);
+      }),
       r
     );
   }
@@ -1265,7 +1265,7 @@ function ns(e, t, s, n = !0) {
     let l = t.parent;
     const a = t.proxy,
       d = `https://vuejs.org/error-reference/#runtime-${s}`;
-    for (; l; ) {
+    for (; l;) {
       const u = l.ec;
       if (u) {
         for (let g = 0; g < u.length; g++) if (u[g](e, a, d) === !1) return;
@@ -1297,7 +1297,7 @@ function or(e) {
 function Mi(e) {
   let t = Ee + 1,
     s = ie.length;
-  for (; t < s; ) {
+  for (; t < s;) {
     const n = (t + s) >>> 1,
       r = ie[n],
       i = At(r);
@@ -1360,8 +1360,8 @@ function ar(e) {
       t &&
         !(t.flags & 8) &&
         (t.flags & 4 && (t.flags &= -2),
-        Rt(t, t.i, t.i ? 15 : 14),
-        t.flags & 4 || (t.flags &= -2));
+          Rt(t, t.i, t.i ? 15 : 14),
+          t.flags & 4 || (t.flags &= -2));
     }
   } finally {
     for (; Ee < ie.length; Ee++) {
@@ -1404,15 +1404,15 @@ function Pi(e, t) {
     let [i, o, l, a = z] = t[r];
     i &&
       (D(i) && (i = { mounted: i, updated: i }),
-      i.deep && De(o),
-      n.push({
-        dir: i,
-        instance: s,
-        value: o,
-        oldValue: void 0,
-        arg: l,
-        modifiers: a,
-      }));
+        i.deep && De(o),
+        n.push({
+          dir: i,
+          instance: s,
+          value: o,
+          oldValue: void 0,
+          arg: l,
+          modifiers: a,
+        }));
   }
   return e;
 }
@@ -1468,7 +1468,7 @@ function Gt(e, t, s, n, r = !1) {
       (Y(d)
         ? ((u[d] = null), E(d) && (g[d] = null))
         : te(d) && (d.value = null)),
-    D(a))
+      D(a))
   )
     Rt(a, l, 12, [o, u]);
   else {
@@ -1509,7 +1509,7 @@ function hr(e, t, s = le) {
     e.__wdc ||
     (e.__wdc = () => {
       let r = s;
-      for (; r; ) {
+      for (; r;) {
         if (r.isDeactivated) return;
         r = r.parent;
       }
@@ -1517,7 +1517,7 @@ function hr(e, t, s = le) {
     });
   if ((rs(t, n, s), s)) {
     let r = s.parent;
-    for (; r && r.parent; )
+    for (; r && r.parent;)
       (dr(r.parent.vnode) && ji(n, t, s, r), (r = r.parent));
   }
 }
@@ -1542,7 +1542,7 @@ function rs(e, t, s = le, n = !1) {
   }
 }
 const Ie =
-    (e) =>
+  (e) =>
     (t, s = le) => {
       (!Pt || e === "sp") && rs(e, (...n) => t(...n), s);
     },
@@ -1765,18 +1765,18 @@ function Wi(e) {
   }
   if (
     (ne(Fi, g),
-    ne(qs, C),
-    ne(Li, E),
-    ne(Ni, j),
-    ne(Ii, k),
-    ne(ki, X),
-    ne(Bi, je),
-    ne(Vi, ke),
-    ne($i, ve),
-    ne(Hi, W),
-    ne(Ys, O),
-    ne(zi, It),
-    R(Ke))
+      ne(qs, C),
+      ne(Li, E),
+      ne(Ni, j),
+      ne(Ii, k),
+      ne(ki, X),
+      ne(Bi, je),
+      ne(Vi, ke),
+      ne($i, ve),
+      ne(Hi, W),
+      ne(Ys, O),
+      ne(zi, It),
+      R(Ke))
   )
     if (Ke.length) {
       const K = e.exposed || (e.exposed = {});
@@ -1805,11 +1805,11 @@ function Ji(e, t, s = Me) {
       : (i = Vt(r)),
       te(i)
         ? Object.defineProperty(t, n, {
-            enumerable: !0,
-            configurable: !0,
-            get: () => i.value,
-            set: (o) => (i.value = o),
-          })
+          enumerable: !0,
+          configurable: !0,
+          get: () => i.value,
+          set: (o) => (i.value = o),
+        })
         : (t[n] = i));
   }
 }
@@ -1891,11 +1891,11 @@ function un(e, t) {
   return t
     ? e
       ? function () {
-          return se(
-            D(e) ? e.call(this, this) : e,
-            D(t) ? t.call(this, this) : t,
-          );
-        }
+        return se(
+          D(e) ? e.call(this, this) : e,
+          D(t) ? t.call(this, this) : t,
+        );
+      }
       : t
     : e;
 }
@@ -1970,13 +1970,13 @@ function Xi(e, t) {
       get config() {
         return i.config;
       },
-      set config(u) {},
+      set config(u) { },
       use(u, ...g) {
         return (
           o.has(u) ||
-            (u && D(u.install)
-              ? (o.add(u), u.install(d, ...g))
-              : D(u) && (o.add(u), u(d, ...g))),
+          (u && D(u.install)
+            ? (o.add(u), u.install(d, ...g))
+            : D(u) && (o.add(u), u(d, ...g))),
           d
         );
       },
@@ -2009,8 +2009,8 @@ function Xi(e, t) {
       unmount() {
         a &&
           (Ae(l, d._instance, 16),
-          e(null, d._container),
-          delete d._container.__vue_app__);
+            e(null, d._container),
+            delete d._container.__vue_app__);
       },
       provide(u, g) {
         return ((i.provides[u] = g), d);
@@ -2063,10 +2063,10 @@ function eo(e, t, s, n = !1) {
 }
 function to(e, t, s, n) {
   const {
-      props: r,
-      attrs: i,
-      vnode: { patchFlag: o },
-    } = e,
+    props: r,
+    attrs: i,
+    vnode: { patchFlag: o },
+  } = e,
     l = F(r),
     [a] = e.propsOptions;
   let d = !1;
@@ -2093,8 +2093,8 @@ function to(e, t, s, n) {
       (!t || (!L(t, g) && ((u = $e(g)) === g || !L(t, u)))) &&
         (a
           ? s &&
-            (s[g] !== void 0 || s[u] !== void 0) &&
-            (r[g] = Rs(a, l, g, void 0, e, !0))
+          (s[g] !== void 0 || s[u] !== void 0) &&
+          (r[g] = Rs(a, l, g, void 0, e, !0))
           : delete r[g]);
     if (i !== l) for (const g in i) (!t || !L(t, g)) && (delete i[g], (d = !0));
   }
@@ -2114,7 +2114,7 @@ function _r(e, t, s, n) {
           ? (s[u] = d)
           : ((l || (l = {}))[u] = d)
         : is(e.emitsOptions, a) ||
-          ((!(a in n) || d !== n[a]) && ((n[a] = d), (o = !0)));
+        ((!(a in n) || d !== n[a]) && ((n[a] = d), (o = !0)));
     }
   if (i) {
     const a = F(s),
@@ -2256,19 +2256,19 @@ function lo(e, t) {
   const s = es();
   s.__VUE__ = !0;
   const {
-      insert: n,
-      remove: r,
-      patchProp: i,
-      createElement: o,
-      createText: l,
-      createComment: a,
-      setText: d,
-      setElementText: u,
-      parentNode: g,
-      nextSibling: C,
-      setScopeId: E = Me,
-      insertStaticContent: j,
-    } = e,
+    insert: n,
+    remove: r,
+    patchProp: i,
+    createElement: o,
+    createText: l,
+    createComment: a,
+    setText: d,
+    setElementText: u,
+    parentNode: g,
+    nextSibling: C,
+    setScopeId: E = Me,
+    insertStaticContent: j,
+  } = e,
     k = (
       c,
       f,
@@ -2321,12 +2321,12 @@ function lo(e, t) {
     },
     J = ({ el: c, anchor: f }, h, x) => {
       let m;
-      for (; c && c !== f; ) ((m = C(c)), n(c, h, x), (c = m));
+      for (; c && c !== f;) ((m = C(c)), n(c, h, x), (c = m));
       n(f, h, x);
     },
     O = ({ el: c, anchor: f }) => {
       let h;
-      for (; c && c !== f; ) ((h = C(c)), r(c), (c = h));
+      for (; c && c !== f;) ((h = C(c)), r(c), (c = h));
       r(f);
     },
     Q = (c, f, h, x, m, b, w, y, _) => {
@@ -2338,12 +2338,12 @@ function lo(e, t) {
       const { props: A, shapeFlag: S, transition: M, dirs: P } = c;
       if (
         ((_ = c.el = o(c.type, b, A && A.is, A)),
-        S & 8
-          ? u(_, c.children)
-          : S & 16 && je(c.children, _, null, x, m, ms(c, b), w, y),
-        P && Je(c, null, x, "created"),
-        ve(_, c, c.scopeId, w, x),
-        A)
+          S & 8
+            ? u(_, c.children)
+            : S & 16 && je(c.children, _, null, x, m, ms(c, b), w, y),
+          P && Je(c, null, x, "created"),
+          ve(_, c, c.scopeId, w, x),
+          A)
       ) {
         for (const V in A) V !== "value" && !vt(V) && i(_, V, null, A[V], b, x);
         ("value" in A && i(_, "value", null, A.value, b),
@@ -2354,9 +2354,9 @@ function lo(e, t) {
       (I && M.beforeEnter(_),
         n(_, f, h),
         ((v = A && A.onVnodeMounted) || I || P) &&
-          de(() => {
-            (v && Ce(v, x, c), I && M.enter(_), P && Je(c, null, x, "mounted"));
-          }, m));
+        de(() => {
+          (v && Ce(v, x, c), I && M.enter(_), P && Je(c, null, x, "mounted"));
+        }, m));
     },
     ve = (c, f, h, x, m) => {
       if ((h && E(c, h), x)) for (let b = 0; b < x.length; b++) E(c, x[b]);
@@ -2386,22 +2386,22 @@ function lo(e, t) {
       let P;
       if (
         (h && Ge(h, !1),
-        (P = M.onVnodeBeforeUpdate) && Ce(P, h, f, c),
-        A && Je(f, c, h, "beforeUpdate"),
-        h && Ge(h, !0),
-        ((S.innerHTML && M.innerHTML == null) ||
-          (S.textContent && M.textContent == null)) &&
+          (P = M.onVnodeBeforeUpdate) && Ce(P, h, f, c),
+          A && Je(f, c, h, "beforeUpdate"),
+          h && Ge(h, !0),
+          ((S.innerHTML && M.innerHTML == null) ||
+            (S.textContent && M.textContent == null)) &&
           u(y, ""),
-        v
-          ? Ke(c.dynamicChildren, v, y, h, x, ms(f, m), b)
-          : w || $(c, f, y, null, h, x, ms(f, m), b, !1),
-        _ > 0)
+          v
+            ? Ke(c.dynamicChildren, v, y, h, x, ms(f, m), b)
+            : w || $(c, f, y, null, h, x, ms(f, m), b, !1),
+          _ > 0)
       ) {
         if (_ & 16) ut(y, S, M, h, m);
         else if (
           (_ & 2 && S.class !== M.class && i(y, "class", null, M.class, m),
-          _ & 4 && i(y, "style", S.style, M.style, m),
-          _ & 8)
+            _ & 4 && i(y, "style", S.style, M.style, m),
+            _ & 8)
         ) {
           const I = f.dynamicProps;
           for (let V = 0; V < I.length; V++) {
@@ -2509,7 +2509,7 @@ function lo(e, t) {
             N === null && vo(c, ce.el),
             P && de(P, m),
             (ae = S.props && S.props.onVnodeUpdated) &&
-              de(() => Ce(ae, I, S, V), m));
+            de(() => Ce(ae, I, S, V), m));
         } else {
           let S;
           const { el: M, props: P } = f,
@@ -2593,14 +2593,14 @@ function lo(e, t) {
       const A = f.length;
       let S = c.length - 1,
         M = A - 1;
-      for (; v <= S && v <= M; ) {
+      for (; v <= S && v <= M;) {
         const P = c[v],
           I = (f[v] = _ ? Le(f[v]) : Te(f[v]));
         if (mt(P, I)) k(P, I, h, null, m, b, w, y, _);
         else break;
         v++;
       }
-      for (; v <= S && v <= M; ) {
+      for (; v <= S && v <= M;) {
         const P = c[S],
           I = (f[M] = _ ? Le(f[M]) : Te(f[M]));
         if (mt(P, I)) k(P, I, h, null, m, b, w, y, _);
@@ -2611,11 +2611,11 @@ function lo(e, t) {
         if (v <= M) {
           const P = M + 1,
             I = P < A ? f[P].el : x;
-          for (; v <= M; )
+          for (; v <= M;)
             (k(null, (f[v] = _ ? Le(f[v]) : Te(f[v])), h, I, m, b, w, y, _),
               v++);
         }
-      } else if (v > M) for (; v <= S; ) (_e(c[v], m, b, !0), v++);
+      } else if (v > M) for (; v <= S;) (_e(c[v], m, b, !0), v++);
       else {
         const P = v,
           I = v,
@@ -2715,9 +2715,9 @@ function lo(e, t) {
       } = c;
       if (
         (S === -2 && (m = !1),
-        y != null && Gt(y, null, h, c, !0),
-        P != null && (f.renderCache[P] = void 0),
-        A & 256)
+          y != null && Gt(y, null, h, c, !0),
+          P != null && (f.renderCache[P] = void 0),
+          A & 256)
       ) {
         f.ctx.deactivate(c);
         return;
@@ -2766,7 +2766,7 @@ function lo(e, t) {
     },
     Nr = (c, f) => {
       let h;
-      for (; c !== f; ) ((h = C(c)), r(c), (c = h));
+      for (; c !== f;) ((h = C(c)), r(c), (c = h));
       r(f);
     },
     Hr = (c, f, h) => {
@@ -2781,12 +2781,12 @@ function lo(e, t) {
           c.isUnmounted = !0;
         }, f),
         f &&
-          f.pendingBranch &&
-          !f.isUnmounted &&
-          c.asyncDep &&
-          !c.asyncResolved &&
-          c.suspenseId === f.pendingId &&
-          (f.deps--, f.deps === 0 && f.resolve()));
+        f.pendingBranch &&
+        !f.isUnmounted &&
+        c.asyncDep &&
+        !c.asyncResolved &&
+        c.suspenseId === f.pendingId &&
+        (f.deps--, f.deps === 0 && f.resolve()));
     },
     dt = (c, f, h, x = !1, m = !1, b = 0) => {
       for (let w = b; w < c.length; w++) _e(c[w], f, h, x, m);
@@ -2800,12 +2800,12 @@ function lo(e, t) {
     };
   let as = !1;
   const tn = (c, f, h) => {
-      (c == null
-        ? f._vnode && _e(f._vnode, null, null, !0)
-        : k(f._vnode || null, c, f, null, null, null, h),
-        (f._vnode = c),
-        as || ((as = !0), cn(), cr(), (as = !1)));
-    },
+    (c == null
+      ? f._vnode && _e(f._vnode, null, null, !0)
+      : k(f._vnode || null, c, f, null, null, null, h),
+      (f._vnode = c),
+      as || ((as = !0), cn(), cr(), (as = !1)));
+  },
     ht = {
       p: k,
       um: _e,
@@ -2847,7 +2847,7 @@ function Tr(e, t, s = !1) {
         !l.dynamicChildren &&
         ((l.patchFlag <= 0 || l.patchFlag === 32) &&
           ((l = r[i] = Le(r[i])), (l.el = o.el)),
-        !s && l.patchFlag !== -2 && Tr(o, l)),
+          !s && l.patchFlag !== -2 && Tr(o, l)),
         l.type === os && (l.el = o.el));
     }
 }
@@ -2863,12 +2863,12 @@ function ao(e) {
         ((t[n] = r), s.push(n));
         continue;
       }
-      for (i = 0, o = s.length - 1; i < o; )
+      for (i = 0, o = s.length - 1; i < o;)
         ((l = (i + o) >> 1), e[s[l]] < d ? (i = l + 1) : (o = l));
       d < e[s[i]] && (i > 0 && (t[n] = s[i - 1]), (s[i] = n));
     }
   }
-  for (i = s.length, o = s[i - 1]; i-- > 0; ) ((s[i] = o), (o = t[o]));
+  for (i = s.length, o = s[i - 1]; i-- > 0;) ((s[i] = o), (o = t[o]));
   return s;
 }
 function Mr(e) {
@@ -2893,7 +2893,7 @@ function Ar(e, t, s = z) {
       const E = uo();
       d = E.__watcherHandles || (E.__watcherHandles = []);
     } else if (!a) {
-      const E = () => {};
+      const E = () => { };
       return ((E.stop = Me), (E.resume = Me), (E.pause = Me), E);
     }
   }
@@ -2902,10 +2902,10 @@ function Ar(e, t, s = z) {
   let g = !1;
   (i === "post"
     ? (l.scheduler = (E) => {
-        de(E, u && u.suspense);
-      })
+      de(E, u && u.suspense);
+    })
     : i !== "sync" &&
-      ((g = !0),
+    ((g = !0),
       (l.scheduler = (E, j) => {
         j ? E() : Ws(E);
       })),
@@ -2945,7 +2945,7 @@ function go(e, t, ...s) {
     o = i && po(n, t.slice(7));
   o &&
     (o.trim && (r = s.map((u) => (Y(u) ? u.trim() : u))),
-    o.number && (r = s.map(ws)));
+      o.number && (r = s.map(ws)));
   let l,
     a = n[(l = fs(t))] || n[(l = fs(He(t)))];
   (!a && i && (a = n[(l = fs($e(t)))]), a && Ae(a, e, 6, r));
@@ -2986,22 +2986,22 @@ function is(e, t) {
 }
 function gn(e) {
   const {
-      type: t,
-      vnode: s,
-      proxy: n,
-      withProxy: r,
-      propsOptions: [i],
-      slots: o,
-      attrs: l,
-      emit: a,
-      render: d,
-      renderCache: u,
-      props: g,
-      data: C,
-      setupState: E,
-      ctx: j,
-      inheritAttrs: k,
-    } = e,
+    type: t,
+    vnode: s,
+    proxy: n,
+    withProxy: r,
+    propsOptions: [i],
+    slots: o,
+    attrs: l,
+    emit: a,
+    render: d,
+    renderCache: u,
+    props: g,
+    data: C,
+    setupState: E,
+    ctx: j,
+    inheritAttrs: k,
+  } = e,
     X = Jt(e);
   let H, W;
   try {
@@ -3029,7 +3029,7 @@ function gn(e) {
   }
   return (
     s.dirs &&
-      ((J = ft(J, null, !1, !0)),
+    ((J = ft(J, null, !1, !0)),
       (J.dirs = J.dirs ? J.dirs.concat(s.dirs) : s.dirs)),
     s.transition && Js(J, s.transition),
     (H = J),
@@ -3038,11 +3038,11 @@ function gn(e) {
   );
 }
 const mo = (e) => {
-    let t;
-    for (const s in e)
-      (s === "class" || s === "style" || Qt(s)) && ((t || (t = {}))[s] = e[s]);
-    return t;
-  },
+  let t;
+  for (const s in e)
+    (s === "class" || s === "style" || Qt(s)) && ((t || (t = {}))[s] = e[s]);
+  return t;
+},
   bo = (e, t) => {
     const s = {};
     for (const n in e) (!js(n) || !(n.slice(9) in t)) && (s[n] = e[n]);
@@ -3085,7 +3085,7 @@ function mn(e, t, s) {
   return !1;
 }
 function vo({ vnode: e, parent: t }, s) {
-  for (; t; ) {
+  for (; t;) {
     const n = t.subTree;
     if ((n.suspense && n.suspense.activeBranch === e && (n.el = e.el), n === e))
       (((e = t.vnode).el = s), (t = t.parent));
@@ -3189,11 +3189,11 @@ function p(
       ? (Xs(a, s), i & 128 && e.normalize(a))
       : s && (a.shapeFlag |= Y(s) ? 8 : 16),
     Ot > 0 &&
-      !o &&
-      pe &&
-      (a.patchFlag > 0 || i & 6) &&
-      a.patchFlag !== 32 &&
-      pe.push(a),
+    !o &&
+    pe &&
+    (a.patchFlag > 0 || i & 6) &&
+    a.patchFlag !== 32 &&
+    pe.push(a),
     a
   );
 }
@@ -3204,9 +3204,9 @@ function So(e, t = null, s = null, n = 0, r = null, i = !1) {
     return (
       s && Xs(l, s),
       Ot > 0 &&
-        !i &&
-        pe &&
-        (l.shapeFlag & 6 ? (pe[pe.indexOf(e)] = l) : pe.push(l)),
+      !i &&
+      pe &&
+      (l.shapeFlag & 6 ? (pe[pe.indexOf(e)] = l) : pe.push(l)),
       (l.patchFlag = -2),
       l
     );
@@ -3299,8 +3299,8 @@ function Xs(e, t) {
       !r && !vr(t)
         ? (t._ctx = ge)
         : r === 3 &&
-          ge &&
-          (ge.slots._ === 1 ? (t._ = 1) : ((t._ = 2), (e.patchFlag |= 1024)));
+        ge &&
+        (ge.slots._ === 1 ? (t._ = 1) : ((t._ = 2), (e.patchFlag |= 1024)));
     }
   else
     D(t)
@@ -3422,15 +3422,15 @@ let le = null,
     (Ds = t("__VUE_SSR_SETTERS__", (s) => (Pt = s))));
 }
 const Dt = (e) => {
-    const t = le;
-    return (
-      Yt(e),
-      e.scope.on(),
-      () => {
-        (e.scope.off(), Yt(t));
-      }
-    );
-  },
+  const t = le;
+  return (
+    Yt(e),
+    e.scope.on(),
+    () => {
+      (e.scope.off(), Yt(t));
+    }
+  );
+},
   xn = () => {
     (le && le.scope.off(), Yt(null));
   };
@@ -3509,15 +3509,15 @@ function Do(e) {
 function ls(e) {
   return e.exposed
     ? e.exposeProxy ||
-        (e.exposeProxy = new Proxy(rr(xi(e.exposed)), {
-          get(t, s) {
-            if (s in t) return t[s];
-            if (s in St) return St[s](e);
-          },
-          has(t, s) {
-            return s in t || s in St;
-          },
-        }))
+    (e.exposeProxy = new Proxy(rr(xi(e.exposed)), {
+      get(t, s) {
+        if (s in t) return t[s];
+        if (s in St) return St[s](e);
+      },
+      has(t, s) {
+        return s in t || s in St;
+      },
+    }))
     : e.proxy;
 }
 function Io(e) {
@@ -3534,7 +3534,7 @@ const _n = typeof window < "u" && window.trustedTypes;
 if (_n)
   try {
     Is = _n.createPolicy("vue", { createHTML: (e) => e });
-  } catch {}
+  } catch { }
 const Lr = Is ? (e) => Is.createHTML(e) : (e) => e,
   Fo = "http://www.w3.org/2000/svg",
   Lo = "http://www.w3.org/1998/Math/MathML",
@@ -3559,9 +3559,9 @@ const Lr = Is ? (e) => Is.createHTML(e) : (e) => e,
               : Pe.createElement(e);
       return (
         e === "select" &&
-          n &&
-          n.multiple != null &&
-          r.setAttribute("multiple", n.multiple),
+        n &&
+        n.multiple != null &&
+        r.setAttribute("multiple", n.multiple),
         r
       );
     },
@@ -3585,7 +3585,7 @@ const Lr = Is ? (e) => Is.createHTML(e) : (e) => e,
         for (
           ;
           t.insertBefore(r.cloneNode(!0), s),
-            !(r === i || !(r = r.nextSibling));
+          !(r === i || !(r = r.nextSibling));
         );
       else {
         yn.innerHTML = Lr(
@@ -3598,7 +3598,7 @@ const Lr = Is ? (e) => Is.createHTML(e) : (e) => e,
         const l = yn.content;
         if (n === "svg" || n === "mathml") {
           const a = l.firstChild;
-          for (; a.firstChild; ) l.appendChild(a.firstChild);
+          for (; a.firstChild;) l.appendChild(a.firstChild);
           l.removeChild(a);
         }
         t.insertBefore(l, s);
@@ -3704,7 +3704,7 @@ function Mn(e, t, s, n, r) {
   }
   try {
     e[t] = s;
-  } catch {}
+  } catch { }
   o && e.removeAttribute(r || t);
 }
 function rt(e, t, s, n) {
@@ -3732,7 +3732,7 @@ function Go(e) {
   if (On.test(e)) {
     t = {};
     let n;
-    for (; (n = e.match(On)); )
+    for (; (n = e.match(On));)
       ((e = e.slice(0, e.length - n[0].length)), (t[n[0].toLowerCase()] = !0));
   }
   return [e[2] === ":" ? e.slice(3) : $e(e.slice(2)), t];
@@ -3760,10 +3760,10 @@ function Xo(e, t) {
   } else return t;
 }
 const Pn = (e) =>
-    e.charCodeAt(0) === 111 &&
-    e.charCodeAt(1) === 110 &&
-    e.charCodeAt(2) > 96 &&
-    e.charCodeAt(2) < 123,
+  e.charCodeAt(0) === 111 &&
+  e.charCodeAt(1) === 110 &&
+  e.charCodeAt(2) > 96 &&
+  e.charCodeAt(2) < 123,
   Zo = (e, t, s, n, r, i) => {
     const o = r === "svg";
     t === "class"
@@ -3773,21 +3773,21 @@ const Pn = (e) =>
         : Qt(t)
           ? js(t) || Jo(e, t, s, n, i)
           : (
-                t[0] === "."
-                  ? ((t = t.slice(1)), !0)
-                  : t[0] === "^"
-                    ? ((t = t.slice(1)), !1)
-                    : el(e, t, n, o)
-              )
+            t[0] === "."
+              ? ((t = t.slice(1)), !0)
+              : t[0] === "^"
+                ? ((t = t.slice(1)), !1)
+                : el(e, t, n, o)
+          )
             ? (Mn(e, t, n),
               !e.tagName.includes("-") &&
-                (t === "value" || t === "checked" || t === "selected") &&
-                Tn(e, t, n, o, i, t !== "value"))
+              (t === "value" || t === "checked" || t === "selected") &&
+              Tn(e, t, n, o, i, t !== "value"))
             : e._isVueCE && (/[A-Z]/.test(t) || !Y(n))
               ? Mn(e, He(t), n, i, t)
               : (t === "true-value"
-                  ? (e._trueValue = n)
-                  : t === "false-value" && (e._falseValue = n),
+                ? (e._trueValue = n)
+                : t === "false-value" && (e._falseValue = n),
                 Tn(e, t, n, o));
   };
 function el(e, t, s, n) {
@@ -3835,11 +3835,11 @@ const ys = Symbol("_assign"),
         (s && (l = l.trim()), i && (l = ws(l)), e[ys](l));
       }),
         s &&
-          rt(e, "change", () => {
-            e.value = e.value.trim();
-          }),
+        rt(e, "change", () => {
+          e.value = e.value.trim();
+        }),
         t ||
-          (rt(e, "compositionstart", tl),
+        (rt(e, "compositionstart", tl),
           rt(e, "compositionend", Dn),
           rt(e, "change", Dn)));
     },
@@ -3853,9 +3853,9 @@ const ys = Symbol("_assign"),
     ) {
       if (((e[ys] = Rn(o)), e.composing)) return;
       const l =
-          (i || e.type === "number") && !/^0\d/.test(e.value)
-            ? ws(e.value)
-            : e.value,
+        (i || e.type === "number") && !/^0\d/.test(e.value)
+          ? ws(e.value)
+          : e.value,
         a = t ?? "";
       l !== a &&
         ((document.activeElement === e &&
@@ -3903,7 +3903,7 @@ const ll = (...e) => {
       const o = s(r, !1, cl(r));
       return (
         r instanceof Element &&
-          (r.removeAttribute("v-cloak"), r.setAttribute("data-v-app", "")),
+        (r.removeAttribute("v-cloak"), r.setAttribute("data-v-app", "")),
         o
       );
     }),
@@ -3919,8 +3919,8 @@ function al(e) {
   return Y(e) ? document.querySelector(e) : e;
 }
 const fl = {
-    class: "container mx-auto px-6 flex justify-between items-center",
-  },
+  class: "container mx-auto px-6 flex justify-between items-center",
+},
   ul = { class: "flex items-center space-x-8" },
   dl = {
     class:
@@ -3972,11 +3972,11 @@ const fl = {
                     ]),
                   },
                   o[1] ||
-                    (o[1] = [
-                      p("span", { class: "text-blue-600" }, "<", -1),
-                      Qe("Dev.FullStack"),
-                      p("span", { class: "text-blue-600" }, " />", -1),
-                    ]),
+                  (o[1] = [
+                    p("span", { class: "text-blue-600" }, "<", -1),
+                    Qe("Dev.FullStack"),
+                    p("span", { class: "text-blue-600" }, " />", -1),
+                  ]),
                   2,
                 ),
                 p("div", ul, [
@@ -4058,32 +4058,32 @@ const fl = {
                               "svg",
                               pl,
                               o[2] ||
-                                (o[2] = [
-                                  p(
-                                    "path",
-                                    {
-                                      d: "M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z",
-                                    },
-                                    null,
-                                    -1,
-                                  ),
-                                ]),
+                              (o[2] = [
+                                p(
+                                  "path",
+                                  {
+                                    d: "M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z",
+                                  },
+                                  null,
+                                  -1,
+                                ),
+                              ]),
                             ))
                           : (G(),
                             q(
                               "svg",
                               gl,
                               o[3] ||
-                                (o[3] = [
-                                  p(
-                                    "path",
-                                    {
-                                      d: "M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z",
-                                    },
-                                    null,
-                                    -1,
-                                  ),
-                                ]),
+                              (o[3] = [
+                                p(
+                                  "path",
+                                  {
+                                    d: "M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z",
+                                  },
+                                  null,
+                                  -1,
+                                ),
+                              ]),
                             )),
                       ],
                       2,
@@ -4182,26 +4182,26 @@ const fl = {
                   ]),
                 },
                 d[3] ||
-                  (d[3] = [
-                    p(
-                      "svg",
-                      {
-                        class: "w-6 h-6",
-                        fill: "none",
-                        stroke: "currentColor",
-                        viewBox: "0 0 24 24",
-                      },
-                      [
-                        p("path", {
-                          strokeLinecap: "round",
-                          strokeLinejoin: "round",
-                          strokeWidth: "2",
-                          d: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z",
-                        }),
-                      ],
-                      -1,
-                    ),
-                  ]),
+                (d[3] = [
+                  p(
+                    "svg",
+                    {
+                      class: "w-6 h-6",
+                      fill: "none",
+                      stroke: "currentColor",
+                      viewBox: "0 0 24 24",
+                    },
+                    [
+                      p("path", {
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round",
+                        strokeWidth: "2",
+                        d: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z",
+                      }),
+                    ],
+                    -1,
+                  ),
+                ]),
                 2,
               )),
           t.value
@@ -4228,26 +4228,26 @@ const fl = {
                     },
                     [
                       d[4] ||
-                        (d[4] = p(
-                          "div",
-                          { class: "flex items-center space-x-3" },
-                          [
-                            p(
-                              "div",
-                              {
-                                class:
-                                  "w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs",
-                              },
-                              "AI",
-                            ),
-                            p(
-                              "span",
-                              { class: "font-bold text-white text-sm" },
-                              "Assistant",
-                            ),
-                          ],
-                          -1,
-                        )),
+                      (d[4] = p(
+                        "div",
+                        { class: "flex items-center space-x-3" },
+                        [
+                          p(
+                            "div",
+                            {
+                              class:
+                                "w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs",
+                            },
+                            "AI",
+                          ),
+                          p(
+                            "span",
+                            { class: "font-bold text-white text-sm" },
+                            "Assistant",
+                          ),
+                        ],
+                        -1,
+                      )),
                       p(
                         "button",
                         {
@@ -4272,47 +4272,47 @@ const fl = {
                     },
                     [
                       (G(!0),
-                      q(
-                        oe,
-                        null,
-                        nt(
-                          s.value,
-                          (u, g) => (
-                            G(),
-                            q(
-                              "div",
-                              {
-                                key: g,
-                                class: T([
-                                  "flex",
-                                  u.role === "user"
-                                    ? "justify-end"
-                                    : "justify-start",
-                                ]),
-                              },
-                              [
-                                p(
-                                  "div",
-                                  {
-                                    class: T([
-                                      "max-w-[85%] px-4 py-3 rounded-2xl",
-                                      u.role === "user"
-                                        ? "bg-blue-600 text-white rounded-br-none shadow-md"
-                                        : a.isDarkMode
-                                          ? "bg-zinc-800 text-zinc-200 border border-zinc-700 rounded-bl-none"
-                                          : "bg-white text-slate-800 shadow-sm border border-slate-100 rounded-bl-none",
-                                    ]),
-                                  },
-                                  ue(u.text),
-                                  3,
-                                ),
-                              ],
-                              2,
-                            )
+                        q(
+                          oe,
+                          null,
+                          nt(
+                            s.value,
+                            (u, g) => (
+                              G(),
+                              q(
+                                "div",
+                                {
+                                  key: g,
+                                  class: T([
+                                    "flex",
+                                    u.role === "user"
+                                      ? "justify-end"
+                                      : "justify-start",
+                                  ]),
+                                },
+                                [
+                                  p(
+                                    "div",
+                                    {
+                                      class: T([
+                                        "max-w-[85%] px-4 py-3 rounded-2xl",
+                                        u.role === "user"
+                                          ? "bg-blue-600 text-white rounded-br-none shadow-md"
+                                          : a.isDarkMode
+                                            ? "bg-zinc-800 text-zinc-200 border border-zinc-700 rounded-bl-none"
+                                            : "bg-white text-slate-800 shadow-sm border border-slate-100 rounded-bl-none",
+                                      ]),
+                                    },
+                                    ue(u.text),
+                                    3,
+                                  ),
+                                ],
+                                2,
+                              )
+                            ),
                           ),
-                        ),
-                        128,
-                      )),
+                          128,
+                        )),
                       r.value
                         ? (G(),
                           q("div", xl, [
@@ -4556,12 +4556,12 @@ const fl = {
         }
       });
       const s = () => {
-          t.value
-            ? (document.documentElement.classList.add("dark"),
-              localStorage.setItem("theme", "dark"))
-            : (document.documentElement.classList.remove("dark"),
-              localStorage.setItem("theme", "light"));
-        },
+        t.value
+          ? (document.documentElement.classList.add("dark"),
+            localStorage.setItem("theme", "dark"))
+          : (document.documentElement.classList.remove("dark"),
+            localStorage.setItem("theme", "light"));
+      },
         n = () => {
           ((t.value = !t.value), s());
         };
@@ -4613,12 +4613,12 @@ const fl = {
                         ]),
                       },
                       i[0] ||
-                        (i[0] = [
-                          Qe(" Crafting "),
-                          p("span", { class: "text-blue-600" }, "Digital", -1),
-                          p("br", null, null, -1),
-                          Qe("Experiences. "),
-                        ]),
+                      (i[0] = [
+                        Qe(" Crafting "),
+                        p("span", { class: "text-blue-600" }, "Digital", -1),
+                        p("br", null, null, -1),
+                        Qe("Experiences. "),
+                      ]),
                       2,
                     ),
                     p(
@@ -4631,9 +4631,9 @@ const fl = {
                       },
                       [
                         i[1] ||
-                          (i[1] = Qe(
-                            " Especialista em ecossistemas de alta performance com ",
-                          )),
+                        (i[1] = Qe(
+                          " Especialista em ecossistemas de alta performance com ",
+                        )),
                         p(
                           "span",
                           {
@@ -4695,15 +4695,15 @@ const fl = {
                         p("div", Ol, [
                           p("div", Pl, [
                             i[3] ||
-                              (i[3] = p(
-                                "h2",
-                                {
-                                  class:
-                                    "text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-4",
-                                },
-                                "01. Perfil",
-                                -1,
-                              )),
+                            (i[3] = p(
+                              "h2",
+                              {
+                                class:
+                                  "text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-4",
+                              },
+                              "01. Perfil",
+                              -1,
+                            )),
                             p(
                               "div",
                               {
@@ -4713,19 +4713,19 @@ const fl = {
                                 ]),
                               },
                               i[2] ||
-                                (i[2] = [
-                                  p(
-                                    "img",
-                                    {
-                                      src: "https://picsum.photos/seed/fullstack-dev/600/800",
-                                      alt: "Profile",
-                                      class:
-                                        "w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105",
-                                    },
-                                    null,
-                                    -1,
-                                  ),
-                                ]),
+                              (i[2] = [
+                                p(
+                                  "img",
+                                  {
+                                    src: "https://picsum.photos/seed/fullstack-dev/600/800",
+                                    alt: "Profile",
+                                    class:
+                                      "w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105",
+                                  },
+                                  null,
+                                  -1,
+                                ),
+                              ]),
                               2,
                             ),
                           ]),
@@ -4777,12 +4777,12 @@ const fl = {
                                         2,
                                       ),
                                       i[4] ||
-                                        (i[4] = p(
-                                          "p",
-                                          { class: "text-sm" },
-                                          "React (Next.js), Vue 3, Tailwind CSS, TypeScript.",
-                                          -1,
-                                        )),
+                                      (i[4] = p(
+                                        "p",
+                                        { class: "text-sm" },
+                                        "React (Next.js), Vue 3, JavaScript, TypeScript.",
+                                        -1,
+                                      )),
                                     ]),
                                     p("div", null, [
                                       p(
@@ -4799,12 +4799,12 @@ const fl = {
                                         2,
                                       ),
                                       i[5] ||
-                                        (i[5] = p(
-                                          "p",
-                                          { class: "text-sm" },
-                                          "Java (Spring), Node.js (NestJS), PostgreSQL, Kafka.",
-                                          -1,
-                                        )),
+                                      (i[5] = p(
+                                        "p",
+                                        { class: "text-sm" },
+                                        "Java (Spring), Node.js (NestJS), PostgreSQL.",
+                                        -1,
+                                      )),
                                     ]),
                                   ],
                                   2,
@@ -4832,88 +4832,88 @@ const fl = {
                     p("div", Dl, [
                       p("div", Il, [
                         i[6] ||
-                          (i[6] = p(
-                            "h2",
-                            {
-                              class:
-                                "text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 text-center",
-                            },
-                            "02. Arsenal Tecnológico",
-                            -1,
-                          )),
+                        (i[6] = p(
+                          "h2",
+                          {
+                            class:
+                              "text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 text-center",
+                          },
+                          "02. Arsenal Tecnológico",
+                          -1,
+                        )),
                         p("div", kl, [
                           (G(!0),
-                          q(
-                            oe,
-                            null,
-                            nt(
-                              bt(yl),
-                              (o) => (
-                                G(),
-                                q(
-                                  "div",
-                                  {
-                                    key: o.name,
-                                    class: T([
-                                      "p-8 rounded-3xl border transition-all group",
-                                      t.value
-                                        ? "bg-[#1a1a1a] border-zinc-800 shadow-none hover:border-zinc-600"
-                                        : "bg-white border-slate-100 shadow-sm hover:shadow-xl",
-                                    ]),
-                                  },
-                                  [
-                                    p("div", jl, [
-                                      p("span", null, ue(o.icon), 1),
-                                      p("span", Fl, "LVL " + ue(o.level), 1),
-                                    ]),
-                                    p(
-                                      "div",
-                                      {
-                                        class: T([
-                                          "font-black text-lg",
-                                          t.value
-                                            ? "text-white"
-                                            : "text-slate-900",
-                                        ]),
-                                      },
-                                      ue(o.name),
-                                      3,
-                                    ),
-                                    p(
-                                      "div",
-                                      {
-                                        class: T([
-                                          "h-1 w-full rounded-full mt-4 overflow-hidden",
-                                          t.value
-                                            ? "bg-zinc-800"
-                                            : "bg-slate-100",
-                                        ]),
-                                      },
-                                      [
-                                        p(
-                                          "div",
-                                          {
-                                            class: T([
-                                              "h-full transition-all duration-700",
-                                              t.value
-                                                ? "bg-zinc-100"
-                                                : "bg-slate-900 group-hover:bg-blue-600",
-                                            ]),
-                                            style: ts({ width: `${o.level}%` }),
-                                          },
-                                          null,
-                                          6,
-                                        ),
-                                      ],
-                                      2,
-                                    ),
-                                  ],
-                                  2,
-                                )
+                            q(
+                              oe,
+                              null,
+                              nt(
+                                bt(yl),
+                                (o) => (
+                                  G(),
+                                  q(
+                                    "div",
+                                    {
+                                      key: o.name,
+                                      class: T([
+                                        "p-8 rounded-3xl border transition-all group",
+                                        t.value
+                                          ? "bg-[#1a1a1a] border-zinc-800 shadow-none hover:border-zinc-600"
+                                          : "bg-white border-slate-100 shadow-sm hover:shadow-xl",
+                                      ]),
+                                    },
+                                    [
+                                      p("div", jl, [
+                                        p("span", null, ue(o.icon), 1),
+                                        p("span", Fl, "LVL " + ue(o.level), 1),
+                                      ]),
+                                      p(
+                                        "div",
+                                        {
+                                          class: T([
+                                            "font-black text-lg",
+                                            t.value
+                                              ? "text-white"
+                                              : "text-slate-900",
+                                          ]),
+                                        },
+                                        ue(o.name),
+                                        3,
+                                      ),
+                                      p(
+                                        "div",
+                                        {
+                                          class: T([
+                                            "h-1 w-full rounded-full mt-4 overflow-hidden",
+                                            t.value
+                                              ? "bg-zinc-800"
+                                              : "bg-slate-100",
+                                          ]),
+                                        },
+                                        [
+                                          p(
+                                            "div",
+                                            {
+                                              class: T([
+                                                "h-full transition-all duration-700",
+                                                t.value
+                                                  ? "bg-zinc-100"
+                                                  : "bg-slate-900 group-hover:bg-blue-600",
+                                              ]),
+                                              style: ts({ width: `${o.level}%` }),
+                                            },
+                                            null,
+                                            6,
+                                          ),
+                                        ],
+                                        2,
+                                      ),
+                                    ],
+                                    2,
+                                  )
+                                ),
                               ),
-                            ),
-                            128,
-                          )),
+                              128,
+                            )),
                         ]),
                       ]),
                     ]),
@@ -4924,119 +4924,119 @@ const fl = {
                   p("div", Nl, [
                     p("div", Hl, [
                       i[7] ||
-                        (i[7] = p(
-                          "h2",
-                          {
-                            class:
-                              "text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12",
-                          },
-                          "03. Projetos em Destaque",
-                          -1,
-                        )),
+                      (i[7] = p(
+                        "h2",
+                        {
+                          class:
+                            "text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12",
+                        },
+                        "03. Projetos em Destaque",
+                        -1,
+                      )),
                       p("div", zl, [
                         (G(!0),
-                        q(
-                          oe,
-                          null,
-                          nt(
-                            bt(_l),
-                            (o) => (
-                              G(),
-                              q("div", { key: o.id, class: "group" }, [
-                                p(
-                                  "div",
-                                  {
-                                    class: T([
-                                      "relative aspect-[16/10] rounded-3xl overflow-hidden mb-6 transition-all duration-500",
-                                      t.value
-                                        ? "bg-zinc-800 shadow-none group-hover:shadow-white/5"
-                                        : "bg-slate-100 shadow-sm group-hover:shadow-2xl",
-                                    ]),
-                                  },
-                                  [
-                                    p(
-                                      "img",
-                                      {
-                                        src: o.image,
-                                        alt: o.title,
-                                        class:
-                                          "w-full h-full object-cover transition-transform duration-700 group-hover:scale-105",
-                                      },
-                                      null,
-                                      8,
-                                      $l,
-                                    ),
-                                    p("div", Vl, [
+                          q(
+                            oe,
+                            null,
+                            nt(
+                              bt(_l),
+                              (o) => (
+                                G(),
+                                q("div", { key: o.id, class: "group" }, [
+                                  p(
+                                    "div",
+                                    {
+                                      class: T([
+                                        "relative aspect-[16/10] rounded-3xl overflow-hidden mb-6 transition-all duration-500",
+                                        t.value
+                                          ? "bg-zinc-800 shadow-none group-hover:shadow-white/5"
+                                          : "bg-slate-100 shadow-sm group-hover:shadow-2xl",
+                                      ]),
+                                    },
+                                    [
                                       p(
-                                        "span",
+                                        "img",
                                         {
-                                          class: T([
-                                            "px-6 py-3 rounded-full font-bold text-sm",
-                                            t.value
-                                              ? "bg-white text-black"
-                                              : "bg-white text-slate-900",
-                                          ]),
+                                          src: o.image,
+                                          alt: o.title,
+                                          class:
+                                            "w-full h-full object-cover transition-transform duration-700 group-hover:scale-105",
                                         },
-                                        "Ver Detalhes",
-                                        2,
+                                        null,
+                                        8,
+                                        $l,
                                       ),
-                                    ]),
-                                  ],
-                                  2,
-                                ),
-                                p("div", Bl, [
-                                  (G(!0),
-                                  q(
-                                    oe,
-                                    null,
-                                    nt(
-                                      o.tech,
-                                      (l) => (
-                                        G(),
-                                        q(
+                                      p("div", Vl, [
+                                        p(
                                           "span",
                                           {
-                                            key: l,
-                                            class:
-                                              "text-[10px] font-bold text-blue-600 uppercase tracking-widest",
+                                            class: T([
+                                              "px-6 py-3 rounded-full font-bold text-sm",
+                                              t.value
+                                                ? "bg-white text-black"
+                                                : "bg-white text-slate-900",
+                                            ]),
                                           },
-                                          ue(l),
-                                          1,
-                                        )
-                                      ),
-                                    ),
-                                    128,
-                                  )),
-                                ]),
-                                p(
-                                  "h3",
-                                  {
-                                    class: T([
-                                      "text-2xl font-bold mb-3",
-                                      t.value ? "text-white" : "text-slate-900",
-                                    ]),
-                                  },
-                                  ue(o.title),
-                                  3,
-                                ),
-                                p(
-                                  "p",
-                                  {
-                                    class: T([
-                                      "leading-relaxed text-sm mb-6",
-                                      t.value
-                                        ? "text-zinc-400"
-                                        : "text-slate-500",
-                                    ]),
-                                  },
-                                  ue(o.description),
-                                  3,
-                                ),
-                              ])
+                                          "Ver Detalhes",
+                                          2,
+                                        ),
+                                      ]),
+                                    ],
+                                    2,
+                                  ),
+                                  p("div", Bl, [
+                                    (G(!0),
+                                      q(
+                                        oe,
+                                        null,
+                                        nt(
+                                          o.tech,
+                                          (l) => (
+                                            G(),
+                                            q(
+                                              "span",
+                                              {
+                                                key: l,
+                                                class:
+                                                  "text-[10px] font-bold text-blue-600 uppercase tracking-widest",
+                                              },
+                                              ue(l),
+                                              1,
+                                            )
+                                          ),
+                                        ),
+                                        128,
+                                      )),
+                                  ]),
+                                  p(
+                                    "h3",
+                                    {
+                                      class: T([
+                                        "text-2xl font-bold mb-3",
+                                        t.value ? "text-white" : "text-slate-900",
+                                      ]),
+                                    },
+                                    ue(o.title),
+                                    3,
+                                  ),
+                                  p(
+                                    "p",
+                                    {
+                                      class: T([
+                                        "leading-relaxed text-sm mb-6",
+                                        t.value
+                                          ? "text-zinc-400"
+                                          : "text-slate-500",
+                                      ]),
+                                    },
+                                    ue(o.description),
+                                    3,
+                                  ),
+                                ])
+                              ),
                             ),
-                          ),
-                          128,
-                        )),
+                            128,
+                          )),
                       ]),
                     ]),
                   ]),
@@ -5056,94 +5056,94 @@ const fl = {
                     p("div", Kl, [
                       p("div", Ul, [
                         i[9] ||
-                          (i[9] = p(
-                            "h2",
-                            {
-                              class:
-                                "text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12",
-                            },
-                            "04. Trajetória",
-                            -1,
-                          )),
+                        (i[9] = p(
+                          "h2",
+                          {
+                            class:
+                              "text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12",
+                          },
+                          "04. Trajetória",
+                          -1,
+                        )),
                         p("div", Wl, [
                           (G(!0),
-                          q(
-                            oe,
-                            null,
-                            nt(
-                              bt(wl),
-                              (o, l) => (
-                                G(),
-                                q(
-                                  "div",
-                                  {
-                                    key: l,
-                                    class: "grid md:grid-cols-3 gap-8",
-                                  },
-                                  [
-                                    p("div", Jl, ue(o.period), 1),
-                                    p("div", Gl, [
-                                      p(
-                                        "h4",
-                                        {
-                                          class: T([
-                                            "text-2xl font-bold mb-1",
-                                            t.value
-                                              ? "text-white"
-                                              : "text-slate-900",
-                                          ]),
-                                        },
-                                        ue(o.role),
-                                        3,
-                                      ),
-                                      p("p", ql, ue(o.company), 1),
-                                      p("ul", Yl, [
-                                        (G(!0),
-                                        q(
-                                          oe,
-                                          null,
-                                          nt(
-                                            o.description,
-                                            (a, d) => (
-                                              G(),
-                                              q(
-                                                "li",
-                                                {
-                                                  key: d,
-                                                  class: T([
-                                                    "text-[15px] leading-relaxed flex items-start",
-                                                    t.value
-                                                      ? "text-zinc-400"
-                                                      : "text-slate-600",
-                                                  ]),
-                                                },
-                                                [
-                                                  i[8] ||
-                                                    (i[8] = p(
-                                                      "span",
-                                                      {
-                                                        class:
-                                                          "text-blue-500 mr-3 mt-1.5",
-                                                      },
-                                                      "•",
-                                                      -1,
-                                                    )),
-                                                  Qe(" " + ue(a), 1),
-                                                ],
-                                                2,
-                                              )
-                                            ),
-                                          ),
-                                          128,
-                                        )),
+                            q(
+                              oe,
+                              null,
+                              nt(
+                                bt(wl),
+                                (o, l) => (
+                                  G(),
+                                  q(
+                                    "div",
+                                    {
+                                      key: l,
+                                      class: "grid md:grid-cols-3 gap-8",
+                                    },
+                                    [
+                                      p("div", Jl, ue(o.period), 1),
+                                      p("div", Gl, [
+                                        p(
+                                          "h4",
+                                          {
+                                            class: T([
+                                              "text-2xl font-bold mb-1",
+                                              t.value
+                                                ? "text-white"
+                                                : "text-slate-900",
+                                            ]),
+                                          },
+                                          ue(o.role),
+                                          3,
+                                        ),
+                                        p("p", ql, ue(o.company), 1),
+                                        p("ul", Yl, [
+                                          (G(!0),
+                                            q(
+                                              oe,
+                                              null,
+                                              nt(
+                                                o.description,
+                                                (a, d) => (
+                                                  G(),
+                                                  q(
+                                                    "li",
+                                                    {
+                                                      key: d,
+                                                      class: T([
+                                                        "text-[15px] leading-relaxed flex items-start",
+                                                        t.value
+                                                          ? "text-zinc-400"
+                                                          : "text-slate-600",
+                                                      ]),
+                                                    },
+                                                    [
+                                                      i[8] ||
+                                                      (i[8] = p(
+                                                        "span",
+                                                        {
+                                                          class:
+                                                            "text-blue-500 mr-3 mt-1.5",
+                                                        },
+                                                        "•",
+                                                        -1,
+                                                      )),
+                                                      Qe(" " + ue(a), 1),
+                                                    ],
+                                                    2,
+                                                  )
+                                                ),
+                                              ),
+                                              128,
+                                            )),
+                                        ]),
                                       ]),
-                                    ]),
-                                  ],
-                                )
+                                    ],
+                                  )
+                                ),
                               ),
-                            ),
-                            128,
-                          )),
+                              128,
+                            )),
                         ]),
                       ]),
                     ]),
@@ -5187,27 +5187,27 @@ const fl = {
                           ]),
                         },
                         i[10] ||
-                          (i[10] = [
-                            Qe(" Enviar E-mail "),
-                            p(
-                              "svg",
-                              {
-                                class: "ml-3 w-5 h-5",
-                                fill: "none",
-                                stroke: "currentColor",
-                                viewBox: "0 0 24 24",
-                              },
-                              [
-                                p("path", {
-                                  strokeLinecap: "round",
-                                  strokeLinejoin: "round",
-                                  strokeWidth: "2",
-                                  d: "M14 5l7 7m0 0l-7 7m7-7H3",
-                                }),
-                              ],
-                              -1,
-                            ),
-                          ]),
+                        (i[10] = [
+                          Qe(" Enviar E-mail "),
+                          p(
+                            "svg",
+                            {
+                              class: "ml-3 w-5 h-5",
+                              fill: "none",
+                              stroke: "currentColor",
+                              viewBox: "0 0 24 24",
+                            },
+                            [
+                              p("path", {
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                                strokeWidth: "2",
+                                d: "M14 5l7 7m0 0l-7 7m7-7H3",
+                              }),
+                            ],
+                            -1,
+                          ),
+                        ]),
                         2,
                       ),
                     ]),
@@ -5271,15 +5271,15 @@ const fl = {
                       ),
                     ]),
                     i[11] ||
-                      (i[11] = p(
-                        "p",
-                        {
-                          class:
-                            "text-zinc-500 text-xs font-medium uppercase tracking-[0.2em]",
-                        },
-                        "© 2024 Design & Code by Diego",
-                        -1,
-                      )),
+                    (i[11] = p(
+                      "p",
+                      {
+                        class:
+                          "text-zinc-500 text-xs font-medium uppercase tracking-[0.2em]",
+                      },
+                      "© 2024 Design & Code by Diego",
+                      -1,
+                    )),
                   ]),
                 ],
                 2,

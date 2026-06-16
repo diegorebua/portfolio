@@ -4555,7 +4555,7 @@ const hl = {
         },
     ],
     El =
-        "Sou um Desenvolvedor Full Stack apaixonado, com mais de 7 anos de experiência construindo aplicações web escaláveis. Minha expertise abrange os ecossistemas robustos do Java e Spring Boot, bem como os modernos ambientes ágeis do Node.js, React e Vue. Tenho prazer em resolver problemas arquitetônicos complexos e entregar um código limpo e de fácil manutenção.",
+        "Sou um Desenvolvedor Full Stack com foco na construção de aplicações web modernas e escaláveis. Com uma trajetória que evoluiu do suporte técnico para a desenvolvedor de software, possuo uma visão sistêmica completa do ciclo de vida das aplicações. Hoje atuo de ponta a ponta: desde a modelagem de bancos de dados e orquestração de infraestrutura com Docker, até a criação de interfaces com React e Vue. Tenho facilidade em atuar em ambientes ágeis, entregando soluções eficientes e código de fácil manutenção.",
     Ml = {
         id: "hero",
         class: "min-h-screen flex items-center justify-center pt-20 section-dot-bg",
@@ -4869,7 +4869,7 @@ const hl = {
                                                                             (l[6] = p(
                                                                                 "p",
                                                                                 { class: "text-sm" },
-                                                                                "React (Next.js), Vue 3, Tailwind CSS, TypeScript.",
+                                                                                "React (Next.js), Vue 3, JavaScript, TypeScript.",
                                                                                 -1,
                                                                             )),
                                                                         ]),
@@ -4891,7 +4891,7 @@ const hl = {
                                                                             (l[7] = p(
                                                                                 "p",
                                                                                 { class: "text-sm" },
-                                                                                "Java (Spring), Node.js (NestJS), PostgreSQL, Kafka.",
+                                                                                "Java (Spring), Node.js (NestJS), PostgreSQL.",
                                                                                 -1,
                                                                             )),
                                                                         ]),

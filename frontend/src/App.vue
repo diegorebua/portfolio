@@ -88,7 +88,7 @@ const handleNavClick = (targetId: string) => {
                 <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-4">01. Perfil</h2>
                 <div :class="['relative group overflow-hidden rounded-3xl aspect-[4/5]', isDarkMode ? 'bg-zinc-800' : 'bg-slate-100']">
                   <img 
-                    src="https://picsum.photos/seed/fullstack-dev/600/800" 
+                    src="/profile.jpeg" 
                     alt="Profile" 
                     class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
                   />
@@ -103,11 +103,11 @@ const handleNavClick = (targetId: string) => {
                   <div :class="['grid grid-cols-2 gap-8 pt-8 border-t', isDarkMode ? 'border-zinc-800' : 'border-slate-100']">
                     <div>
                       <h4 :class="[isDarkMode ? 'text-white' : 'text-slate-900', 'font-bold mb-2']">Frontend</h4>
-                      <p class="text-sm">React (Next.js), Vue 3, Tailwind CSS, TypeScript.</p>
+                      <p class="text-sm">React (Next.js), Vue 3, JavaScript, TypeScript.</p>
                     </div>
                     <div>
                       <h4 :class="[isDarkMode ? 'text-white' : 'text-slate-900', 'font-bold mb-2']">Backend</h4>
-                      <p class="text-sm">Java (Spring), Node.js (NestJS), PostgreSQL, Kafka.</p>
+                      <p class="text-sm">Java (Spring), Node.js (NestJS), PostgreSQL.</p>
                     </div>
                   </div>
                 </div>
@@ -124,17 +124,11 @@ const handleNavClick = (targetId: string) => {
             <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 text-center">02. Arsenal Tecnológico</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div v-for="skill in SKILLS" :key="skill.name" :class="['p-8 rounded-3xl border transition-all group', isDarkMode ? 'bg-[#1a1a1a] border-zinc-800 shadow-none hover:border-zinc-600' : 'bg-white border-slate-100 shadow-sm hover:shadow-xl']">
-                <div class="text-4xl mb-6 flex items-center justify-between">
-                  <span>{{ skill.icon }}</span>
-                  <span class="text-[10px] text-zinc-500 font-bold group-hover:text-blue-500 transition-colors">LVL {{ skill.level }}</span>
+                <div class="mb-6 flex items-center justify-between">
+                  <img v-if="skill.icon.startsWith('http')" :src="skill.icon" :alt="skill.name" class="w-12 h-12 object-contain" />
+                  <span v-else class="text-4xl">{{ skill.icon }}</span>
                 </div>
                 <div :class="['font-black text-lg', isDarkMode ? 'text-white' : 'text-slate-900']">{{ skill.name }}</div>
-                <div :class="['h-1 w-full rounded-full mt-4 overflow-hidden', isDarkMode ? 'bg-zinc-800' : 'bg-slate-100']">
-                  <div 
-                    :class="['h-full transition-all duration-700', isDarkMode ? 'bg-zinc-100' : 'bg-slate-900 group-hover:bg-blue-600']" 
-                    :style="{ width: `${skill.level}%` }"
-                  ></div>
-                </div>
               </div>
             </div>
           </div>
