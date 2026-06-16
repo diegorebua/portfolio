@@ -7,13 +7,7 @@ export default defineConfig(() => {
     return {
       server: {
         port: 5173,
-        host: '0.0.0.0',
-        proxy: {
-          '/api': {
-            target: 'http://backend:3001',
-            changeOrigin: true
-          }
-        }
+        host: '0.0.0.0'
       },
       plugins: [vue(), tailwindcss()],
       resolve: {

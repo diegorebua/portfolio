@@ -2,7 +2,6 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
 import Navbar from './components/Navbar.vue';
-import ChatWidget from './components/ChatWidget.vue';
 import { PROJECTS, SKILLS, EXPERIENCES, BIO } from './constants';
 
 const isDarkMode = ref(false);
@@ -50,7 +49,6 @@ const handleNavClick = (targetId: string) => {
 <template>
   <div :class="['min-h-screen transition-colors duration-500', isDarkMode ? 'bg-[#121212] text-zinc-300' : 'bg-white text-slate-900']">
     <Navbar :is-dark-mode="isDarkMode" @toggle-dark-mode="toggleDarkMode" @nav-click="handleNavClick" />
-    <ChatWidget :is-dark-mode="isDarkMode" />
 
     <main :class="['transition-all duration-300 ease-in-out', isFading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0']">
       <!-- Hero Section -->
@@ -210,7 +208,7 @@ const handleNavClick = (targetId: string) => {
           <a href="#" :class="['font-bold text-sm tracking-widest uppercase transition-colors', isDarkMode ? 'text-zinc-500 hover:text-white' : 'text-slate-400 hover:text-blue-600']">LinkedIn</a>
           <a href="#" :class="['font-bold text-sm tracking-widest uppercase transition-colors', isDarkMode ? 'text-zinc-500 hover:text-white' : 'text-slate-400 hover:text-blue-600']">Twitter</a>
         </div>
-        <p class="text-zinc-500 text-xs font-medium uppercase tracking-[0.2em]">&copy; 2024 Design e Código por Diego</p>
+        <p class="text-zinc-500 text-xs font-medium uppercase tracking-[0.2em]">&copy; 2025 Design e Código por Diego</p>
       </div>
     </footer>
   </div>

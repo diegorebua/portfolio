@@ -5368,7 +5368,7 @@ const hl = {
                                             class:
                                                 "text-zinc-500 text-xs font-medium uppercase tracking-[0.2em]",
                                         },
-                                        "© 2024 Design e Código por Diego",
+                                        "© 2025 Design e Código por Diego",
                                         -1,
                                     )),
                                 ]),
