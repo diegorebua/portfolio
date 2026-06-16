@@ -1,10 +1,6 @@
 {
   "name": "meu-site",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "backend"
-  ],
   "scripts": {
     "dev": "npm run dev --workspaces",
     "build": "npm run build --workspaces",
