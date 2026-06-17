@@ -4,36 +4,13 @@ import { Project, Skill, Experience } from './types';
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Sistema ERP Empresarial',
-    description: 'Sistema ERP de grande escala construído para logística de manufatura utilizando Spring Boot e React.',
-    tech: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Docker'],
-    image: 'https://picsum.photos/seed/erp/800/600',
+    title: 'Site Institucional Odontológico',
+    description: 'Site institucional criado para a Dra. Milena Takenaka. Focado em UX/UI, o projeto traduz a essência do atendimento humanizado em uma interface moderna e responsiva, projetada para converter visitantes em pacientes.',
+    tech: ['Java', 'React', 'Docker'],
+    image: '/dramilenatakenaka.jpeg',
+    link: 'https://dramilenatakenaka.com',
     category: 'fullstack'
   },
-  {
-    id: '2',
-    title: 'Plataforma de E-commerce',
-    description: 'Vitrine moderna com estoque em tempo real e frontend de alta performance em Vue 3.',
-    tech: ['Vue', 'Node.js', 'Express', 'MongoDB', 'Tailwind'],
-    image: 'https://picsum.photos/seed/shop/800/600',
-    category: 'fullstack'
-  },
-  {
-    id: '3',
-    title: 'Dashboard de Análise',
-    description: 'Ferramenta de visualização de dados em tempo real para monitoramento de performance de servidores e métricas de API.',
-    tech: ['Node.js', 'React', 'D3.js', 'Redis'],
-    image: 'https://picsum.photos/seed/analytics/800/600',
-    category: 'frontend'
-  },
-  {
-    id: '4',
-    title: 'Gateway de API Bancária',
-    description: 'Arquitetura de microsserviços de alta segurança para processamento de transações financeiras.',
-    tech: ['Java', 'Kafka', 'Spring Cloud', 'Kubernetes'],
-    image: 'https://picsum.photos/seed/bank/800/600',
-    category: 'backend'
-  }
 ];
 
 export const SKILLS: Skill[] = [

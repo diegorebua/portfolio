@@ -5019,7 +5019,7 @@ const hl = {
                                                     class:
                                                         "text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12",
                                                 },
-                                                "03. Projetos em Destaque",
+                                                "03. Projetos",
                                                 -1,
                                             )),
                                             p("div", Bl, [

@@ -137,15 +137,20 @@ const handleNavClick = (targetId: string) => {
       <section id="projects" class="py-32">
         <div class="container mx-auto px-6">
           <div class="max-w-5xl mx-auto">
-            <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12">03. Projetos em Destaque</h2>
+            <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12">03. Projetos</h2>
             <div class="grid md:grid-cols-2 gap-12">
               <div v-for="project in PROJECTS" :key="project.id" class="group">
-                <div :class="['relative aspect-[16/10] rounded-3xl overflow-hidden mb-6 transition-all duration-500', isDarkMode ? 'bg-zinc-800 shadow-none group-hover:shadow-white/5' : 'bg-slate-100 shadow-sm group-hover:shadow-2xl']">
+                <component 
+                  :is="project.link ? 'a' : 'div'" 
+                  :href="project.link" 
+                  :target="project.link ? '_blank' : null" 
+                  :class="['block relative aspect-[16/10] rounded-3xl overflow-hidden mb-6 transition-all duration-500', isDarkMode ? 'bg-zinc-800 shadow-none group-hover:shadow-white/5' : 'bg-slate-100 shadow-sm group-hover:shadow-2xl']"
+                >
                   <img :src="project.image" :alt="project.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span :class="['px-6 py-3 rounded-full font-bold text-sm', isDarkMode ? 'bg-white text-black' : 'bg-white text-slate-900']">Ver Detalhes</span>
                   </div>
-                </div>
+                </component>
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span v-for="t in project.tech" :key="t" class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">{{ t }}</span>
                 </div>
