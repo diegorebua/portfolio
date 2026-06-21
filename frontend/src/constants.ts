@@ -4,13 +4,13 @@ import { Project, Skill, Experience } from './types';
 const CDN = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
 
 const ICONS = {
-  java:       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+  java: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
   javascript: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  nodejs:     `${CDN}/nodejs/nodejs-original.svg`,
-  react:      `${CDN}/react/react-original.svg`,
-  vue:        `${CDN}/vuejs/vuejs-original.svg`,
+  nodejs: `${CDN}/nodejs/nodejs-original.svg`,
+  react: `${CDN}/react/react-original.svg`,
+  vue: `${CDN}/vuejs/vuejs-original.svg`,
   typescript: `${CDN}/typescript/typescript-original.svg`,
-  docker:     `${CDN}/docker/docker-original.svg`,
+  docker: `${CDN}/docker/docker-original.svg`,
   postgresql: `${CDN}/postgresql/postgresql-original.svg`,
 };
 
@@ -27,14 +27,14 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  { name: 'Java',       icon: ICONS.java,       category: 'language'  },
-  { name: 'Node.js',    icon: ICONS.nodejs,     category: 'language'  },
-  { name: 'TypeScript', icon: ICONS.typescript, category: 'language'  },
-  { name: 'JavaScript', icon: ICONS.javascript, category: 'language'  },
-  { name: 'React',      icon: ICONS.react,      category: 'framework' },
-  { name: 'Vue',        icon: ICONS.vue,        category: 'framework' },
-  { name: 'Docker',     icon: ICONS.docker,     category: 'tool'      },
-  { name: 'PostgreSQL', icon: ICONS.postgresql, category: 'tool'      },
+  { name: 'Java', icon: ICONS.java, category: 'language' },
+  { name: 'Node.js', icon: ICONS.nodejs, category: 'language' },
+  { name: 'TypeScript', icon: ICONS.typescript, category: 'language' },
+  { name: 'JavaScript', icon: ICONS.javascript, category: 'language' },
+  { name: 'React', icon: ICONS.react, category: 'framework' },
+  { name: 'Vue', icon: ICONS.vue, category: 'framework' },
+  { name: 'Docker', icon: ICONS.docker, category: 'tool' },
+  { name: 'PostgreSQL', icon: ICONS.postgresql, category: 'tool' },
 ];
 
 export const EXPERIENCES: Experience[] = [
