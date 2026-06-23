@@ -5,13 +5,7 @@ defineProps<{
   isDarkMode: boolean;
 }>();
 
-const phrases = [
-  'Java · Spring Boot · Microservices',
-  'Node.js · NestJS · Express',
-  'React · Next.js · TypeScript',
-  'Vue 3 · Composition API · Vite',
-  'PostgreSQL · Redis · Docker',
-];
+const phrase = 'JavaScript, TypeScript, Node, React e Vue.';
 
 const displayedText = ref('');
 const cursorVisible = ref(true);
@@ -28,30 +22,25 @@ function sleep(ms: number) {
 }
 
 async function animate() {
-  let phraseIndex = 0;
-
   while (running) {
-    const phrase = phrases[phraseIndex % phrases.length];
-
-    // Type forward
+    // Type character by character
     for (let i = 0; i <= phrase.length; i++) {
       if (!running) return;
       displayedText.value = phrase.substring(0, i);
-      await sleep(55 + Math.random() * 30);
+      await sleep(90 + Math.random() * 40);
     }
 
-    // Pause at full text
-    await sleep(1800);
+    // Hold 5 seconds
+    await sleep(5000);
 
     // Erase backward
     for (let i = phrase.length; i >= 0; i--) {
       if (!running) return;
       displayedText.value = phrase.substring(0, i);
-      await sleep(30);
+      await sleep(55);
     }
 
-    await sleep(300);
-    phraseIndex++;
+    await sleep(400);
   }
 }
 

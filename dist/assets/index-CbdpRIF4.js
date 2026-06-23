@@ -4632,7 +4632,7 @@ const fl = {
                       [
                         i[1] ||
                         (i[1] = Qe(
-                          " Especialista em ecossistemas de alta performance com ",
+                          " Desenvolvendo ambientes tecnológicos de alta performance com ",
                         )),
                         p(
                           "span",
