@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
 import Navbar from './components/Navbar.vue';
+import TerminalTyping from './components/TerminalTyping.vue';
 import { PROJECTS, SKILLS, EXPERIENCES, BIO } from './constants';
 
 const isDarkMode = ref(false);
@@ -65,9 +66,7 @@ const handleNavClick = (targetId: string) => {
           <h1 :class="['text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-none', isDarkMode ? 'text-white' : 'text-slate-900']">
             Criando <span class="text-blue-600">Experiências</span><br />Digitais.
           </h1>
-          <p :class="['max-w-2xl mx-auto text-base sm:text-lg md:text-xl mb-10 md:mb-12 font-medium leading-relaxed', isDarkMode ? 'text-zinc-400' : 'text-slate-500']">
-            Especialista em ecossistemas de alta performance com <span :class="[isDarkMode ? 'text-white' : 'text-slate-900', 'font-bold underline decoration-blue-500/30']">Java, Node.js, React e Vue.</span>
-          </p>
+          <TerminalTyping :is-dark-mode="isDarkMode" />
           <!-- mobile: botões em coluna | sm+: em linha -->
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#projects" @click.prevent="handleNavClick('#projects')" :class="['w-full sm:w-auto px-8 md:px-10 py-4 rounded-full font-bold transition-all shadow-xl active:scale-95', isDarkMode ? 'bg-white text-black hover:bg-zinc-200' : 'bg-slate-900 text-white hover:bg-blue-600 shadow-slate-900/10']">
