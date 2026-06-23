@@ -26,7 +26,7 @@ onUnmounted(() => {
 <template>
   <nav :class="[
     'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-    isScrolled ? (isDarkMode ? 'bg-[#121212]/90 backdrop-blur-md py-3 shadow-lg border-b border-zinc-800' : 'glass-light py-3 shadow-sm border-b') : 'bg-transparent py-6'
+    isScrolled ? (isDarkMode ? 'bg-black/40 backdrop-blur-md py-3 shadow-lg border-b border-zinc-800' : 'glass-light py-3 shadow-sm border-b') : 'bg-transparent py-6'
   ]">
     <div class="container mx-auto px-6 flex justify-between items-center">
       <a href="#" :class="['text-xl font-bold mono tracking-tighter', isDarkMode ? 'text-white' : 'text-slate-900']">

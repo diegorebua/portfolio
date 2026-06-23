@@ -48,7 +48,14 @@ const handleNavClick = (targetId: string) => {
 </script>
 
 <template>
-  <div :class="['min-h-screen transition-colors duration-500', isDarkMode ? 'bg-[#121212] text-zinc-300' : 'bg-white text-slate-900']">
+  <div :class="['min-h-screen transition-colors duration-500', isDarkMode ? 'bg-transparent text-zinc-300' : 'bg-white text-slate-900']">
+    <!-- Animated background — visible only in dark mode -->
+    <div class="bg-light-leaks" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="blob blob-4"></div>
+    </div>
     <Navbar :is-dark-mode="isDarkMode" @toggle-dark-mode="toggleDarkMode" @nav-click="handleNavClick" />
 
     <main :class="['transition-all duration-300 ease-in-out', isFading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0']">
@@ -219,7 +226,7 @@ const handleNavClick = (targetId: string) => {
     </main>
 
     <!-- ===================== FOOTER ===================== -->
-    <footer :class="['py-12 md:py-20 border-t', isDarkMode ? 'bg-[#121212] border-zinc-800' : 'bg-white border-slate-100']">
+    <footer :class="['py-12 md:py-20 border-t', isDarkMode ? 'bg-transparent border-zinc-800' : 'bg-white border-slate-100']">
       <div class="container mx-auto px-4 sm:px-6 text-center">
         <div class="flex justify-center space-x-8 md:space-x-12 mb-8 md:mb-12">
           <a href="https://github.com/diegorebua" target="_blank" aria-label="GitHub" :class="['transition-all hover:scale-110 active:scale-95', isDarkMode ? 'text-zinc-500 hover:text-white' : 'text-slate-400 hover:text-blue-600']">
