@@ -6,31 +6,17 @@
 }
 
 :root {
-  --dot-color: #e2e8f0;
-}
-
-.dark {
   --dot-color: #262626;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
-  background: #ffffff;
-}
-
-.dark body {
   background: #000000;
 }
 
 .mono {
   font-family: 'Fira Code', monospace;
-}
-
-.glass-light {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .section-dot-bg {
@@ -43,27 +29,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.dark ::-webkit-scrollbar-track {
   background: #171717;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #404040;
   border-radius: 10px;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: #404040;
-}
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
   background: #525252;
 }
 
@@ -75,14 +49,8 @@ body {
   z-index: -1;
   overflow: hidden;
   background: #000000;
-  /* só visível no dark mode */
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.dark .bg-light-leaks {
   opacity: 1;
+  pointer-events: none;
 }
 
 .blob {
