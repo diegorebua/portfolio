@@ -1,21 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import Navbar from './components/Navbar.vue';
 import TerminalTyping from './components/TerminalTyping.vue';
 import { PROJECTS, SKILLS, EXPERIENCES, BIO } from './constants';
+import { useMotionSlice } from './composables/useMotionSlice';
 
-const isFading = ref(false);
+useMotionSlice();
+
 const handleNavClick = (targetId: string) => {
-  isFading.value = true;
-  setTimeout(() => {
-    const target = document.querySelector(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'auto' });
-    }
-    setTimeout(() => {
-      isFading.value = false;
-    }, 50);
-  }, 300);
+  const target = document.querySelector(targetId);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
 };
 </script>
 
@@ -30,7 +25,7 @@ const handleNavClick = (targetId: string) => {
     </div>
     <Navbar @nav-click="handleNavClick" />
 
-    <main :class="['transition-all duration-300 ease-in-out', isFading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0']">
+    <main>
 
       <!-- ===================== HERO ===================== -->
       <section id="hero" class="min-h-screen flex items-center justify-center pt-20 section-dot-bg">
@@ -58,7 +53,7 @@ const handleNavClick = (targetId: string) => {
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
-              <div class="w-full md:w-1/3">
+              <div class="w-full md:w-1/3" data-motion>
                 <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-4">01. Perfil</h2>
                 <div class="relative group overflow-hidden rounded-3xl aspect-[4/5] max-w-xs mx-auto md:max-w-none bg-zinc-800">
                   <img
@@ -68,7 +63,7 @@ const handleNavClick = (targetId: string) => {
                   />
                 </div>
               </div>
-              <div class="w-full md:w-2/3">
+              <div class="w-full md:w-2/3" data-motion="100ms">
                 <h3 class="text-2xl md:text-4xl font-bold mb-6 md:mb-8 leading-tight text-white">
                   Combinando robustez no backend com elegância no frontend.
                 </h3>
@@ -92,12 +87,17 @@ const handleNavClick = (targetId: string) => {
       </section>
 
       <!-- ===================== SKILLS ===================== -->
-      <section id="skills" class="py-16 md:py-32 border-y bg-zinc-900/30 border-zinc-800">
+      <section id="skills" class="py-16 md:py-32 border-y border-zinc-800">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-5xl mx-auto">
-            <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12 text-center">02. Arsenal Tecnológico</h2>
+            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12 text-center">02. Arsenal Tecnológico</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-              <div v-for="skill in SKILLS" :key="skill.name" class="p-5 md:p-8 flex flex-col items-center text-center rounded-2xl md:rounded-3xl border transition-all group bg-[#1a1a1a] border-zinc-800 shadow-none hover:border-zinc-600">
+              <div
+                v-for="(skill, idx) in SKILLS"
+                :key="skill.name"
+                :data-motion="`${idx * 60}ms`"
+                class="p-5 md:p-8 flex flex-col items-center text-center rounded-2xl md:rounded-3xl border transition-all group bg-white/[0.02] backdrop-blur-xl border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:bg-white/[0.06] hover:border-white/10"
+              >
                 <div class="mb-4 md:mb-6 flex justify-center">
                   <img v-if="skill.icon.startsWith('http')" :src="skill.icon" :alt="skill.name" class="w-10 h-10 md:w-12 md:h-12 object-contain mx-auto" />
                   <span v-else class="text-3xl md:text-4xl">{{ skill.icon }}</span>
@@ -113,9 +113,9 @@ const handleNavClick = (targetId: string) => {
       <section id="projects" class="py-16 md:py-32">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-5xl mx-auto">
-            <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">03. Projetos</h2>
+            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">03. Projetos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              <div v-for="project in PROJECTS" :key="project.id" class="group">
+              <div v-for="(project, idx) in PROJECTS" :key="project.id" :data-motion="`${idx * 100}ms`" class="group">
                 <component
                   :is="project.link ? 'a' : 'div'"
                   :href="project.link"
@@ -142,9 +142,9 @@ const handleNavClick = (targetId: string) => {
       <section id="experience" class="py-16 md:py-32 border-y bg-zinc-900/10 border-zinc-800">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">04. Trajetória</h2>
+            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">04. Trajetória</h2>
             <div class="space-y-12 md:space-y-16">
-              <div v-for="(exp, idx) in EXPERIENCES" :key="idx" class="flex flex-col md:grid md:grid-cols-3 gap-3 md:gap-8">
+              <div v-for="(exp, idx) in EXPERIENCES" :key="idx" :data-motion="`${idx * 80}ms`" class="flex flex-col md:grid md:grid-cols-3 gap-3 md:gap-8">
                 <div class="text-zinc-500 font-bold text-sm">{{ exp.period }}</div>
                 <div class="md:col-span-2">
                   <h4 class="text-xl md:text-2xl font-bold mb-1 text-white">{{ exp.role }}</h4>
@@ -165,7 +165,7 @@ const handleNavClick = (targetId: string) => {
       <!-- ===================== CONTACT ===================== -->
       <section id="contact" class="py-24 md:py-40">
         <div class="container mx-auto px-4 sm:px-6 text-center">
-          <div class="max-w-xl mx-auto">
+          <div class="max-w-xl mx-auto" data-motion>
             <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6 md:mb-8 tracking-tighter text-white">Vamos criar algo novo?</h2>
             <p class="text-base md:text-lg mb-10 md:mb-12 text-zinc-400">
               Estou sempre aberto a novos desafios e parcerias inovadoras. Entre em contato para uma consultoria ou café remoto.
