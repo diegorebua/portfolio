@@ -38,7 +38,7 @@ const handleNavClick = (targetId: string) => {
           <div class="inline-block mb-6 px-4 py-1 rounded-full border text-[11px] font-bold tracking-widest uppercase border-zinc-800 bg-zinc-900 text-zinc-400">
             Desenvolvedor de Software
           </div>
-          <h1 class="text-6xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-none text-white">
+          <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-none text-white">
             Criando <span class="text-blue-600">Experiências</span><br />Digitais.
           </h1>
           <TerminalTyping />
