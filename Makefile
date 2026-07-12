@@ -1,7 +1,10 @@
-.PHONY: up build down logs bash
+.PHONY: up build down logs bash dev
 
 up:
 	docker compose up -d
+
+dev:
+	docker compose --profile dev up -d
 
 build:
 	docker compose build
