@@ -1,16 +1,13 @@
 .PHONY: up build down logs bash dev prod
 
 up:
-	docker compose --profile dev up -d frontend-dev
-	docker compose --profile dev logs -f frontend-dev
+	docker compose --profile dev up frontend-dev
 
 dev:
-	docker compose --profile dev up -d frontend-dev
-	docker compose --profile dev logs -f frontend-dev
+	docker compose --profile dev up frontend-dev
 
 prod:
-	docker compose up -d frontend
-	docker compose logs -f frontend
+	docker compose up frontend
 
 build:
 	docker compose --profile dev build
