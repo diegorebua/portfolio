@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue';
 import TerminalTyping from './components/TerminalTyping.vue';
+import InteractiveBackground from './components/InteractiveBackground.vue';
 import { PROJECTS, SKILLS, EXPERIENCES, BIO } from './constants';
 import { useMotionSlice } from './composables/useMotionSlice';
 
@@ -16,13 +17,8 @@ const handleNavClick = (targetId: string) => {
 
 <template>
   <div class="min-h-screen transition-colors duration-500 overflow-hidden bg-transparent text-zinc-300">
-    <!-- Animated background -->
-    <div class="bg-light-leaks" aria-hidden="true">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-      <div class="blob blob-3"></div>
-      <div class="blob blob-4"></div>
-    </div>
+    <!-- Animated interactive background -->
+    <InteractiveBackground />
     <Navbar @nav-click="handleNavClick" />
 
     <main>
