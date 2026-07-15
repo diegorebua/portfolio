@@ -27,26 +27,26 @@ export const PROJECTS: Project[] = [
   {
     id: '2',
     title: 'Próximos projetos a caminho',
-    description: 'Em breve: Novo ecossistema interativo em desenvolvimento com arquitetura moderna, processamento assíncrono e alta escalabilidade.',
-    tech: ['Node.js', 'Vue 3', 'PostgreSQL'],
-    image: '/project_next_1.svg',
+    description: 'Novas soluções e aplicações estão sendo estruturadas no momento e serão adicionadas em breve ao portfólio.',
+    tech: [],
+    image: '',
     category: 'fullstack'
   },
   {
     id: '3',
     title: 'Próximos projetos a caminho',
-    description: 'Em breve: Plataforma corporativa SaaS com gestão contínua em nuvem, orquestração de containers e painel analítico avançado em tempo real.',
-    tech: ['React', 'TypeScript', 'Docker'],
-    image: '/project_next_2.svg',
+    description: 'Novas soluções e aplicações estão sendo estruturadas no momento e serão adicionadas em breve ao portfólio.',
+    tech: [],
+    image: '',
     category: 'fullstack'
   },
   {
     id: '4',
     title: 'Próximos projetos a caminho',
-    description: 'Em breve: API Restful e arquitetura de microsserviços orientada a eventos construída em Java e Spring Boot com deploy automatizado.',
-    tech: ['Java', 'Spring Boot', 'AWS'],
-    image: '/project_next_3.svg',
-    category: 'backend'
+    description: 'Novas soluções e aplicações estão sendo estruturadas no momento e serão adicionadas em breve ao portfólio.',
+    tech: [],
+    image: '',
+    category: 'fullstack'
   },
 ];
 

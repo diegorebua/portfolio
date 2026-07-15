@@ -118,14 +118,20 @@ const handleNavClick = (targetId: string) => {
                   :target="project.link ? '_blank' : null"
                   class="block relative aspect-[16/10] rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden mb-2.5 sm:mb-5 md:mb-6 transition-all duration-500 bg-zinc-800 shadow-none group-hover:shadow-white/5"
                 >
-                  <img :src="project.image" :alt="project.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <img v-if="project.image" :src="project.image" :alt="project.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div v-else class="w-full h-full flex flex-col items-center justify-center p-3 text-center bg-gradient-to-br from-zinc-900/90 via-zinc-900 to-zinc-800/60 border border-zinc-800/80">
+                    <div class="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-blue-600/10 border border-blue-500/20 flex items-center justify-center mb-1.5 sm:mb-2.5 text-blue-500">
+                      <svg class="w-3.5 h-3.5 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </div>
+                    <span class="text-[9px] sm:text-xs font-bold text-zinc-500 tracking-widest uppercase">Em Breve</span>
+                  </div>
+                  <div v-if="project.image" class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span class="px-3 py-1.5 sm:px-6 sm:py-3 rounded-full font-bold text-[10px] sm:text-sm bg-white text-black">{{ project.link ? 'Ver Detalhes' : 'Em Breve' }}</span>
                   </div>
                 </component>
                 <h3 class="text-xs sm:text-xl md:text-2xl font-bold mb-1.5 sm:mb-2 text-white leading-tight">{{ project.title }}</h3>
                 <p class="leading-relaxed text-[11px] sm:text-sm mb-3 sm:mb-4 text-zinc-400 line-clamp-3 sm:line-clamp-none">{{ project.description }}</p>
-                <div class="flex flex-wrap gap-1 sm:gap-1.5 mt-auto pt-1 sm:pt-2">
+                <div v-if="project.tech && project.tech.length" class="flex flex-wrap gap-1 sm:gap-1.5 mt-auto pt-1 sm:pt-2">
                   <span v-for="t in project.tech" :key="t" class="px-2 py-0.5 rounded-full bg-blue-600/10 border border-blue-500/20 text-[9px] sm:text-xs font-bold text-blue-500 uppercase tracking-wider">{{ t }}</span>
                 </div>
               </div>
