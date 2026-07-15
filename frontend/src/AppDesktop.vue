@@ -18,7 +18,7 @@ const handleNavClick = (targetId: string) => {
 <template>
   <div class="min-h-screen transition-colors duration-500 bg-transparent text-zinc-300">
     <!-- Animated interactive background -->
-    <InteractiveBackground />
+    <InteractiveBackground :is-mobile="false" />
     <Navbar @nav-click="handleNavClick" />
 
     <main>
@@ -60,12 +60,12 @@ const handleNavClick = (targetId: string) => {
                 </div>
               </div>
               <div class="w-full md:w-2/3" data-motion="100ms">
-                <h3 class="text-2xl md:text-4xl font-bold mb-6 md:mb-8 leading-tight text-white">
+                <h3 class="text-2xl md:text-4xl font-bold mb-8 md:mb-12 leading-tight text-white">
                   Combinando robustez no backend com elegância no frontend.
                 </h3>
-                <div class="leading-relaxed space-y-6 text-base md:text-lg text-zinc-400">
+                <div class="leading-[1.8] space-y-8 md:space-y-10 text-base md:text-lg text-zinc-400 my-4">
                   <p>{{ BIO }}</p>
-                  <div class="grid grid-cols-2 gap-6 md:gap-8 pt-6 md:pt-8 border-t border-zinc-800">
+                  <div class="grid grid-cols-2 gap-8 md:gap-10 pt-8 md:pt-12 mt-8 md:mt-10 border-t border-zinc-800">
                     <div>
                       <h4 class="text-white font-bold mb-2">Frontend</h4>
                       <p class="text-sm">React (Next.js), Vue 3, JavaScript, TypeScript.</p>
@@ -120,7 +120,7 @@ const handleNavClick = (targetId: string) => {
                 >
                   <img :src="project.image" :alt="project.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <span class="px-6 py-3 rounded-full font-bold text-sm bg-white text-black">Ver Detalhes</span>
+                    <span class="px-6 py-3 rounded-full font-bold text-sm bg-white text-black">{{ project.link ? 'Ver Detalhes' : 'Em Breve' }}</span>
                   </div>
                 </component>
                 <div class="flex flex-wrap gap-2 mb-3 md:mb-4">
@@ -141,12 +141,12 @@ const handleNavClick = (targetId: string) => {
             <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">04. Trajetória</h2>
             <div class="space-y-12 md:space-y-16">
               <div v-for="(exp, idx) in EXPERIENCES" :key="idx" :data-motion="`${idx * 80}ms`" class="flex flex-col md:grid md:grid-cols-3 gap-3 md:gap-8">
-                <div class="text-zinc-500 font-bold text-sm">{{ exp.period }}</div>
+                <div class="text-zinc-500 font-bold text-sm mb-1 md:mb-0">{{ exp.period }}</div>
                 <div class="md:col-span-2">
-                  <h4 class="text-xl md:text-2xl font-bold mb-1 text-white">{{ exp.role }}</h4>
-                  <p class="text-blue-600 font-bold mb-4 md:mb-6 text-base md:text-lg">{{ exp.company }}</p>
-                  <ul class="space-y-3 md:space-y-4">
-                    <li v-for="(item, i) in exp.description" :key="i" class="text-sm md:text-[15px] leading-relaxed flex items-start text-zinc-400">
+                  <h4 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-white">{{ exp.role }}</h4>
+                  <p class="text-blue-600 font-bold mb-6 md:mb-8 text-base md:text-lg">{{ exp.company }}</p>
+                  <ul class="space-y-4 md:space-y-6">
+                    <li v-for="(item, i) in exp.description" :key="i" class="text-sm md:text-[15px] leading-[1.8] flex items-start text-zinc-400 py-1">
                       <span class="text-blue-500 mr-3 mt-1.5 shrink-0">•</span>
                       {{ item }}
                     </li>
@@ -162,8 +162,8 @@ const handleNavClick = (targetId: string) => {
       <section id="contact" class="py-24 md:py-40">
         <div class="container mx-auto px-4 sm:px-6 text-center">
           <div class="max-w-xl mx-auto" data-motion>
-            <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6 md:mb-8 tracking-tighter text-white">Vamos criar algo novo?</h2>
-            <p class="text-base md:text-lg mb-10 md:mb-12 text-zinc-400">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-8 md:mb-12 tracking-tighter text-white">Vamos criar algo novo?</h2>
+            <p class="text-base md:text-lg mb-12 md:mb-16 text-zinc-400 leading-[1.8]">
               Estou sempre aberto a novos desafios e parcerias inovadoras. Entre em contato para uma consultoria ou café remoto.
             </p>
             <a

@@ -18,7 +18,7 @@ const handleNavClick = (targetId: string) => {
 <template>
   <div class="min-h-screen transition-colors duration-500 overflow-hidden bg-transparent text-zinc-300">
     <!-- Animated interactive background -->
-    <InteractiveBackground />
+    <InteractiveBackground :is-mobile="true" />
     <Navbar @nav-click="handleNavClick" />
 
     <main>
@@ -26,18 +26,18 @@ const handleNavClick = (targetId: string) => {
       <!-- ===================== HERO ===================== -->
       <section id="hero" class="min-h-[100dvh] flex items-center justify-center pt-20 pb-[env(safe-area-inset-bottom)] section-dot-bg">
         <div class="container mx-auto px-4 sm:px-6 text-center">
-          <div class="inline-block mb-6 px-4 py-1 rounded-full border text-[11px] font-bold tracking-widest uppercase border-zinc-800 bg-zinc-900 text-zinc-400">
+          <div class="inline-block mb-8 px-4 py-1 rounded-full border text-[11px] font-bold tracking-widest uppercase border-zinc-800 bg-zinc-900 text-zinc-400">
             Desenvolvedor de Software
           </div>
-          <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-none text-white">
+          <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-8 sm:mb-10 md:mb-12 tracking-tighter leading-none text-white">
             Criando <span class="text-blue-600">Experiências</span><br />Digitais.
           </h1>
           <TerminalTyping />
-          <div class="flex flex-row items-center justify-center gap-2 w-full px-8 mt-6">
-            <a href="#projects" @click.prevent="handleNavClick('#projects')" class="flex-1 text-center py-2.5 rounded-full font-bold text-[11px] uppercase tracking-wider transition-all shadow-xl active:scale-95 whitespace-nowrap bg-white text-black hover:bg-zinc-200">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full max-w-xs sm:max-w-none mx-auto px-4 mt-8">
+            <a href="#projects" @click.prevent="handleNavClick('#projects')" class="w-full sm:w-auto text-center py-3.5 px-8 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl active:scale-95 whitespace-nowrap bg-white text-black hover:bg-zinc-200">
               Projetos
             </a>
-            <a href="#about" @click.prevent="handleNavClick('#about')" class="flex-1 text-center py-2.5 border rounded-full font-bold text-[11px] uppercase tracking-wider transition-all active:scale-95 whitespace-nowrap bg-transparent text-white border-zinc-700 hover:border-zinc-500">
+            <a href="#about" @click.prevent="handleNavClick('#about')" class="w-full sm:w-auto text-center py-3.5 px-8 border rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-all active:scale-95 whitespace-nowrap bg-transparent text-white border-zinc-700 hover:border-zinc-500">
               Sobre Mim
             </a>
           </div>
@@ -45,13 +45,13 @@ const handleNavClick = (targetId: string) => {
       </section>
 
       <!-- ===================== ABOUT ===================== -->
-      <section id="about" class="py-16 md:py-32 border-t border-zinc-800">
+      <section id="about" class="py-16 sm:py-24 md:py-32 border-t border-zinc-800">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
               <div class="w-full md:w-1/3" data-motion>
-                <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-4">01. Perfil</h2>
-                <div class="relative group overflow-hidden rounded-3xl aspect-[4/5] max-w-xs mx-auto md:max-w-none bg-zinc-800">
+                <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-6 sm:mb-8">01. Perfil</h2>
+                <div class="relative group overflow-hidden rounded-3xl aspect-[4/5] max-w-[260px] sm:max-w-xs mx-auto md:max-w-none bg-zinc-800">
                   <img
                     src="/profile.jpeg"
                     alt="Profile"
@@ -60,19 +60,19 @@ const handleNavClick = (targetId: string) => {
                 </div>
               </div>
               <div class="w-full md:w-2/3" data-motion="100ms">
-                <h3 class="text-2xl md:text-4xl font-bold mb-6 md:mb-8 leading-tight text-white">
+                <h3 class="text-2xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12 leading-tight text-white">
                   Combinando robustez no backend com elegância no frontend.
                 </h3>
-                <div class="leading-relaxed space-y-6 text-base md:text-lg text-zinc-400">
+                <div class="leading-[1.8] space-y-8 sm:space-y-10 text-base md:text-lg text-zinc-400 my-4">
                   <p>{{ BIO }}</p>
-                  <div class="grid grid-cols-2 gap-6 md:gap-8 pt-6 md:pt-8 border-t border-zinc-800">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 pt-8 sm:pt-10 md:pt-12 mt-8 sm:mt-10 border-t border-zinc-800">
                     <div>
-                      <h4 class="text-white font-bold mb-2">Frontend</h4>
-                      <p class="text-sm">React (Next.js), Vue 3, JavaScript, TypeScript.</p>
+                      <h4 class="text-white font-bold mb-3.5 sm:mb-4">Frontend</h4>
+                      <p class="text-sm leading-[1.75]">React (Next.js), Vue 3, JavaScript, TypeScript.</p>
                     </div>
                     <div>
-                      <h4 class="text-white font-bold mb-2">Backend</h4>
-                      <p class="text-sm">Java (Spring), Node.js (NestJS), PostgreSQL.</p>
+                      <h4 class="text-white font-bold mb-3.5 sm:mb-4">Backend</h4>
+                      <p class="text-sm leading-[1.75]">Java (Spring), Node.js (NestJS), PostgreSQL.</p>
                     </div>
                   </div>
                 </div>
@@ -83,22 +83,22 @@ const handleNavClick = (targetId: string) => {
       </section>
 
       <!-- ===================== SKILLS ===================== -->
-      <section id="skills" class="py-16 md:py-32 border-y border-zinc-800">
+      <section id="skills" class="py-16 sm:py-24 md:py-32 border-y border-zinc-800">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-5xl mx-auto">
-            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12 text-center">02. Arsenal Tecnológico</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 sm:mb-16 md:mb-20 text-center">02. Arsenal Tecnológico</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8">
               <div
                 v-for="(skill, idx) in SKILLS"
                 :key="skill.name"
                 :data-motion="`${idx * 60}ms`"
-                class="p-5 md:p-8 flex flex-col items-center text-center rounded-2xl md:rounded-3xl border transition-all group bg-white/[0.02] backdrop-blur-xl border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:bg-white/[0.06] hover:border-white/10"
+                class="p-4 sm:p-6 md:p-8 flex flex-col items-center text-center rounded-2xl md:rounded-3xl border transition-all group bg-white/[0.02] backdrop-blur-xl border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:bg-white/[0.06] hover:border-white/10"
               >
-                <div class="mb-4 md:mb-6 flex justify-center">
-                  <img v-if="skill.icon.startsWith('http')" :src="skill.icon" :alt="skill.name" class="w-10 h-10 md:w-12 md:h-12 object-contain mx-auto" />
-                  <span v-else class="text-3xl md:text-4xl">{{ skill.icon }}</span>
+                <div class="mb-4 sm:mb-6 md:mb-8 flex justify-center">
+                  <img v-if="skill.icon.startsWith('http')" :src="skill.icon" :alt="skill.name" class="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain mx-auto" />
+                  <span v-else class="text-2xl sm:text-3xl md:text-4xl">{{ skill.icon }}</span>
                 </div>
-                <div class="font-black text-sm md:text-lg text-white">{{ skill.name }}</div>
+                <div class="font-black text-xs sm:text-sm md:text-lg text-white mt-1 sm:mt-2">{{ skill.name }}</div>
               </div>
             </div>
           </div>
@@ -106,28 +106,28 @@ const handleNavClick = (targetId: string) => {
       </section>
 
       <!-- ===================== PROJECTS ===================== -->
-      <section id="projects" class="py-16 md:py-32">
+      <section id="projects" class="py-16 sm:py-24 md:py-32">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-5xl mx-auto">
             <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">03. Projetos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-              <div v-for="(project, idx) in PROJECTS" :key="project.id" :data-motion="`${idx * 100}ms`" class="group">
+            <div class="grid grid-cols-2 gap-3 sm:gap-8 md:gap-12">
+              <div v-for="(project, idx) in PROJECTS" :key="project.id" :data-motion="`${idx * 100}ms`" class="group flex flex-col">
                 <component
                   :is="project.link ? 'a' : 'div'"
                   :href="project.link"
                   :target="project.link ? '_blank' : null"
-                  class="block relative aspect-[16/10] rounded-2xl md:rounded-3xl overflow-hidden mb-5 md:mb-6 transition-all duration-500 bg-zinc-800 shadow-none group-hover:shadow-white/5"
+                  class="block relative aspect-[16/10] rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden mb-2.5 sm:mb-5 md:mb-6 transition-all duration-500 bg-zinc-800 shadow-none group-hover:shadow-white/5"
                 >
                   <img :src="project.image" :alt="project.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <span class="px-6 py-3 rounded-full font-bold text-sm bg-white text-black">Ver Detalhes</span>
+                    <span class="px-3 py-1.5 sm:px-6 sm:py-3 rounded-full font-bold text-[10px] sm:text-sm bg-white text-black">{{ project.link ? 'Ver Detalhes' : 'Em Breve' }}</span>
                   </div>
                 </component>
-                <div class="flex flex-wrap gap-2 mb-3 md:mb-4">
-                  <span v-for="t in project.tech" :key="t" class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">{{ t }}</span>
+                <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3 md:mb-4">
+                  <span v-for="t in project.tech" :key="t" class="px-2 py-0.5 rounded-full bg-blue-600/10 border border-blue-500/20 text-[9px] sm:text-xs font-bold text-blue-500 uppercase tracking-wider">{{ t }}</span>
                 </div>
-                <h3 class="text-xl md:text-2xl font-bold mb-3 text-white">{{ project.title }}</h3>
-                <p class="leading-relaxed text-sm mb-6 text-zinc-400">{{ project.description }}</p>
+                <h3 class="text-xs sm:text-xl md:text-2xl font-bold mb-1.5 sm:mb-2.5 text-white leading-tight">{{ project.title }}</h3>
+                <p class="leading-relaxed text-[11px] sm:text-sm mb-4 sm:mb-6 text-zinc-400 line-clamp-3 sm:line-clamp-none">{{ project.description }}</p>
               </div>
             </div>
           </div>
@@ -135,19 +135,19 @@ const handleNavClick = (targetId: string) => {
       </section>
 
       <!-- ===================== EXPERIENCE ===================== -->
-      <section id="experience" class="py-16 md:py-32 border-y bg-zinc-900/10 border-zinc-800">
+      <section id="experience" class="py-16 sm:py-24 md:py-32 border-y bg-zinc-900/10 border-zinc-800">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-4xl mx-auto">
-            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">04. Trajetória</h2>
-            <div class="space-y-12 md:space-y-16">
-              <div v-for="(exp, idx) in EXPERIENCES" :key="idx" :data-motion="`${idx * 80}ms`" class="flex flex-col md:grid md:grid-cols-3 gap-3 md:gap-8">
-                <div class="text-zinc-500 font-bold text-sm">{{ exp.period }}</div>
+            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 sm:mb-16 md:mb-20">04. Trajetória</h2>
+            <div class="space-y-14 sm:space-y-16 md:space-y-20">
+              <div v-for="(exp, idx) in EXPERIENCES" :key="idx" :data-motion="`${idx * 80}ms`" class="flex flex-col md:grid md:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
+                <div class="text-zinc-500 font-bold text-xs sm:text-sm tracking-wider uppercase mb-1.5 md:mb-0">{{ exp.period }}</div>
                 <div class="md:col-span-2">
-                  <h4 class="text-xl md:text-2xl font-bold mb-1 text-white">{{ exp.role }}</h4>
-                  <p class="text-blue-600 font-bold mb-4 md:mb-6 text-base md:text-lg">{{ exp.company }}</p>
-                  <ul class="space-y-3 md:space-y-4">
-                    <li v-for="(item, i) in exp.description" :key="i" class="text-sm md:text-[15px] leading-relaxed flex items-start text-zinc-400">
-                      <span class="text-blue-500 mr-3 mt-1.5 shrink-0">•</span>
+                  <h4 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white">{{ exp.role }}</h4>
+                  <p class="text-blue-500 font-bold mb-5 sm:mb-6 md:mb-8 text-sm sm:text-base md:text-lg">{{ exp.company }}</p>
+                  <ul class="space-y-4 sm:space-y-5 md:space-y-6">
+                    <li v-for="(item, i) in exp.description" :key="i" class="text-xs sm:text-sm md:text-[15px] leading-[1.8] flex items-start text-zinc-400 py-1">
+                      <span class="text-blue-500 mr-2.5 sm:mr-3 mt-1 sm:mt-1.5 shrink-0">•</span>
                       {{ item }}
                     </li>
                   </ul>
@@ -159,19 +159,19 @@ const handleNavClick = (targetId: string) => {
       </section>
 
       <!-- ===================== CONTACT ===================== -->
-      <section id="contact" class="py-24 md:py-40">
+      <section id="contact" class="py-16 sm:py-24 md:py-40">
         <div class="container mx-auto px-4 sm:px-6 text-center">
           <div class="max-w-xl mx-auto" data-motion>
-            <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6 md:mb-8 tracking-tighter text-white">Vamos criar algo novo?</h2>
-            <p class="text-base md:text-lg mb-10 md:mb-12 text-zinc-400">
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-black mb-8 sm:mb-10 md:mb-12 tracking-tighter text-white">Vamos criar algo novo?</h2>
+            <p class="text-sm sm:text-base md:text-lg mb-12 sm:mb-14 md:mb-16 text-zinc-400 max-w-md mx-auto leading-[1.8]">
               Estou sempre aberto a novos desafios e parcerias inovadoras. Entre em contato para uma consultoria ou café remoto.
             </p>
             <a
               href="mailto:contact@devportfolio.com"
-              class="inline-flex items-center px-8 md:px-12 py-4 md:py-5 font-black rounded-full transition-all shadow-2xl active:scale-95 text-sm md:text-base bg-zinc-100 text-slate-900 hover:bg-white"
+              class="inline-flex items-center px-8 sm:px-12 py-3.5 sm:py-4 md:py-5 font-black rounded-full transition-all shadow-2xl active:scale-95 text-xs sm:text-sm md:text-base bg-zinc-100 text-slate-900 hover:bg-white"
             >
               Enviar E-mail
-              <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <svg class="ml-2.5 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </div>
         </div>
@@ -197,26 +197,3 @@ const handleNavClick = (targetId: string) => {
     </footer>
   </div>
 </template>
-
-<style scoped>
-/* Reduzir os tamanhos das manchas e blur no celular */
-.blob {
-  filter: blur(80px);
-}
-.blob-1 {
-  width: 300px;
-  height: 300px;
-}
-.blob-2 {
-  width: 250px;
-  height: 250px;
-}
-.blob-3 {
-  width: 300px;
-  height: 300px;
-}
-.blob-4 {
-  width: 200px;
-  height: 200px;
-}
-</style>
