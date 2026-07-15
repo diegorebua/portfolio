@@ -50,7 +50,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl mb-10 md:mb-12 font-medium leading-relaxed text-zinc-400">
+  <p class="max-w-2xl mx-auto text-sm sm:text-lg md:text-xl mb-8 sm:mb-10 md:mb-12 px-4 font-medium leading-relaxed text-zinc-400">
     Desenvolvendo ambientes tecnológicos de alta performance com
     <span class="text-white font-bold">{{ displayedText }}</span><span
       class="inline-block w-[2px] h-[1em] align-middle ml-[1px] translate-y-[-1px] transition-opacity duration-75 bg-blue-400"
