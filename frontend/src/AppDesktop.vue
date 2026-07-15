@@ -123,11 +123,11 @@ const handleNavClick = (targetId: string) => {
                     <span class="px-6 py-3 rounded-full font-bold text-sm bg-white text-black">{{ project.link ? 'Ver Detalhes' : 'Em Breve' }}</span>
                   </div>
                 </component>
-                <div class="flex flex-wrap gap-2 mb-3 md:mb-4">
-                  <span v-for="t in project.tech" :key="t" class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">{{ t }}</span>
-                </div>
                 <h3 class="text-xl md:text-2xl font-bold mb-3 text-white">{{ project.title }}</h3>
-                <p class="leading-relaxed text-sm mb-6 text-zinc-400">{{ project.description }}</p>
+                <p class="leading-relaxed text-sm mb-4 text-zinc-400">{{ project.description }}</p>
+                <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                  <span v-for="t in project.tech" :key="t" class="px-2.5 py-1 rounded-full bg-blue-600/10 border border-blue-500/20 text-[10px] font-bold text-blue-500 uppercase tracking-widest">{{ t }}</span>
+                </div>
               </div>
             </div>
           </div>
