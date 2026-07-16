@@ -46,8 +46,8 @@ const handleNavClick = (targetId: string) => {
 
       <!-- ===================== ABOUT ===================== -->
       <section id="about" class="py-16 sm:py-24 md:py-32 border-t border-zinc-800">
-        <div class="container mx-auto px-4 sm:px-6">
-          <div class="max-w-5xl mx-auto">
+        <div class="container mx-auto px-14 sm:px-28 md:px-44">
+          <div class="max-w-md sm:max-w-lg md:max-w-xl mx-auto">
             <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
               <div class="w-full md:w-1/3" data-motion>
                 <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-6 sm:mb-8">01. Perfil</h2>
@@ -84,8 +84,8 @@ const handleNavClick = (targetId: string) => {
 
       <!-- ===================== SKILLS ===================== -->
       <section id="skills" class="py-16 sm:py-24 md:py-32 border-y border-zinc-800">
-        <div class="container mx-auto px-4 sm:px-6">
-          <div class="max-w-5xl mx-auto">
+        <div class="container mx-auto px-14 sm:px-28 md:px-44">
+          <div class="max-w-md sm:max-w-lg md:max-w-xl mx-auto">
             <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 sm:mb-16 md:mb-20 text-center">02. Arsenal Tecnológico</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8">
               <div
@@ -107,33 +107,33 @@ const handleNavClick = (targetId: string) => {
 
       <!-- ===================== PROJECTS ===================== -->
       <section id="projects" class="py-16 sm:py-24 md:py-32">
-        <div class="container mx-auto px-4 sm:px-6">
-          <div class="max-w-5xl mx-auto">
+        <div class="container mx-auto px-14 sm:px-28 md:px-44">
+          <div class="max-w-md sm:max-w-lg md:max-w-xl mx-auto">
             <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">03. Projetos</h2>
-            <div class="grid grid-cols-2 gap-3 sm:gap-8 md:gap-12">
+            <div class="grid grid-cols-1 gap-10 sm:gap-14 md:gap-16">
               <div v-for="(project, idx) in PROJECTS" :key="project.id" :data-motion="`${idx * 100}ms`" class="group flex flex-col">
                 <component
                   :is="project.link ? 'a' : 'div'"
                   :href="project.link"
                   :target="project.link ? '_blank' : null"
-                  class="block relative aspect-[16/10] rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden mb-2.5 sm:mb-5 md:mb-6 transition-all duration-500 bg-zinc-800 shadow-none group-hover:shadow-white/5"
+                  class="block relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden mb-4 sm:mb-6 transition-all duration-500 bg-zinc-800 shadow-none group-hover:shadow-white/5"
                 >
                   <img v-if="project.image" :src="project.image" :alt="project.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div v-else class="w-full h-full flex flex-col items-center justify-center p-3 text-center bg-gradient-to-br from-zinc-900/90 via-zinc-900 to-zinc-800/60 border border-zinc-800/80">
-                    <div class="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-blue-600/10 border border-blue-500/20 flex items-center justify-center mb-1.5 sm:mb-2.5 text-blue-500">
-                      <svg class="w-3.5 h-3.5 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                  <div v-else class="w-full h-full flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-gradient-to-br from-zinc-900/90 via-zinc-900 to-zinc-800/60 border border-zinc-800/80">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-600/10 border border-blue-500/20 flex items-center justify-center mb-2.5 sm:mb-3 text-blue-500">
+                      <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                     </div>
-                    <span class="text-[9px] sm:text-xs font-bold text-zinc-500 tracking-widest uppercase">Em Breve</span>
+                    <span class="text-[10px] sm:text-xs font-bold text-zinc-500 tracking-widest uppercase">Em Breve</span>
                   </div>
                   <div v-if="project.image" class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <span class="px-3 py-1.5 sm:px-6 sm:py-3 rounded-full font-bold text-[10px] sm:text-sm bg-white text-black">{{ project.link ? 'Ver Detalhes' : 'Em Breve' }}</span>
+                    <span class="px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-xs sm:text-sm bg-white text-black">{{ project.link ? 'Ver Detalhes' : 'Em Breve' }}</span>
                   </div>
                 </component>
-                <h3 class="text-xs sm:text-xl md:text-2xl font-bold mb-1.5 sm:mb-2 text-white leading-tight">{{ project.title }}</h3>
-                <p class="leading-relaxed text-[11px] sm:text-sm mb-3 sm:mb-4 text-zinc-400 line-clamp-3 sm:line-clamp-none">{{ project.description }}</p>
-                <div v-if="project.tech && project.tech.length" class="flex flex-wrap gap-1 sm:gap-1.5 mt-auto pt-1 sm:pt-2">
-                  <span v-for="t in project.tech" :key="t" class="px-2 py-0.5 rounded-full bg-blue-600/10 border border-blue-500/20 text-[9px] sm:text-xs font-bold text-blue-500 uppercase tracking-wider">{{ t }}</span>
+                <div v-if="project.tech && project.tech.length" class="flex flex-wrap gap-1.5 sm:gap-2 mb-2.5 sm:mb-3">
+                  <span v-for="t in project.tech" :key="t" class="px-2.5 py-1 rounded-full bg-blue-600/10 border border-blue-500/20 text-[10px] sm:text-xs font-bold text-blue-500 uppercase tracking-wider">{{ t }}</span>
                 </div>
+                <h3 class="text-base sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-white leading-tight">{{ project.title }}</h3>
+                <p class="leading-relaxed text-xs sm:text-base text-zinc-400 mt-auto">{{ project.description }}</p>
               </div>
             </div>
           </div>
@@ -142,8 +142,8 @@ const handleNavClick = (targetId: string) => {
 
       <!-- ===================== EXPERIENCE ===================== -->
       <section id="experience" class="py-16 sm:py-24 md:py-32 border-y bg-zinc-900/10 border-zinc-800">
-        <div class="container mx-auto px-4 sm:px-6">
-          <div class="max-w-4xl mx-auto">
+        <div class="container mx-auto px-14 sm:px-28 md:px-44">
+          <div class="max-w-md sm:max-w-lg md:max-w-xl mx-auto">
             <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 sm:mb-16 md:mb-20">04. Trajetória</h2>
             <div class="space-y-14 sm:space-y-16 md:space-y-20">
               <div v-for="(exp, idx) in EXPERIENCES" :key="idx" :data-motion="`${idx * 80}ms`" class="flex flex-col md:grid md:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
