@@ -32,22 +32,6 @@ export const PROJECTS: Project[] = [
     image: '',
     category: 'fullstack'
   },
-  {
-    id: '3',
-    title: 'Próximos projetos a caminho',
-    description: 'Novas soluções e aplicações estão sendo estruturadas no momento e serão adicionadas em breve ao portfólio.',
-    tech: [],
-    image: '',
-    category: 'fullstack'
-  },
-  {
-    id: '4',
-    title: 'Próximos projetos a caminho',
-    description: 'Novas soluções e aplicações estão sendo estruturadas no momento e serão adicionadas em breve ao portfólio.',
-    tech: [],
-    image: '',
-    category: 'fullstack'
-  },
 ];
 
 export const SKILLS: Skill[] = [
