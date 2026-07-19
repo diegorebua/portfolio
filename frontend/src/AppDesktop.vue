@@ -30,7 +30,7 @@ const handleNavClick = (targetId: string) => {
             Desenvolvedor de Software
           </div>
           <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-none text-white">
-            Criando <span class="text-blue-600">Experiências</span><br />Digitais.
+            Criando <span class="text-blue-600">Soluções</span><br />Digitais
           </h1>
           <TerminalTyping />
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
