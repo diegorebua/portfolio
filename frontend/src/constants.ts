@@ -19,9 +19,17 @@ export const PROJECTS: Project[] = [
     id: '1',
     title: 'Site Institucional Odontológico',
     description: 'Site institucional criado para a Dra. Milena Takenaka. Focado em UX/UI, o projeto traduz a essência do atendimento humanizado em uma interface moderna e responsiva, projetada para converter visitantes em pacientes.',
-    tech: ['Java', 'React', 'Docker'],
+    tech: ['Vue 3', 'TypeScript', 'Node.js', 'Express', 'Tailwind CSS', 'Docker'],
     image: '/dramilenatakenaka.jpeg',
     link: 'https://dramilenatakenaka.com',
+    category: 'fullstack'
+  },
+  {
+    id: '2',
+    title: 'Próximos projetos a caminho',
+    description: 'Novas soluções e aplicações estão sendo estruturadas no momento e serão adicionadas em breve ao portfólio.',
+    tech: [],
+    image: '',
     category: 'fullstack'
   },
 ];

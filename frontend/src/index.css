@@ -6,26 +6,17 @@
 }
 
 :root {
-  --dot-color: #e2e8f0;
-}
-
-.dark {
   --dot-color: #262626;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
+  background: #000000;
 }
 
 .mono {
   font-family: 'Fira Code', monospace;
-}
-
-.glass-light {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .section-dot-bg {
@@ -38,26 +29,120 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.dark ::-webkit-scrollbar-track {
   background: #171717;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #404040;
   border-radius: 10px;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: #404040;
-}
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #525252;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #525252;
+/* ===================== ANIMATED BACKGROUND ===================== */
+
+.bg-light-leaks {
+  position: fixed;
+  top: -50px;
+  left: 0;
+  right: 0;
+  bottom: -50px;
+  z-index: -1;
+  overflow: hidden;
+  background: #000000;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.5;
+  will-change: transform;
+}
+
+/* Blob 1 — azul médio, canto superior esquerdo */
+.blob-1 {
+  width: 600px;
+  height: 600px;
+  top: -100px;
+  left: -150px;
+  background: #1a3a8f;
+  animation: drift-1 18s ease-in-out infinite;
+}
+
+/* Blob 2 — azul escuro profundo, centro-direita */
+.blob-2 {
+  width: 500px;
+  height: 500px;
+  top: 30%;
+  right: -100px;
+  background: #0d1f5c;
+  animation: drift-2 22s ease-in-out infinite;
+}
+
+/* Blob 3 — azul petróleo, parte inferior esquerda */
+.blob-3 {
+  width: 650px;
+  height: 650px;
+  bottom: -150px;
+  left: 20%;
+  background: #0a2a6e;
+  animation: drift-3 26s ease-in-out infinite;
+}
+
+/* Blob 4 — índigo escuro, topo direito */
+.blob-4 {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  right: 25%;
+  background: #162d7a;
+  animation: drift-4 20s ease-in-out infinite;
+}
+
+@keyframes drift-1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(80px, 60px) scale(1.15); }
+  66%  { transform: translate(-40px, 100px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes drift-2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(-70px, 80px) scale(1.1); }
+  66%  { transform: translate(50px, -60px) scale(1.2); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes drift-3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(60px, -80px) scale(0.95); }
+  66%  { transform: translate(-80px, -40px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes drift-4 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(-50px, 70px) scale(1.2); }
+  66%  { transform: translate(90px, 30px) scale(0.85); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* ===================== MOTION SLICE ===================== */
+
+[data-motion] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-motion].is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
