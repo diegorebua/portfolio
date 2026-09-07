@@ -133,6 +133,13 @@ const handleNavClick = (targetId: string) => {
                 <p class="leading-relaxed text-xs sm:text-base text-zinc-400 mt-auto">{{ project.description }}</p>
               </div>
             </div>
+            <div data-motion="200ms" class="mt-10 sm:mt-12 md:mt-16 text-center">
+              <p class="text-xs sm:text-sm font-bold tracking-wider text-zinc-500 uppercase flex items-center justify-center gap-2 sm:gap-3">
+                <span class="w-6 sm:w-8 h-[1px] bg-zinc-700"></span>
+                Mais projetos em breve
+                <span class="w-6 sm:w-8 h-[1px] bg-zinc-700"></span>
+              </p>
+            </div>
           </div>
         </div>
       </section>

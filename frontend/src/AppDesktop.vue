@@ -107,7 +107,7 @@ const handleNavClick = (targetId: string) => {
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-5xl mx-auto">
             <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">Projetos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <div :class="['grid gap-8 md:gap-12', PROJECTS.length === 1 ? 'grid-cols-1 max-w-4xl' : 'grid-cols-1 md:grid-cols-2']">
               <div v-for="(project, idx) in PROJECTS" :key="project.id" :data-motion="`${idx * 100}ms`" class="group">
                 <component
                   :is="project.link ? 'a' : 'div'"
@@ -132,6 +132,13 @@ const handleNavClick = (targetId: string) => {
                 <h3 class="text-xl md:text-2xl font-bold mb-3 text-white">{{ project.title }}</h3>
                 <p class="leading-relaxed text-sm text-zinc-400 mt-auto">{{ project.description }}</p>
               </div>
+            </div>
+            <div data-motion="200ms" class="mt-12 md:mt-16 text-center md:text-left">
+              <p class="text-sm font-bold tracking-wider text-zinc-500 uppercase flex items-center justify-center md:justify-start gap-3">
+                <span class="w-8 h-[1px] bg-zinc-700"></span>
+                Mais projetos chegando em breve
+                <span class="w-8 h-[1px] bg-zinc-700 md:hidden"></span>
+              </p>
             </div>
           </div>
         </div>
