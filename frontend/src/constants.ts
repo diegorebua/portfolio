@@ -73,3 +73,5 @@ export const EXPERIENCES: Experience[] = [
 ];
 
 export const BIO = "Sou um Desenvolvedor Full Stack com foco na construção de aplicações web modernas e escaláveis. Com uma trajetória que evoluiu do suporte técnico para a desenvolvedor de software, possuo uma visão sistêmica completa do ciclo de vida das aplicações. Hoje atuo de ponta a ponta: desde a modelagem de bancos de dados e orquestração de infraestrutura com Docker, até a criação de interfaces com React e Vue. Tenho facilidade em atuar em ambientes ágeis, entregando soluções eficientes e código de fácil manutenção.";
+
+export const EMAIL = "diegorebua@gmail.com";
