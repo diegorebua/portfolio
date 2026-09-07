@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
 
 export const SKILLS: Skill[] = [
   { name: 'Java', icon: ICONS.java, category: 'language' },
-  { name: 'Node.js', icon: ICONS.nodejs, category: 'language' },
+  { name: 'Node.js', icon: ICONS.nodejs, category: 'framework' },
   { name: 'TypeScript', icon: ICONS.typescript, category: 'language' },
   { name: 'JavaScript', icon: ICONS.javascript, category: 'language' },
   { name: 'React', icon: ICONS.react, category: 'framework' },
