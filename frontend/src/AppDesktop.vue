@@ -26,9 +26,6 @@ const handleNavClick = (targetId: string) => {
       <!-- ===================== HERO ===================== -->
       <section id="hero" class="min-h-screen flex items-center justify-center pt-20 section-dot-bg">
         <div class="container mx-auto px-4 sm:px-6 text-center">
-          <div class="inline-block mb-6 px-4 py-1 rounded-full border text-[11px] font-bold tracking-widest uppercase border-zinc-800 bg-zinc-900 text-zinc-400">
-            Desenvolvedor de Software
-          </div>
           <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-none text-white">
             Criando <span class="text-blue-600">Experiências</span><br />Digitais.
           </h1>
