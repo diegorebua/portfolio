@@ -83,19 +83,28 @@ const handleNavClick = (targetId: string) => {
       <section id="skills" class="py-16 md:py-32 border-y border-zinc-800">
         <div class="container mx-auto px-4 sm:px-6">
           <div class="max-w-5xl mx-auto">
-            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12 text-center">Arsenal Tecnológico</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-              <div
-                v-for="(skill, idx) in SKILLS"
-                :key="skill.name"
-                :data-motion="`${idx * 60}ms`"
-                class="p-5 md:p-8 flex flex-col items-center text-center rounded-2xl md:rounded-3xl border transition-all group bg-white/[0.02] backdrop-blur-xl border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:bg-white/[0.06] hover:border-white/10"
-              >
-                <div class="mb-4 md:mb-6 flex justify-center">
-                  <img v-if="skill.icon.startsWith('http')" :src="skill.icon" :alt="skill.name" class="w-10 h-10 md:w-12 md:h-12 object-contain mx-auto" />
-                  <span v-else class="text-3xl md:text-4xl">{{ skill.icon }}</span>
+            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 md:mb-16 text-center">Tecnologias</h2>
+            <div class="space-y-12 md:space-y-16">
+              <div v-for="(group, gIdx) in [
+                { title: 'Linguagens', items: SKILLS.filter(s => s.category === 'language') },
+                { title: 'Frameworks', items: SKILLS.filter(s => s.category === 'framework') },
+                { title: 'Infraestrutura', items: SKILLS.filter(s => s.category === 'tool') }
+              ]" :key="group.title">
+                <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-white text-center md:text-left" :data-motion="`${gIdx * 100}ms`">{{ group.title }}</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                  <div
+                    v-for="(skill, idx) in group.items"
+                    :key="skill.name"
+                    :data-motion="`${(gIdx * 100) + (idx * 60)}ms`"
+                    class="p-5 md:p-8 flex flex-col items-center text-center rounded-2xl md:rounded-3xl border transition-all group bg-white/[0.02] backdrop-blur-xl border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:bg-white/[0.06] hover:border-white/10 hover:shadow-[0_8px_30px_rgba(255,255,255,0.04)]"
+                  >
+                    <div class="mb-4 md:mb-6 flex justify-center">
+                      <img v-if="skill.icon.startsWith('http')" :src="skill.icon" :alt="skill.name" class="w-10 h-10 md:w-12 md:h-12 object-contain mx-auto transition-transform duration-300 group-hover:scale-110" />
+                      <span v-else class="text-3xl md:text-4xl transition-transform duration-300 group-hover:scale-110">{{ skill.icon }}</span>
+                    </div>
+                    <div class="font-black text-sm md:text-lg text-white">{{ skill.name }}</div>
+                  </div>
                 </div>
-                <div class="font-black text-sm md:text-lg text-white">{{ skill.name }}</div>
               </div>
             </div>
           </div>
