@@ -30,7 +30,7 @@ onUnmounted(() => {
       <div class="flex items-center space-x-8">
         <div class="hidden md:flex space-x-10 text-[13px] font-semibold uppercase tracking-widest text-zinc-500">
           <a href="#about" @click.prevent="emit('navClick', '#about')" class="transition-colors hover:text-white">Sobre</a>
-          <a href="#skills" @click.prevent="emit('navClick', '#skills')" class="transition-colors hover:text-white">Habilidades</a>
+          <a href="#skills" @click.prevent="emit('navClick', '#skills')" class="transition-colors hover:text-white">Tecnologias</a>
           <a href="#projects" @click.prevent="emit('navClick', '#projects')" class="transition-colors hover:text-white">Projetos</a>
           <a href="#experience" @click.prevent="emit('navClick', '#experience')" class="transition-colors hover:text-white">Experiência</a>
         </div>
