@@ -24,8 +24,15 @@ onUnmounted(() => {
     isScrolled ? 'pb-3 pt-[calc(0.75rem+env(safe-area-inset-top))]' : 'pb-6 pt-[calc(1.5rem+env(safe-area-inset-top))]'
   ]">
     <div class="container mx-auto px-6 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold mono tracking-tighter text-white">
-        <span class="text-blue-600">&lt;</span>Dev.FullStack<span class="text-blue-600"> /&gt;</span>
+      <a href="#" class="flex items-center gap-3 group select-none" aria-label="Diego Rebuá — Início">
+        <!-- Monograma DR -->
+        <span class="flex items-center justify-center w-8 h-8 rounded-md border border-blue-600/60 bg-blue-600/10 text-blue-400 font-black text-sm tracking-tight transition-all duration-300 group-hover:bg-blue-600/20 group-hover:border-blue-500">
+          DR
+        </span>
+        <!-- Wordmark -->
+        <span class="text-[15px] font-semibold tracking-tight text-white leading-none">
+          Diego <span class="text-zinc-400 font-normal">Rebuá</span>
+        </span>
       </a>
       <div class="flex items-center space-x-8">
         <div class="hidden md:flex space-x-10 text-[13px] font-semibold uppercase tracking-widest text-zinc-500">
