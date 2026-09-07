@@ -23,15 +23,7 @@ export const PROJECTS: Project[] = [
     image: '/dramilenatakenaka.jpeg',
     link: 'https://dramilenatakenaka.com',
     category: 'fullstack'
-  },
-  {
-    id: '2',
-    title: 'Próximos projetos a caminho',
-    description: 'Novas soluções e aplicações estão sendo estruturadas no momento e serão adicionadas em breve ao portfólio.',
-    tech: [],
-    image: '',
-    category: 'fullstack'
-  },
+  }
 ];
 
 export const SKILLS: Skill[] = [
