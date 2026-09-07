@@ -47,7 +47,7 @@ const handleNavClick = (targetId: string) => {
           <div class="max-w-md sm:max-w-lg md:max-w-xl mx-auto">
             <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
               <div class="w-full md:w-1/3" data-motion>
-                <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-6 sm:mb-8">01. Perfil</h2>
+                <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-6 sm:mb-8">Perfil</h2>
                 <div class="relative group overflow-hidden rounded-3xl aspect-[4/5] max-w-[260px] sm:max-w-xs mx-auto md:max-w-none bg-zinc-800">
                   <img
                     src="/profile.jpeg"
@@ -83,7 +83,7 @@ const handleNavClick = (targetId: string) => {
       <section id="skills" class="py-16 sm:py-24 md:py-32 border-y border-zinc-800">
         <div class="container mx-auto px-14 sm:px-28 md:px-44">
           <div class="max-w-md sm:max-w-lg md:max-w-xl mx-auto">
-            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 sm:mb-16 md:mb-20 text-center">02. Arsenal Tecnológico</h2>
+            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 sm:mb-16 md:mb-20 text-center">Arsenal Tecnológico</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8">
               <div
                 v-for="(skill, idx) in SKILLS"
@@ -106,7 +106,7 @@ const handleNavClick = (targetId: string) => {
       <section id="projects" class="py-16 sm:py-24 md:py-32">
         <div class="container mx-auto px-14 sm:px-28 md:px-44">
           <div class="max-w-md sm:max-w-lg md:max-w-xl mx-auto">
-            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">03. Projetos</h2>
+            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-8 md:mb-12">Projetos</h2>
             <div class="grid grid-cols-1 gap-10 sm:gap-14 md:gap-16">
               <div v-for="(project, idx) in PROJECTS" :key="project.id" :data-motion="`${idx * 100}ms`" class="group flex flex-col">
                 <component
@@ -141,7 +141,7 @@ const handleNavClick = (targetId: string) => {
       <section id="experience" class="py-16 sm:py-24 md:py-32 border-y bg-zinc-900/10 border-zinc-800">
         <div class="container mx-auto px-14 sm:px-28 md:px-44">
           <div class="max-w-md sm:max-w-lg md:max-w-xl mx-auto">
-            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 sm:mb-16 md:mb-20">04. Trajetória</h2>
+            <h2 data-motion class="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-12 sm:mb-16 md:mb-20">Trajetória</h2>
             <div class="space-y-14 sm:space-y-16 md:space-y-20">
               <div v-for="(exp, idx) in EXPERIENCES" :key="idx" :data-motion="`${idx * 80}ms`" class="flex flex-col md:grid md:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
                 <div class="text-zinc-500 font-bold text-xs sm:text-sm tracking-wider uppercase mb-1.5 md:mb-0">{{ exp.period }}</div>
