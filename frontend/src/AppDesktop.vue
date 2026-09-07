@@ -2,7 +2,7 @@
 import Navbar from './components/Navbar.vue';
 import TerminalTyping from './components/TerminalTyping.vue';
 import InteractiveBackground from './components/InteractiveBackground.vue';
-import { PROJECTS, SKILLS, EXPERIENCES, BIO } from './constants';
+import { PROJECTS, SKILLS, EXPERIENCES, BIO, EMAIL } from './constants';
 import { useMotionSlice } from './composables/useMotionSlice';
 
 useMotionSlice();
@@ -170,7 +170,7 @@ const handleNavClick = (targetId: string) => {
               Estou sempre aberto a novos desafios e parcerias inovadoras. Entre em contato para uma consultoria ou café remoto.
             </p>
             <a
-              href="mailto:contact@devportfolio.com"
+              :href="'mailto:' + EMAIL"
               class="inline-flex items-center px-8 md:px-12 py-4 md:py-5 font-black rounded-full transition-all shadow-2xl active:scale-95 text-sm md:text-base bg-zinc-100 text-slate-900 hover:bg-white"
             >
               Enviar E-mail
