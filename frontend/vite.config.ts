@@ -22,7 +22,8 @@ export default defineConfig(async () => {
         clientPort: 3000
       },
       watch: {
-        usePolling: true
+        usePolling: true,
+        interval: 100
       }
     },
     plugins,
