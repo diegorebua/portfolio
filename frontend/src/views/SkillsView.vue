@@ -95,7 +95,7 @@ const filteredSkills = computed(() => {
       </div>
 
       <!-- Skills Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-5 mb-16">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-5">
         <div
           v-for="skill in filteredSkills"
           :key="skill.name"
@@ -129,25 +129,6 @@ const filteredSkills = computed(() => {
           <span class="mono text-[9px] uppercase tracking-widest opacity-60" style="color: var(--color-text-dim)">
             {{ skill.category }}
           </span>
-        </div>
-      </div>
-
-      <!-- Architecture Focus Showcase Card -->
-      <div class="p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <div class="md:col-span-8">
-            <span class="mono text-xs uppercase tracking-[0.2em] text-sky-400 font-bold block mb-2">Como eu trabalho</span>
-            <h3 class="text-2xl font-bold mb-3">Do código local ao ambiente de produção</h3>
-            <p class="text-sm leading-relaxed" style="color: var(--color-text-muted)">
-              Ambientes padronizados com Docker para rodar exatamente igual em qualquer máquina. Código versionado com Git, organização clara de pastas e deploy contínuo em nuvem.
-            </p>
-          </div>
-          <div class="md:col-span-4 flex flex-wrap gap-2 justify-start md:justify-end">
-            <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Docker</span>
-            <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Git</span>
-            <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">REST APIs</span>
-            <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Cloudflare</span>
-          </div>
         </div>
       </div>
     </div>

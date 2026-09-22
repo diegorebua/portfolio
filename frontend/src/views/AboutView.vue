@@ -22,7 +22,7 @@ useGsapMotion();
         </span>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         <!-- Photo — Left column with light/dark adaptive card & aura -->
         <div class="lg:col-span-4 about-photo relative">
           <!-- Ambient Halo behind the photo card -->
@@ -84,39 +84,6 @@ useGsapMotion();
                 APIs em Node.js e Java (Spring Boot), com banco de dados PostgreSQL estruturado e containers Docker.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Core Pillars / Architecture Values -->
-      <div class="pt-12" style="border-top: 1px solid var(--color-border)">
-        <h2 class="mono text-xs uppercase tracking-[0.25em] mb-8" style="color: var(--color-accent)">
-          Como eu trabalho
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
-            <span class="font-morganite text-4xl sm:text-5xl font-bold text-sky-400 mb-1 block tracking-wider leading-none">01</span>
-            <h3 class="text-lg font-bold mb-2">Velocidade e Resposta Rápida</h3>
-            <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--color-text-muted)">
-              Código enxuto, consultas otimizadas e páginas leves. A experiência precisa ser instantânea, sem travamentos nem esperas.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
-            <span class="font-morganite text-4xl sm:text-5xl font-bold text-sky-400 mb-1 block tracking-wider leading-none">02</span>
-            <h3 class="text-lg font-bold mb-2">Código Claro e Sustentável</h3>
-            <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--color-text-muted)">
-              Estrutura que qualquer desenvolvedor entende e dá continuidade sem estresse. Tipagem estrita e padrões diretos.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
-            <span class="font-morganite text-4xl sm:text-5xl font-bold text-sky-400 mb-1 block tracking-wider leading-none">03</span>
-            <h3 class="text-lg font-bold mb-2">Foco no Usuário Real</h3>
-            <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--color-text-muted)">
-              Interfaces feitas para quem usa todo dia. Feedbacks visuais rápidos, navegação intuitiva e zero atrito.
-            </p>
           </div>
         </div>
       </div>
