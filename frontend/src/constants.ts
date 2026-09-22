@@ -27,14 +27,14 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  { name: 'Java', icon: ICONS.java, category: 'language' },
-  { name: 'Node.js', icon: ICONS.nodejs, category: 'framework' },
-  { name: 'TypeScript', icon: ICONS.typescript, category: 'language' },
-  { name: 'JavaScript', icon: ICONS.javascript, category: 'language' },
-  { name: 'React', icon: ICONS.react, category: 'framework' },
-  { name: 'Vue', icon: ICONS.vue, category: 'framework' },
-  { name: 'Docker', icon: ICONS.docker, category: 'tool' },
-  { name: 'PostgreSQL', icon: ICONS.postgresql, category: 'tool' },
+  { name: 'Java', icon: ICONS.java, category: 'language', roleTag: 'Backend' },
+  { name: 'Node.js', icon: ICONS.nodejs, category: 'framework', roleTag: 'Runtime' },
+  { name: 'TypeScript', icon: ICONS.typescript, category: 'language', roleTag: 'Tipagem' },
+  { name: 'JavaScript', icon: ICONS.javascript, category: 'language', roleTag: 'Core Web' },
+  { name: 'React', icon: ICONS.react, category: 'framework', roleTag: 'Frontend' },
+  { name: 'Vue', icon: ICONS.vue, category: 'framework', roleTag: 'Frontend' },
+  { name: 'Docker', icon: ICONS.docker, category: 'tool', roleTag: 'DevOps' },
+  { name: 'PostgreSQL', icon: ICONS.postgresql, category: 'tool', roleTag: 'Database' },
 ];
 
 export const EXPERIENCES: Experience[] = [

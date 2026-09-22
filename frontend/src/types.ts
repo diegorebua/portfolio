@@ -13,6 +13,7 @@ export interface Skill {
   name: string;
   icon: string;
   category: 'language' | 'framework' | 'tool';
+  roleTag?: string;
 }
 
 export interface Experience {

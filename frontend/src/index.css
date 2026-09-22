@@ -1,148 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+/* ===================== CUSTOM FONTS ===================== */
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-:root {
-  --dot-color: #262626;
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Morganite';
+  src: url('/fonts/Morganite-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-morganite {
+  font-family: 'Morganite', 'Space Grotesk', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* ===================== DESIGN TOKENS (TONS & SOBRETONS: PRETO, BRANCO & AZUL) ===================== */
+
+:root,
+html.dark {
+  /* Tons e Sobretons de Preto (Obsidiana / Meia-Noite Profunda) */
+  --color-bg:            #040711;       /* Preto abissal com infusão midnight */
+  --color-surface:       #080e1d;       /* Grafite meia-noite suave */
+  --color-surface-2:     #0e172c;       /* Superfície secundária slate-navy */
+  --color-surface-hover: #13203c;       /* Superfície ao passar o mouse */
+
+  /* Bordas em sobretons frios */
+  --color-border:        rgba(56, 189, 248, 0.12); /* Borda translúcida azulada sutil */
+  --color-border-2:      rgba(56, 189, 248, 0.28); /* Borda azul ciano brilhante */
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Tons e Sobretons de Branco */
+  --color-text:          #ffffff;       /* Branco puro brilhante */
+  --color-text-frost:    #f0f6ff;       /* Branco gelo luminoso */
+  --color-text-muted:    #94a3b8;       /* Cinza ardósia claro / prateado */
+  --color-text-dim:      #4b5563;       /* Grafite suave discreto */
+
+  /* Tons e Sobretons de Azul (Do Ciano Elétrico ao Cobalto Profundo) */
+  --color-accent:        #38bdf8;       /* Azul ciano elétrico / sky (alta personalidade) */
+  --color-accent-vibrant:#2563eb;       /* Azul cobalto real vivo */
+  --color-accent-deep:   #1d4ed8;       /* Azul marinho profundo */
+  --color-accent-ice:    #bae6fd;       /* Azul gelo para destaques delicados */
+  --color-accent-glow:   #60a5fa;       /* Azul brilhante de iluminação */
+  --color-accent-sub:    rgba(56, 189, 248, 0.08); /* Fundo suave com brilho ciano */
+  --color-accent-badge:  rgba(37, 99, 235, 0.18);  /* Fundo de tags estruturadas */
+
+  /* Navbar tokens */
+  --color-navbar-bg:     rgba(8, 14, 29, 0.84);
+  --color-navbar-bg-scrolled: rgba(4, 7, 17, 0.92);
+  --color-navbar-border: rgba(255, 255, 255, 0.1);
+  --color-navbar-border-scrolled: rgba(56, 189, 248, 0.22);
+  --color-navbar-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(56, 189, 248, 0.1);
+  --color-navbar-shadow-scrolled: 0 16px 40px -10px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(56, 189, 248, 0.2);
+
+  /* Card tokens modo escuro */
+  --card-bg:             linear-gradient(150deg, rgba(14, 23, 44, 0.75) 0%, rgba(8, 14, 29, 0.92) 100%);
+  --card-border:         rgba(56, 189, 248, 0.15);
+  --card-border-hover:   rgba(56, 189, 248, 0.55);
+  --card-shadow:         inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 30px -8px rgba(0, 0, 0, 0.65);
+  --card-shadow-hover:   0 16px 38px -8px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  --color-section-glow:  rgba(56, 189, 248, 0.04);
+
+  /* Padrão de textura único */
+  --dot-color:           rgba(56, 189, 248, 0.09);
+
+  /* Iluminação atmosférica do fundo para modo escuro */
+  --ambient-bg-glow:     radial-gradient(circle 900px at 50% -80px, rgba(37, 99, 235, 0.12) 0%, rgba(56, 189, 248, 0.05) 45%, transparent 75%),
+                         radial-gradient(circle 700px at 90% 45%, rgba(29, 78, 216, 0.08) 0%, transparent 60%),
+                         radial-gradient(circle 800px at 10% 85%, rgba(37, 99, 235, 0.08) 0%, transparent 65%);
+
+  /* Spacing base: 4px */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+}
+
+html.light {
+  /* Tons e Sobretons Claros Harmoniosos (Branco Nobre / Azul Gelo / Ardósia Profunda) */
+  --color-bg:            #f4f8fc;       /* Fundo suave com leve infusão azul-gelo (não chapado) */
+  --color-surface:       #ffffff;       /* Branco puro para superfícies com relevo */
+  --color-surface-2:     #eef5fb;       /* Slate suave azulado para cartões e destaques */
+  --color-surface-hover: #e2eef8;       /* Slate suave no hover */
+
+  /* Bordas em sobretons frios elegantes */
+  --color-border:        rgba(186, 230, 253, 0.65); /* Borda azul gelo sutil */
+  --color-border-2:      rgba(37, 99, 235, 0.28);  /* Borda azul cobalto de destaque */
+  --color-border-subtle: rgba(186, 230, 253, 0.4);
+
+  /* Tipografia em Tons Escuros de Alto Contraste e Harmonia */
+  --color-text:          #0f172a;       /* Meia-noite profundo (suave aos olhos, não preto puro estéril) */
+  --color-text-frost:    #1e293b;       /* Ardósia escuro nobre */
+  --color-text-muted:    #475569;       /* Cinza ardósia equilibrado e legível */
+  --color-text-dim:      #64748b;       /* Cinza médio suave para metadados */
+
+  /* Tons e Sobretons de Azul para Modo Claro */
+  --color-accent:        #0284c7;       /* Azul oceano vibrante */
+  --color-accent-vibrant:#2563eb;       /* Azul cobalto real */
+  --color-accent-deep:   #1d4ed8;       /* Azul marinho profundo */
+  --color-accent-ice:    #0369a1;       /* Azul profundo legível para tags */
+  --color-accent-glow:   #0284c7;       /* Azul de destaque */
+  --color-accent-sub:    rgba(224, 242, 254, 0.75); /* Fundo sutil azulado gelo */
+  --color-accent-badge:  rgba(224, 242, 254, 0.85);
+
+  /* Navbar tokens modo claro (vidro fosco acetinado) */
+  --color-navbar-bg:     rgba(255, 255, 255, 0.82);
+  --color-navbar-bg-scrolled: rgba(244, 248, 252, 0.94);
+  --color-navbar-border: rgba(186, 230, 253, 0.7);
+  --color-navbar-border-scrolled: rgba(37, 99, 235, 0.25);
+  --color-navbar-shadow: 0 10px 30px -8px rgba(37, 99, 235, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.7);
+  --color-navbar-shadow-scrolled: 0 16px 40px -10px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(37, 99, 235, 0.15);
+
+  /* Card tokens modo claro (elevados, com relevo e profundidade) */
+  --card-bg:             linear-gradient(150deg, #ffffff 0%, #f4f8fd 100%);
+  --card-border:         rgba(186, 230, 253, 0.8);
+  --card-border-hover:   rgba(37, 99, 235, 0.45);
+  --card-shadow:         0 6px 22px -4px rgba(37, 99, 235, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 1);
+  --card-shadow-hover:   0 16px 36px -10px rgba(37, 99, 235, 0.18), 0 4px 12px -2px rgba(37, 99, 235, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1);
+  --color-section-glow:  rgba(186, 230, 253, 0.35);
+
+  /* Padrão de textura micropontos para modo claro */
+  --dot-color:           rgba(56, 189, 248, 0.15);
+
+  /* Iluminação atmosférica do fundo (Camadas de aura azul suave que removem o aspecto chapado) */
+  --ambient-bg-glow:     radial-gradient(circle 900px at 50% -80px, rgba(186, 230, 253, 0.45) 0%, rgba(224, 242, 254, 0.2) 45%, transparent 75%),
+                         radial-gradient(circle 700px at 85% 45%, rgba(191, 219, 254, 0.25) 0%, transparent 60%),
+                         radial-gradient(circle 800px at 15% 85%, rgba(224, 242, 254, 0.3) 0%, transparent 65%);
+}
+
+/* ===================== BASE ===================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
   scroll-behavior: smooth;
-  background: #000000;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .mono {
-  font-family: 'Fira Code', monospace;
+  font-family: 'DM Mono', ui-monospace, monospace;
 }
 
-.section-dot-bg {
-  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
-  background-size: 32px 32px;
+/* ===================== PATTERNS & TEXTURES ===================== */
+
+/* Textura granulada orgânica de filme (noise) */
+.bg-textured-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 160px 160px;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* ===================== SCROLLBAR ===================== */
 
-::-webkit-scrollbar-track {
-  background: #171717;
-}
-
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
 ::-webkit-scrollbar-thumb {
-  background: #404040;
-  border-radius: 10px;
+  background: var(--color-border-2);
+  border-radius: 99px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #525252;
-}
-
-/* ===================== ANIMATED BACKGROUND ===================== */
-
-.bg-light-leaks {
-  position: fixed;
-  top: -50px;
-  left: 0;
-  right: 0;
-  bottom: -50px;
-  z-index: -1;
-  overflow: hidden;
-  background: #000000;
-  opacity: 1;
-  pointer-events: none;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(150px);
-  opacity: 0.5;
-  will-change: transform;
-}
-
-/* Blob 1 — azul médio, canto superior esquerdo */
-.blob-1 {
-  width: 600px;
-  height: 600px;
-  top: -100px;
-  left: -150px;
-  background: #1a3a8f;
-  animation: drift-1 18s ease-in-out infinite;
-}
-
-/* Blob 2 — azul escuro profundo, centro-direita */
-.blob-2 {
-  width: 500px;
-  height: 500px;
-  top: 30%;
-  right: -100px;
-  background: #0d1f5c;
-  animation: drift-2 22s ease-in-out infinite;
-}
-
-/* Blob 3 — azul petróleo, parte inferior esquerda */
-.blob-3 {
-  width: 650px;
-  height: 650px;
-  bottom: -150px;
-  left: 20%;
-  background: #0a2a6e;
-  animation: drift-3 26s ease-in-out infinite;
-}
-
-/* Blob 4 — índigo escuro, topo direito */
-.blob-4 {
-  width: 400px;
-  height: 400px;
-  top: 10%;
-  right: 25%;
-  background: #162d7a;
-  animation: drift-4 20s ease-in-out infinite;
-}
-
-@keyframes drift-1 {
-  0%   { transform: translate(0, 0) scale(1); }
-  33%  { transform: translate(80px, 60px) scale(1.15); }
-  66%  { transform: translate(-40px, 100px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes drift-2 {
-  0%   { transform: translate(0, 0) scale(1); }
-  33%  { transform: translate(-70px, 80px) scale(1.1); }
-  66%  { transform: translate(50px, -60px) scale(1.2); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes drift-3 {
-  0%   { transform: translate(0, 0) scale(1); }
-  33%  { transform: translate(60px, -80px) scale(0.95); }
-  66%  { transform: translate(-80px, -40px) scale(1.1); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes drift-4 {
-  0%   { transform: translate(0, 0) scale(1); }
-  33%  { transform: translate(-50px, 70px) scale(1.2); }
-  66%  { transform: translate(90px, 30px) scale(0.85); }
-  100% { transform: translate(0, 0) scale(1); }
+  background: var(--color-accent);
 }
 
 /* ===================== MOTION SLICE ===================== */
 
 [data-motion] {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(36px);
   transition:
-    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-motion].is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===================== SCROLL REVEAL ===================== */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal-stagger].visible > *:nth-child(1) { transition-delay: 0s; }
+[data-reveal-stagger].visible > *:nth-child(2) { transition-delay: 0.08s; }
+[data-reveal-stagger].visible > *:nth-child(3) { transition-delay: 0.16s; }
+[data-reveal-stagger].visible > *:nth-child(4) { transition-delay: 0.24s; }
+[data-reveal-stagger].visible > *:nth-child(5) { transition-delay: 0.32s; }
+[data-reveal-stagger].visible > *:nth-child(6) { transition-delay: 0.40s; }
+[data-reveal-stagger].visible > *:nth-child(7) { transition-delay: 0.48s; }
+[data-reveal-stagger].visible > *:nth-child(8) { transition-delay: 0.56s; }
+[data-reveal-stagger].visible > * { opacity: 1; transform: translateY(0); }
+
+/* ===================== HOVER STATES ===================== */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-accent-vibrant) 0%, var(--color-accent-deep) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 8px 28px rgba(56, 189, 248, 0.45);
+}
+
+.btn-outline {
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.btn-outline:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.18);
+}
+
+.hover-lift {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover { transform: scale(1.03); }
+
+/* ===================== ACCENT LINE ===================== */
+
+.accent-line {
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-vibrant) 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* ===================== HERO NAME SPECIAL EFFECTS ===================== */
+
+.hero-name-container {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+
+/* Ambient glow aura behind the name */
+.hero-name-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 105%;
+  height: 115%;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(56, 189, 248, 0.22) 0%, rgba(37, 99, 235, 0.1) 45%, transparent 75%);
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: -1;
+  animation: heroAuraPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes heroAuraPulse {
+  0% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  100% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+}
+
+/* "Diego": Radiant crystalline white with metallic frost sheen */
+.hero-name-first {
+  display: inline-block;
+  background: linear-gradient(180deg, #ffffff 20%, #f0f6ff 55%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 35px rgba(255, 255, 255, 0.15);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.hero-name-first:hover {
+  transform: translateY(-2px) scale(1.015);
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.45), 0 0 70px rgba(56, 189, 248, 0.3);
+}
+
+/* "Rebuá": Multi-stage electric azure-to-cyan gradient with luminous glow & shimmer beam */
+.hero-name-last {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, #bae6fd 0%, #38bdf8 38%, #2563eb 80%, #60a5fa 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.45));
+  animation: nameShimmer 8s linear infinite;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  will-change: transform, filter;
+}
+
+.hero-name-last:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 0 50px rgba(56, 189, 248, 0.75)) drop-shadow(0 0 85px rgba(37, 99, 235, 0.5));
+}
+
+@keyframes nameShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===================== UTILITY & ATMOSPHERIC CLASSES ===================== */
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-vibrant) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.section-ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 80%;
+  background: radial-gradient(ellipse at 50% 50%, var(--color-section-glow) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  padding: 5px 15px;
+  border-radius: 9999px;
+  background: var(--color-accent-sub);
+  border: 1px solid var(--color-border-2);
+  color: var(--color-accent);
+  box-shadow: 0 2px 10px rgba(56, 189, 248, 0.08);
+  transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.22);
+}
+
+/* ===================== SKILL CARDS ===================== */
+
+.skill-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  opacity: 1;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card .skill-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--color-accent-sub);
+  border: 1px solid var(--card-border);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover .skill-icon-wrap {
+  transform: scale(1.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.25);
+}
+
+/* ===================== CARDS & EXPERIENCE ITEMS ===================== */
+
+.bio-card {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bio-card:hover {
+  border-color: var(--card-border-hover) !important;
+  box-shadow: var(--card-shadow-hover) !important;
+  transform: translateY(-2px);
+}
+
+.exp-item {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.exp-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.exp-item:hover {
+  border-color: var(--card-border-hover) !important;
+  box-shadow: var(--card-shadow-hover) !important;
+  transform: translateY(-2px);
+}
+
+.exp-item:hover::before {
+  opacity: 0.9;
+}
+
+/* ===================== THEME TOGGLE BUTTON ===================== */
+
+.theme-toggle-btn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+  transform: scale(1.06);
+}
+
+/* ===================== LIGHT MODE OVERRIDES ===================== */
+
+html.light .hero-name-first {
+  background: linear-gradient(180deg, #090d16 15%, #1e293b 60%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+html.light .hero-name-first:hover {
+  text-shadow: 0 0 35px rgba(37, 99, 235, 0.25);
+}
+
+html.light .hero-name-last {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 45%, #1d4ed8 85%, #0369a1 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(37, 99, 235, 0.35));
+}
+
+html.light .hero-name-last:hover {
+  filter: drop-shadow(0 0 40px rgba(37, 99, 235, 0.6));
+}
+
+html.light .hero-name-aura {
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(56, 189, 248, 0.14) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 75%);
+  filter: blur(50px);
+}
+
+/* ===================== VIEW TRANSITIONS & THEME WAVE ===================== */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 999999;
+}
+
+/* Anel da Onda de Choque Luminosa que se expande do ponto do clique */
+.theme-shockwave-ring {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border: 3px solid var(--wave-glow, #38bdf8);
+  box-shadow:
+    0 0 35px var(--wave-glow, #38bdf8),
+    0 0 80px rgba(56, 189, 248, 0.6),
+    inset 0 0 30px rgba(56, 189, 248, 0.35);
+  animation: shockwaveExpand 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes shockwaveExpand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  65% {
+    opacity: 0.85;
+  }
+  100% {
+    width: var(--end-diameter, 2600px);
+    height: var(--end-diameter, 2600px);
+    opacity: 0;
+  }
+}
+
+/* Preenchimento de onda para navegadores sem View Transitions nativo */
+.theme-wave-canvas-fallback {
+  position: fixed;
+  pointer-events: none;
+  z-index: 999998;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  animation: waveFillExpand 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes waveFillExpand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    width: var(--end-diameter, 2600px);
+    height: var(--end-diameter, 2600px);
+    opacity: 0;
+  }
+}
+
+/* ===================== REDUCED MOTION ===================== */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion], [data-reveal], [data-reveal-stagger] > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-name-aura, .hero-name-last, .theme-shockwave-ring, .theme-wave-canvas-fallback { animation: none; }
 }
