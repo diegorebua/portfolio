@@ -6,7 +6,7 @@ useGsapMotion();
 </script>
 
 <template>
-  <div class="relative min-h-[calc(100vh-80px)] pt-32 pb-24">
+  <div id="about" class="relative min-h-[calc(100vh-80px)] pt-32 pb-24">
     <!-- Ambient Lighting Glow -->
     <div class="section-ambient-glow" aria-hidden="true"></div>
 

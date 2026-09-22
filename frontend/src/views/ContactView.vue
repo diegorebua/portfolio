@@ -21,7 +21,7 @@ const copyEmail = async () => {
 </script>
 
 <template>
-  <div class="relative min-h-[calc(100vh-80px)] pt-32 pb-24 flex flex-col justify-center">
+  <div id="contact" class="relative min-h-[calc(100vh-80px)] pt-32 pb-24 flex flex-col justify-center">
     <!-- Ambient Corner Aura -->
     <div
       class="absolute right-0 bottom-0 w-96 h-96 rounded-full pointer-events-none opacity-25 blur-3xl"
@@ -29,7 +29,7 @@ const copyEmail = async () => {
     ></div>
 
     <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 w-full my-auto">
-      <div class="max-w-3xl">
+      <div class="max-w-3xl contact-content">
         <!-- Section Badge -->
         <div class="tech-badge mb-8">
           <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>

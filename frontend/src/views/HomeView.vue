@@ -13,16 +13,16 @@ useGsapMotion();
 
     <div class="w-full max-w-6xl mx-auto px-6 lg:px-8 relative z-10 my-auto">
       <!-- Top Terminal -->
-      <div class="mb-6 hero-terminal">
+      <div class="mb-6 hero-terminal max-w-full overflow-hidden">
         <TerminalTyping />
       </div>
 
       <!-- Hero Name Title -->
-      <div class="relative hero-name-container mb-6 select-none">
+      <div class="relative hero-name-container mb-6 select-none max-w-full">
         <div class="hero-name-aura" aria-hidden="true"></div>
         <h1
           class="font-morganite uppercase font-bold tracking-[0.01em] hero-name"
-          style="font-size: clamp(5.2rem, 16vw, 17rem); line-height: 0.82;"
+          style="font-size: clamp(4.5rem, 16vw, 17rem); line-height: 0.82;"
         >
           <span class="hero-name-first">Diego</span>
           <span class="hero-name-last ml-[0.16em]">Rebuá</span>
