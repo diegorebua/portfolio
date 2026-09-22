@@ -21,7 +21,7 @@ export function useGsapMotion() {
         .fromTo(
           '.hero-terminal',
           { y: -20, opacity: 0, scale: 0.95 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.5)', clearProps: 'all' }
+          { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.5)', clearProps: 'transform,opacity' }
         )
         .fromTo(
           '.hero-name-first',
@@ -44,13 +44,13 @@ export function useGsapMotion() {
         .fromTo(
           '.hero-subtitle',
           { y: 25, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', clearProps: 'all' },
+          { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', clearProps: 'transform,opacity' },
           '-=0.7'
         )
         .fromTo(
           '.hero-cta',
           { y: 25, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power3.out', clearProps: 'all' },
+          { y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power3.out', clearProps: 'transform,opacity' },
           '-=0.6'
         );
 
@@ -69,7 +69,7 @@ export function useGsapMotion() {
           opacity: 1,
           duration: 0.9,
           ease: 'power3.out',
-          clearProps: 'all'
+          clearProps: 'transform,opacity'
         }
       );
 
@@ -87,7 +87,7 @@ export function useGsapMotion() {
           stagger: 0.1,
           duration: 0.8,
           ease: 'power3.out',
-          clearProps: 'all'
+          clearProps: 'transform,opacity'
         }
       );
 
@@ -111,7 +111,7 @@ export function useGsapMotion() {
           stagger: 0.05,
           duration: 0.65,
           ease: 'power3.out',
-          clearProps: 'all'
+          clearProps: 'transform,opacity'
         }
       );
 
@@ -131,7 +131,7 @@ export function useGsapMotion() {
           stagger: 0.15,
           duration: 0.9,
           ease: 'power3.out',
-          clearProps: 'all'
+          clearProps: 'transform,opacity'
         }
       );
 
@@ -150,7 +150,7 @@ export function useGsapMotion() {
           stagger: 0.15,
           duration: 0.8,
           ease: 'power3.out',
-          clearProps: 'all'
+          clearProps: 'transform,opacity'
         }
       );
 
@@ -169,7 +169,7 @@ export function useGsapMotion() {
           stagger: 0.1,
           duration: 0.8,
           ease: 'power3.out',
-          clearProps: 'all'
+          clearProps: 'transform,opacity'
         }
       );
     });
