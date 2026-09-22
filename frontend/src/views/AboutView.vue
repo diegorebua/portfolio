@@ -89,7 +89,7 @@ useGsapMotion();
       </div>
 
       <!-- Core Pillars / Architecture Values -->
-      <div class="pt-12 mb-16" style="border-top: 1px solid var(--color-border)">
+      <div class="pt-12" style="border-top: 1px solid var(--color-border)">
         <h2 class="mono text-xs uppercase tracking-[0.25em] mb-8" style="color: var(--color-accent)">
           Como eu trabalho
         </h2>
@@ -119,20 +119,6 @@ useGsapMotion();
             </p>
           </div>
         </div>
-      </div>
-
-      <!-- Bottom Next Navigation Action -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border-2); box-shadow: var(--card-shadow)">
-        <div>
-          <h3 class="text-xl font-bold mb-1">Quer conhecer as tecnologias que utilizo?</h3>
-          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Linguagens, frameworks e bancos de dados do dia a dia.</p>
-        </div>
-        <router-link
-          to="/stack"
-          class="btn-primary px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider shrink-0 active:scale-95"
-        >
-          Ver Tecnologias →
-        </router-link>
       </div>
     </div>
   </div>

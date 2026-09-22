@@ -133,7 +133,7 @@ const filteredSkills = computed(() => {
       </div>
 
       <!-- Architecture Focus Showcase Card -->
-      <div class="p-8 rounded-2xl border mb-16" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
+      <div class="p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           <div class="md:col-span-8">
             <span class="mono text-xs uppercase tracking-[0.2em] text-sky-400 font-bold block mb-2">Como eu trabalho</span>
@@ -149,20 +149,6 @@ const filteredSkills = computed(() => {
             <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Cloudflare</span>
           </div>
         </div>
-      </div>
-
-      <!-- Navigation to Projects -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border-2); box-shadow: var(--card-shadow)">
-        <div>
-          <h3 class="text-xl font-bold mb-1">Quer ver o que foi feito na prática?</h3>
-          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Projetos reais publicados na web.</p>
-        </div>
-        <router-link
-          to="/projetos"
-          class="btn-primary px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider shrink-0 active:scale-95"
-        >
-          Ver Projetos →
-        </router-link>
       </div>
     </div>
   </div>

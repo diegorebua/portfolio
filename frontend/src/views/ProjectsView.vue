@@ -125,7 +125,7 @@ useGsapMotion();
       </div>
 
       <!-- Upcoming Projects Teaser -->
-      <div class="p-8 rounded-2xl border mb-16 flex items-center justify-between gap-6" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
+      <div class="p-8 rounded-2xl border flex items-center justify-between gap-6" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
         <div class="flex items-center gap-4">
           <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: var(--color-accent-sub); border: 1px solid var(--card-border); color: var(--color-accent)">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
@@ -136,20 +136,6 @@ useGsapMotion();
           </div>
         </div>
         <span class="mono text-[10px] uppercase tracking-widest hidden sm:inline-block px-3 py-1 rounded-full border" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Em Andamento</span>
-      </div>
-
-      <!-- Navigation to Experience -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border-2); box-shadow: var(--card-shadow)">
-        <div>
-          <h3 class="text-xl font-bold mb-1">Quer ver onde já trabalhei?</h3>
-          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Empresas, funções e o que desenvolvi na prática.</p>
-        </div>
-        <router-link
-          to="/trajetoria"
-          class="btn-primary px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider shrink-0 active:scale-95"
-        >
-          Ver Trajetória →
-        </router-link>
       </div>
     </div>
   </div>

@@ -28,7 +28,7 @@ useGsapMotion();
       </div>
 
       <!-- Experience Items -->
-      <div class="space-y-8 mb-20">
+      <div class="space-y-8">
         <div
           v-for="(exp, idx) in EXPERIENCES"
           :key="idx"
@@ -70,20 +70,6 @@ useGsapMotion();
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Navigation to Contact -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border-2); box-shadow: var(--card-shadow)">
-        <div>
-          <h3 class="text-xl font-bold mb-1">Quer conversar sobre um projeto ou oportunidade?</h3>
-          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Envie uma mensagem direta por e-mail ou redes sociais.</p>
-        </div>
-        <router-link
-          to="/contato"
-          class="btn-primary px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider shrink-0 active:scale-95"
-        >
-          Falar Comigo →
-        </router-link>
       </div>
     </div>
   </div>
