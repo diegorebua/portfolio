@@ -16,14 +16,14 @@ useGsapMotion();
         <div>
           <div class="tech-badge mb-4">
             <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
-            Timeline // Trajetória
+            Histórico // Carreira
           </div>
           <h1 class="font-morganite uppercase font-bold tracking-[0.02em] text-5xl sm:text-7xl md:text-8xl leading-[0.88]">
             Minha <span class="text-gradient-blue">Trajetória</span>
           </h1>
         </div>
         <p class="mono text-xs uppercase tracking-widest max-w-sm" style="color: var(--color-text-dim)">
-          Histórico profissional, responsabilidades e realizações
+          Empresas, funções e o que foi feito na prática
         </p>
       </div>
 
@@ -75,14 +75,14 @@ useGsapMotion();
       <!-- Navigation to Contact -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border-2); box-shadow: var(--card-shadow)">
         <div>
-          <h3 class="text-xl font-bold mb-1">Gostou do perfil e quer trocar uma ideia?</h3>
-          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Entre em contato para parcerias, projetos ou oportunidades.</p>
+          <h3 class="text-xl font-bold mb-1">Quer conversar sobre um projeto ou oportunidade?</h3>
+          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Envie uma mensagem direta por e-mail ou redes sociais.</p>
         </div>
         <router-link
           to="/contato"
           class="btn-primary px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider shrink-0 active:scale-95"
         >
-          Iniciar Conversa →
+          Falar Comigo →
         </router-link>
       </div>
     </div>

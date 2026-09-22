@@ -4,15 +4,15 @@ const isLoading = ref(false);
 const progress = ref(0);
 const targetPath = ref('');
 const targetLabel = ref('');
-const statusMessage = ref('INITIALIZING_VIEW');
+const statusMessage = ref('CARREGANDO PÁGINA');
 
 const ROUTE_LABELS: Record<string, string> = {
-  '/': 'INÍCIO // CORE',
-  '/sobre': 'PERFIL // SOBRE MIM',
-  '/stack': 'ARSENAL // TECNOLOGIAS',
-  '/projetos': 'PORTFÓLIO // PROJETOS',
-  '/trajetoria': 'TIMELINE // TRAJETÓRIA',
-  '/contato': 'COMUNICAÇÃO // CONTATO',
+  '/': 'PÁGINA // INÍCIO',
+  '/sobre': 'PÁGINA // SOBRE MIM',
+  '/stack': 'PÁGINA // TECNOLOGIAS',
+  '/projetos': 'PÁGINA // PROJETOS',
+  '/trajetoria': 'PÁGINA // TRAJETÓRIA',
+  '/contato': 'PÁGINA // CONTATO',
 };
 
 let loaderInterval: ReturnType<typeof setInterval> | null = null;
@@ -24,10 +24,10 @@ export function usePageLoader() {
   const startLoading = (toPath: string) => {
     // If already loading to this exact path, ignore
     targetPath.value = toPath;
-    targetLabel.value = ROUTE_LABELS[toPath] || `MÓDULO // ${toPath.toUpperCase().replace('/', '')}`;
+    targetLabel.value = ROUTE_LABELS[toPath] || `PÁGINA // ${toPath.toUpperCase().replace('/', '')}`;
     isLoading.value = true;
     progress.value = 0;
-    statusMessage.value = 'INITIALIZING_VIEW';
+    statusMessage.value = 'CARREGANDO PÁGINA';
 
     if (loaderInterval) clearInterval(loaderInterval);
     if (fadeTimeout) clearTimeout(fadeTimeout);
@@ -43,17 +43,15 @@ export function usePageLoader() {
       const eased = 1 - Math.pow(1 - t, 2.2);
       progress.value = Math.min(100, Math.round(eased * 100));
 
-      // Dynamic cinematic cyber status messages during the 2s
-      if (elapsed < 450) {
-        statusMessage.value = 'INITIALIZING_VIEW';
-      } else if (elapsed < 1000) {
-        statusMessage.value = 'COMPILING_MODULES';
-      } else if (elapsed < 1550) {
-        statusMessage.value = 'OPTIMIZING_ASSETS';
-      } else if (elapsed < 1850) {
-        statusMessage.value = 'SYNC_COMPLETE';
+      // Dynamic status messages during the 2s
+      if (elapsed < 500) {
+        statusMessage.value = 'CARREGANDO PÁGINA';
+      } else if (elapsed < 1100) {
+        statusMessage.value = 'PROCESSANDO DADOS';
+      } else if (elapsed < 1650) {
+        statusMessage.value = 'PREPARANDO TELA';
       } else {
-        statusMessage.value = 'LAUNCHING_VIEW';
+        statusMessage.value = 'CONCLUÍDO';
       }
 
       if (elapsed >= TOTAL_DURATION_MS) {

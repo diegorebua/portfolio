@@ -31,7 +31,7 @@ const filteredSkills = computed(() => {
           </h1>
         </div>
         <p class="mono text-xs uppercase tracking-widest max-w-sm" style="color: var(--color-text-dim)">
-          Ferramentas, linguagens e ecossistemas aplicados no dia a dia
+          Tecnologias que uso no dia a dia para construir sistemas e interfaces
         </p>
       </div>
 
@@ -136,15 +136,15 @@ const filteredSkills = computed(() => {
       <div class="p-8 rounded-2xl border mb-16" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           <div class="md:col-span-8">
-            <span class="mono text-xs uppercase tracking-[0.2em] text-sky-400 font-bold block mb-2">Engenharia Contínua</span>
-            <h3 class="text-2xl font-bold mb-3">Fluxo Moderno de Desenvolvimento</h3>
+            <span class="mono text-xs uppercase tracking-[0.2em] text-sky-400 font-bold block mb-2">Como eu trabalho</span>
+            <h3 class="text-2xl font-bold mb-3">Do código local ao ambiente de produção</h3>
             <p class="text-sm leading-relaxed" style="color: var(--color-text-muted)">
-              Uso de controle de versão semântico, conteinerização com Docker para isolamento total de ambientes, testes automatizados e integração com plataformas em nuvem para deploys previsíveis e sem atrito.
+              Ambientes padronizados com Docker para rodar exatamente igual em qualquer máquina. Código versionado com Git, organização clara de pastas e deploy contínuo em nuvem.
             </p>
           </div>
           <div class="md:col-span-4 flex flex-wrap gap-2 justify-start md:justify-end">
-            <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">CI/CD Ready</span>
-            <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Clean Code</span>
+            <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Docker</span>
+            <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Git</span>
             <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">REST APIs</span>
             <span class="mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border font-medium" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Cloudflare</span>
           </div>
@@ -154,8 +154,8 @@ const filteredSkills = computed(() => {
       <!-- Navigation to Projects -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border-2); box-shadow: var(--card-shadow)">
         <div>
-          <h3 class="text-xl font-bold mb-1">Deseja ver essas ferramentas em ação?</h3>
-          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Confira os projetos desenvolvidos e em produção.</p>
+          <h3 class="text-xl font-bold mb-1">Quer ver o que foi feito na prática?</h3>
+          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Projetos reais publicados na web.</p>
         </div>
         <router-link
           to="/projetos"

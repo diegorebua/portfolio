@@ -60,7 +60,7 @@ useGsapMotion();
           </p>
 
           <p class="text-sm md:text-base leading-[1.8] mb-10" style="color: var(--color-text-muted)">
-            Minha abordagem foca no equilíbrio entre código limpo e arquitetura resiliente no backend, complementada por interfaces reativas e com animações fluidas no frontend que encantam o usuário final.
+            Não perco tempo reinventando a roda nem criando complexidade desnecessária. Meu foco é resolver problemas com código limpo, APIs bem documentadas e telas que respondem rápido.
           </p>
 
           <!-- Core Specializations -->
@@ -68,10 +68,10 @@ useGsapMotion();
             <div class="bio-card p-5 rounded-2xl border transition-all duration-300" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
               <h3 class="mono text-xs uppercase tracking-[0.2em] mb-2.5 flex items-center gap-2 font-bold" style="color: var(--color-accent)">
                 <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
-                Frontend Moderno
+                Frontend
               </h3>
               <p class="text-sm leading-relaxed" style="color: var(--color-text-muted)">
-                Construção de SPAs velozes, interfaces reativas com Vue 3, React (Next.js), TypeScript, Tailwind CSS e GSAP.
+                Interfaces reativas, responsivas e velozes construídas com Vue 3, React, TypeScript e Tailwind CSS.
               </p>
             </div>
 
@@ -81,7 +81,7 @@ useGsapMotion();
                 Backend & Dados
               </h3>
               <p class="text-sm leading-relaxed" style="color: var(--color-text-muted)">
-                APIs RESTful e microsserviços com Java (Spring Boot), Node.js (NestJS), modelagem relacional PostgreSQL e conteinerização Docker.
+                APIs em Node.js e Java (Spring Boot), com banco de dados PostgreSQL estruturado e containers Docker.
               </p>
             </div>
           </div>
@@ -91,31 +91,31 @@ useGsapMotion();
       <!-- Core Pillars / Architecture Values -->
       <div class="pt-12 mb-16" style="border-top: 1px solid var(--color-border)">
         <h2 class="mono text-xs uppercase tracking-[0.25em] mb-8" style="color: var(--color-accent)">
-          Princípios de Engenharia
+          Como eu trabalho
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
             <span class="font-morganite text-4xl sm:text-5xl font-bold text-sky-400 mb-1 block tracking-wider leading-none">01</span>
-            <h3 class="text-lg font-bold mb-2">Performance em Primeiro Lugar</h3>
+            <h3 class="text-lg font-bold mb-2">Velocidade e Resposta Rápida</h3>
             <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--color-text-muted)">
-              Otimização rigorosa de bundle, tempos de resposta ultrarrápidos e renderização limpa para uma navegação instantânea.
+              Código enxuto, consultas otimizadas e páginas leves. A experiência precisa ser instantânea, sem travamentos nem esperas.
             </p>
           </div>
 
           <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
             <span class="font-morganite text-4xl sm:text-5xl font-bold text-sky-400 mb-1 block tracking-wider leading-none">02</span>
-            <h3 class="text-lg font-bold mb-2">Código Limpo & Manutenibilidade</h3>
+            <h3 class="text-lg font-bold mb-2">Código Claro e Sustentável</h3>
             <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--color-text-muted)">
-              Adoção de padrões arquiteturais sólidos, tipagem estrita com TypeScript e modularização clara para fácil escalabilidade.
+              Estrutura que qualquer desenvolvedor entende e dá continuidade sem estresse. Tipagem estrita e padrões diretos.
             </p>
           </div>
 
           <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
             <span class="font-morganite text-4xl sm:text-5xl font-bold text-sky-400 mb-1 block tracking-wider leading-none">03</span>
-            <h3 class="text-lg font-bold mb-2">Micro-interações com Propósito</h3>
+            <h3 class="text-lg font-bold mb-2">Foco no Usuário Real</h3>
             <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--color-text-muted)">
-              Motion design e estados de hover calibrados para guiar o usuário sem distrações ou lentidão perceptível.
+              Interfaces feitas para quem usa todo dia. Feedbacks visuais rápidos, navegação intuitiva e zero atrito.
             </p>
           </div>
         </div>
@@ -124,14 +124,14 @@ useGsapMotion();
       <!-- Bottom Next Navigation Action -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border-2); box-shadow: var(--card-shadow)">
         <div>
-          <h3 class="text-xl font-bold mb-1">Quer explorar as tecnologias que domino?</h3>
-          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Veja o arsenal completo de stacks, frameworks e ferramentas.</p>
+          <h3 class="text-xl font-bold mb-1">Quer conhecer as tecnologias que utilizo?</h3>
+          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Linguagens, frameworks e bancos de dados do dia a dia.</p>
         </div>
         <router-link
           to="/stack"
           class="btn-primary px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider shrink-0 active:scale-95"
         >
-          Explorar Stack →
+          Ver Tecnologias →
         </router-link>
       </div>
     </div>

@@ -31,7 +31,7 @@ useGsapMotion();
 
       <!-- Subtitle -->
       <p class="max-w-xl text-base sm:text-lg md:text-xl leading-relaxed mb-10 hero-subtitle" style="color: var(--color-text-muted)">
-        Criando <span class="font-medium" style="color: var(--color-text)">experiências digitais</span> com robustez no backend e elegância no frontend.
+        Desenvolvedor Full Stack. Desenvolvo <span class="font-medium" style="color: var(--color-text)">sistemas confiáveis</span> no backend e interfaces rápidas no frontend.
       </p>
 
       <!-- Primary Action Buttons -->
@@ -78,7 +78,7 @@ useGsapMotion();
           </div>
           <h3 class="font-bold text-base mb-1.5 group-hover:text-sky-400 transition-colors">Sobre Mim</h3>
           <p class="text-xs leading-relaxed line-clamp-2" style="color: var(--color-text-muted)">
-            Desenvolvedor Full Stack com sólida experiência em arquiteturas modernas.
+            Minha história, trajetória do suporte à engenharia e como eu trabalho.
           </p>
         </router-link>
 
@@ -97,7 +97,7 @@ useGsapMotion();
           </div>
           <h3 class="font-bold text-base mb-1.5 group-hover:text-sky-400 transition-colors">Tecnologias</h3>
           <p class="text-xs leading-relaxed line-clamp-2" style="color: var(--color-text-muted)">
-            React, Vue, Node.js, Java Spring, TypeScript, Docker e Cloud.
+            Stack completa: Java, Node.js, React, Vue, TypeScript, Docker e PostgreSQL.
           </p>
         </router-link>
 
@@ -116,7 +116,7 @@ useGsapMotion();
           </div>
           <h3 class="font-bold text-base mb-1.5 group-hover:text-sky-400 transition-colors">Projetos</h3>
           <p class="text-xs leading-relaxed line-clamp-2" style="color: var(--color-text-muted)">
-            Aplicações em produção com foco em performance e escala.
+            Aplicações reais em produção, com código e acesso direto ao vivo.
           </p>
         </router-link>
 
@@ -135,7 +135,7 @@ useGsapMotion();
           </div>
           <h3 class="font-bold text-base mb-1.5 group-hover:text-sky-400 transition-colors">Trajetória</h3>
           <p class="text-xs leading-relaxed line-clamp-2" style="color: var(--color-text-muted)">
-            Histórico profissional e marcos de carreira no ecossistema tech.
+            Experiências profissionais, funções exercidas e entregas na prática.
           </p>
         </router-link>
       </div>

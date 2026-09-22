@@ -33,24 +33,24 @@ const copyEmail = async () => {
         <!-- Section Badge -->
         <div class="tech-badge mb-8">
           <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
-          Comunicação // Contato
+          Contato Direto
         </div>
 
         <!-- Big Heading -->
         <h1 class="font-morganite uppercase font-bold tracking-[0.02em] text-6xl sm:text-8xl md:text-9xl leading-[0.85] mb-8">
-          Vamos criar<br/>
-          <span class="text-gradient-blue">algo novo?</span>
+          Bora trocar<br/>
+          <span class="text-gradient-blue">uma ideia?</span>
         </h1>
 
         <p class="text-base sm:text-lg md:text-xl leading-[1.8] mb-12" style="color: var(--color-text-muted)">
-          Estou sempre aberto a novos desafios técnicos, consultorias e parcerias inovadoras. Entre em contato diretamente para bater um papo ou tomar um café remoto.
+          Seja para conversar sobre uma vaga, tirar uma dúvida técnica ou iniciar um projeto do zero, estou disponível.
         </p>
 
         <!-- Email & Direct Action Box -->
         <div class="p-6 sm:p-8 rounded-3xl border mb-14" style="background: var(--card-bg); border-color: var(--card-border-2); box-shadow: var(--card-shadow)">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div>
-              <span class="mono text-[10px] uppercase tracking-widest text-sky-400 font-bold block mb-1.5">Endereço Principal</span>
+              <span class="mono text-[10px] uppercase tracking-widest text-sky-400 font-bold block mb-1.5">E-mail Direto</span>
               <p class="mono text-base sm:text-xl font-bold select-all" style="color: var(--color-text)">
                 {{ EMAIL }}
               </p>
@@ -84,7 +84,7 @@ const copyEmail = async () => {
         <!-- Social Network Cards -->
         <div>
           <span class="mono text-xs uppercase tracking-[0.25em] mb-6 block" style="color: var(--color-accent)">
-            Canais & Redes
+            Redes Sociais
           </span>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">

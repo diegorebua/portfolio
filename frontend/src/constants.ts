@@ -17,9 +17,9 @@ const ICONS = {
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Site Institucional Odontológico',
-    description: 'Site institucional criado para a Dra. Milena Takenaka. Focado em UX/UI, o projeto traduz a essência do atendimento humanizado em uma interface moderna e responsiva, projetada para converter visitantes em pacientes.',
-    tech: ['Vue 3', 'TypeScript', 'Node.js', 'Express', 'Tailwind CSS', 'Docker'],
+    title: 'Site Institucional Dra. Milena Takenaka',
+    description: 'Site institucional para consultório odontológico. Interface rápida, totalmente responsiva e com foco direto no agendamento de consultas. Desenvolvido com Vue 3, TypeScript e containerizado com Docker.',
+    tech: ['Vue 3', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Docker'],
     image: '/dramilenatakenaka.jpeg',
     link: 'https://dramilenatakenaka.com',
     category: 'fullstack'
@@ -28,13 +28,13 @@ export const PROJECTS: Project[] = [
 
 export const SKILLS: Skill[] = [
   { name: 'Java', icon: ICONS.java, category: 'language', roleTag: 'Backend' },
-  { name: 'Node.js', icon: ICONS.nodejs, category: 'framework', roleTag: 'Runtime' },
-  { name: 'TypeScript', icon: ICONS.typescript, category: 'language', roleTag: 'Tipagem' },
-  { name: 'JavaScript', icon: ICONS.javascript, category: 'language', roleTag: 'Core Web' },
+  { name: 'Node.js', icon: ICONS.nodejs, category: 'framework', roleTag: 'APIs' },
+  { name: 'TypeScript', icon: ICONS.typescript, category: 'language', roleTag: 'Full Stack' },
+  { name: 'JavaScript', icon: ICONS.javascript, category: 'language', roleTag: 'Frontend' },
   { name: 'React', icon: ICONS.react, category: 'framework', roleTag: 'Frontend' },
   { name: 'Vue', icon: ICONS.vue, category: 'framework', roleTag: 'Frontend' },
-  { name: 'Docker', icon: ICONS.docker, category: 'tool', roleTag: 'DevOps' },
-  { name: 'PostgreSQL', icon: ICONS.postgresql, category: 'tool', roleTag: 'Database' },
+  { name: 'Docker', icon: ICONS.docker, category: 'tool', roleTag: 'Deploy' },
+  { name: 'PostgreSQL', icon: ICONS.postgresql, category: 'tool', roleTag: 'Banco' },
 ];
 
 export const EXPERIENCES: Experience[] = [
@@ -43,12 +43,12 @@ export const EXPERIENCES: Experience[] = [
     role: 'Desenvolvedor Júnior',
     period: 'jun 2025 - presente',
     description: [
-      'Desenvolvimento Full Stack: Criação de novas funcionalidades, desenvolvendo desde a interface do usuário até a lógica de negócios e estruturação de fluxos complexos, atuando em modelo ágil (Jira) com apoio de IA Generativa corporativa (Claude Code).',
-      'Stack Tecnológica: Construção e manutenção de aplicações modernas utilizando Node.js, Vue.js e React. Manutenção e evolução de bases de código legadas estruturadas em Golang.',
-      'Banco de Dados: Modelagem e gerenciamento de bancos de dados relacionais e não-relacionais, lidando com a estruturação de tabelas e manipulação de dados em PostgreSQL, MongoDB e SQL.',
-      'Qualidade de Software: Criação de scripts para automação de rotinas, levantamento de casos de uso (Use Cases) e execução rigorosa de testes de software antes dos deploys.',
-      'Infraestrutura e Cloud: Vivência inicial com serviços na nuvem (AWS) e backend as a service (Supabase). Orquestração de ambientes com Docker e suporte em configurações de infraestrutura web (domínios e registros DNS/MX).',
-      'Gestão de Identidades e Acessos (IAM): Administração contínua do ambiente corporativo através do dashboard do Microsoft Entra, gerenciando perfis de usuários, listas de transmissão e o controle hierárquico de acesso às ferramentas da empresa.',
+      'Construção de novas funcionalidades no backend e frontend para sistemas internos e plataformas de clientes.',
+      'Desenvolvimento e manutenção diária de aplicações em Node.js, Vue.js, React e sustentação de serviços em Go.',
+      'Modelagem de dados, criação de tabelas e queries otimizadas em bancos relacionais (PostgreSQL) e não-relacionais (MongoDB).',
+      'Criação de scripts de automação e execução de testes funcionais antes de subir código para produção.',
+      'Configuração de containers Docker para desenvolvimento e deploy, além de gerenciamento de domínios, DNS e serviços AWS.',
+      'Administração de usuários, permissões e políticas de acesso corporativo via Microsoft Entra.',
     ]
   },
   {
@@ -56,14 +56,13 @@ export const EXPERIENCES: Experience[] = [
     role: 'Estagiário',
     period: 'fev 2025 - jun 2025',
     description: [
-      'Atuação em suporte técnico (Help Desk), prestando atendimento aos usuários e realizando a manutenção preventiva e corretiva de desktops e notebooks.',
-      'Responsável por realizar a preparação de máquinas, incluindo formatação, configuração de sistemas operacionais e instalação de softwares corporativos (Pacote Office, etc.).',
-      'Apoio direto ao time de desenvolvimento na manutenção do sistema interno da empresa, atuando na implementação de novas funcionalidades de baixa complexidade, como criação de novos campos e pequenos ajustes, o que impulsionou a transição para a área de engenharia de software.',
-      'Suporte e Governança: Auxílio na administração de acessos corporativos utilizando o Microsoft Entra, atuando na criação de perfis de usuários, controle de permissões e gerenciamento de listas de transmissão da suíte Microsoft.'
+      'Suporte técnico a usuários, manutenção e configuração de computadores e sistemas operacionais.',
+      'Apoio direto à equipe de desenvolvimento com pequenos ajustes e implementação de campos no sistema interno, iniciando a transição para engenharia de software.',
+      'Administração de contas, perfis e permissões de acesso corporativo no Microsoft Entra.'
     ]
   },
 ];
 
-export const BIO = "Sou um Desenvolvedor Full Stack com foco na construção de aplicações web modernas e escaláveis. Com uma trajetória que evoluiu do suporte técnico para a desenvolvedor de software, possuo uma visão sistêmica completa do ciclo de vida das aplicações. Hoje atuo de ponta a ponta: desde a modelagem de bancos de dados e orquestração de infraestrutura com Docker, até a criação de interfaces com React e Vue. Tenho facilidade em atuar em ambientes ágeis, entregando soluções eficientes e código de fácil manutenção.";
+export const BIO = "Desenvolvedor Full Stack. Comecei no suporte técnico, onde aprendi na prática como usuários reais lidam com sistemas e onde os problemas acontecem, e migrei para a engenharia de software. Hoje construo aplicações completas: desenho bancos de dados em PostgreSQL, crio APIs em Node.js e Java, e desenvolvo interfaces rápidas e responsivas com React e Vue. Código limpo, testado e direto ao ponto.";
 
 export const EMAIL = "diegorebua@gmail.com";

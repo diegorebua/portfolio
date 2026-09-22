@@ -16,14 +16,14 @@ useGsapMotion();
         <div>
           <div class="tech-badge mb-4">
             <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
-            Portfólio // Cases
+            Projetos // Em Produção
           </div>
           <h1 class="font-morganite uppercase font-bold tracking-[0.02em] text-5xl sm:text-7xl md:text-8xl leading-[0.88]">
             Projetos em <span class="text-gradient-blue">Destaque</span>
           </h1>
         </div>
         <p class="mono text-xs uppercase tracking-widest max-w-sm" style="color: var(--color-text-dim)">
-          Sistemas e aplicações desenvolvidas para o mundo real
+          Aplicações desenvolvidas, entregues e rodando na web
         </p>
       </div>
 
@@ -73,7 +73,7 @@ useGsapMotion();
                 class="px-7 py-3.5 rounded-full font-bold text-sm shadow-2xl transition-transform duration-300 group-hover:scale-105"
                 style="background: var(--color-accent); color: #040711"
               >
-                {{ project.link ? 'Acessar Projeto Ao Vivo ↗' : 'Em Breve' }}
+                {{ project.link ? 'Abrir Projeto ↗' : 'Em Breve' }}
               </span>
             </div>
           </component>
@@ -100,7 +100,7 @@ useGsapMotion();
                 class="inline-flex items-center gap-2 mono text-xs uppercase tracking-wider font-bold hover:underline"
                 style="color: var(--color-accent)"
               >
-                Visitar Link Externo
+                Acessar Site
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
               </a>
             </div>
@@ -131,24 +131,24 @@ useGsapMotion();
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
           </div>
           <div>
-            <h4 class="font-bold text-sm sm:text-base">Novas soluções em desenvolvimento</h4>
-            <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Novos projetos e estudos de caso serão adicionados ao portfólio em breve.</p>
+            <h4 class="font-bold text-sm sm:text-base">Outros projetos em desenvolvimento</h4>
+            <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Novos sistemas estão sendo finalizados para publicação.</p>
           </div>
         </div>
-        <span class="mono text-[10px] uppercase tracking-widest hidden sm:inline-block px-3 py-1 rounded-full border" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Pipeline Ativo</span>
+        <span class="mono text-[10px] uppercase tracking-widest hidden sm:inline-block px-3 py-1 rounded-full border" style="background: var(--color-accent-sub); border-color: var(--card-border); color: var(--color-accent)">Em Andamento</span>
       </div>
 
       <!-- Navigation to Experience -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl border" style="background: var(--card-bg); border-color: var(--card-border-2); box-shadow: var(--card-shadow)">
         <div>
-          <h3 class="text-xl font-bold mb-1">Conheça minha história profissional</h3>
-          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Veja a linha do tempo de empresas, atuações e responsabilidades.</p>
+          <h3 class="text-xl font-bold mb-1">Quer ver onde já trabalhei?</h3>
+          <p class="text-xs sm:text-sm" style="color: var(--color-text-muted)">Empresas, funções e o que desenvolvi na prática.</p>
         </div>
         <router-link
           to="/trajetoria"
           class="btn-primary px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider shrink-0 active:scale-95"
         >
-          Minha Trajetória →
+          Ver Trajetória →
         </router-link>
       </div>
     </div>
