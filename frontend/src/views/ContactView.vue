@@ -37,7 +37,7 @@ const copyEmail = async () => {
         </div>
 
         <!-- Big Heading -->
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.05] mb-8">
+        <h1 class="font-morganite uppercase font-bold tracking-[0.02em] text-6xl sm:text-8xl md:text-9xl leading-[0.85] mb-8">
           Vamos criar<br/>
           <span class="text-gradient-blue">algo novo?</span>
         </h1>

@@ -51,7 +51,7 @@ useGsapMotion();
 
         <!-- Bio & Presentation — Right column -->
         <div class="lg:col-span-8 flex flex-col justify-center about-text">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight mb-8">
+          <h1 class="font-morganite uppercase font-bold tracking-[0.02em] text-5xl sm:text-7xl md:text-8xl leading-[0.88] mb-8">
             Combinando robustez no backend<br class="hidden md:block" /> com elegância no <span class="text-gradient-blue">frontend</span>.
           </h1>
 
@@ -96,7 +96,7 @@ useGsapMotion();
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
-            <span class="mono text-2xl font-bold text-sky-400 mb-4 block">01</span>
+            <span class="font-morganite text-4xl sm:text-5xl font-bold text-sky-400 mb-1 block tracking-wider leading-none">01</span>
             <h3 class="text-lg font-bold mb-2">Performance em Primeiro Lugar</h3>
             <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--color-text-muted)">
               Otimização rigorosa de bundle, tempos de resposta ultrarrápidos e renderização limpa para uma navegação instantânea.
@@ -104,7 +104,7 @@ useGsapMotion();
           </div>
 
           <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
-            <span class="mono text-2xl font-bold text-sky-400 mb-4 block">02</span>
+            <span class="font-morganite text-4xl sm:text-5xl font-bold text-sky-400 mb-1 block tracking-wider leading-none">02</span>
             <h3 class="text-lg font-bold mb-2">Código Limpo & Manutenibilidade</h3>
             <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--color-text-muted)">
               Adoção de padrões arquiteturais sólidos, tipagem estrita com TypeScript e modularização clara para fácil escalabilidade.
@@ -112,7 +112,7 @@ useGsapMotion();
           </div>
 
           <div class="p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
-            <span class="mono text-2xl font-bold text-sky-400 mb-4 block">03</span>
+            <span class="font-morganite text-4xl sm:text-5xl font-bold text-sky-400 mb-1 block tracking-wider leading-none">03</span>
             <h3 class="text-lg font-bold mb-2">Micro-interações com Propósito</h3>
             <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--color-text-muted)">
               Motion design e estados de hover calibrados para guiar o usuário sem distrações ou lentidão perceptível.

@@ -26,7 +26,7 @@ const filteredSkills = computed(() => {
             <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
             Stack // Arsenal
           </div>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+          <h1 class="font-morganite uppercase font-bold tracking-[0.02em] text-5xl sm:text-7xl md:text-8xl leading-[0.88]">
             Arsenal <span class="text-gradient-blue">Tecnológico</span>
           </h1>
         </div>
