@@ -38,10 +38,10 @@ const isActive = (path: string) => {
 <template>
   <header
     class="fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out"
-    style="top: calc(0.85rem + env(safe-area-inset-top)); width: min(850px, calc(100% - 1.25rem));"
+    style="top: calc(0.85rem + env(safe-area-inset-top)); width: max-content; max-width: calc(100% - 1.25rem);"
   >
     <nav
-      class="flex items-center justify-between w-full px-3 sm:px-6 py-2 sm:py-2.5 transition-all duration-300 rounded-full"
+      class="flex items-center justify-between sm:justify-center gap-1.5 sm:gap-2.5 w-full px-3 sm:px-5 py-2 sm:py-2.5 transition-all duration-300 rounded-full"
       :style="{
         background: isScrolled ? 'var(--color-navbar-bg-scrolled)' : 'var(--color-navbar-bg)',
         backdropFilter: 'blur(20px) saturate(190%)',
@@ -52,7 +52,7 @@ const isActive = (path: string) => {
     >
       <!-- Navigation Links -->
       <div
-        class="flex items-center gap-1 sm:gap-2 font-mono text-[9px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.24em] font-medium overflow-x-auto no-scrollbar py-0.5"
+        class="flex items-center gap-1 sm:gap-1.5 font-mono text-[9px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.22em] font-medium overflow-x-auto no-scrollbar py-0.5"
         style="color: var(--color-text-muted)"
       >
         <router-link
@@ -76,8 +76,15 @@ const isActive = (path: string) => {
         </router-link>
       </div>
 
+      <!-- Divider Pipe between Trajetória and Controls -->
+      <span
+        class="font-mono text-xs sm:text-sm select-none opacity-40 px-0.5 sm:px-1 shrink-0"
+        style="color: var(--color-text-muted)"
+        aria-hidden="true"
+      >|</span>
+
       <!-- Right controls: Theme Toggle + Contact Link -->
-      <div class="flex items-center gap-2 sm:gap-3 shrink-0 ml-1">
+      <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
         <!-- Theme Toggle Button with Circular Shockwave -->
         <button
           type="button"
