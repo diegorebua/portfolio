@@ -7,7 +7,7 @@ useGsapMotion();
 </script>
 
 <template>
-  <div class="relative min-h-[calc(100vh-80px)] flex flex-col justify-between pt-28 pb-16">
+  <div id="home" class="relative min-h-[calc(100vh-80px)] flex flex-col justify-between pt-28 pb-16">
     <!-- Ambient Section Glow -->
     <div class="section-ambient-glow" aria-hidden="true"></div>
 
