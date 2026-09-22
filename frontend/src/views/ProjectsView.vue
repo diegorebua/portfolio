@@ -121,6 +121,14 @@ useGsapMotion();
           </div>
         </div>
       </div>
+
+      <!-- Future Projects Status Note -->
+      <div class="mt-14 flex items-center justify-center gap-2.5 text-center">
+        <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+        <span class="mono text-xs uppercase tracking-widest font-medium" style="color: var(--color-text-dim)">
+          — Mais projetos sendo desenvolvidos
+        </span>
+      </div>
     </div>
   </div>
 </template>
