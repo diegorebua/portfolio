@@ -23,18 +23,28 @@ useGsapMotion();
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">
-        <!-- Photo — Left column -->
-        <div class="lg:col-span-4 about-photo">
-          <div class="relative group overflow-hidden rounded-2xl aspect-[3/4] border transition-all duration-500 hover:scale-[1.01]" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow);">
+        <!-- Photo — Left column with light/dark adaptive card & aura -->
+        <div class="lg:col-span-4 about-photo relative">
+          <!-- Ambient Halo behind the photo card -->
+          <div
+            class="absolute -inset-2 rounded-3xl blur-2xl pointer-events-none opacity-35 transition-all duration-500"
+            style="background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);"
+          ></div>
+
+          <div class="photo-card aspect-[3/4] group">
             <img
               src="/profile.jpeg"
               alt="Diego Rebuá"
-              class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+              class="photo-img"
               loading="lazy"
             />
-            <div class="absolute bottom-3 left-3 right-3 py-2 px-3 rounded-lg backdrop-blur-md mono text-[10px] uppercase tracking-wider flex items-center justify-between" style="background: rgba(4, 7, 17, 0.82); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--color-text-frost)">
-              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Disponível</span>
-              <span style="color: var(--color-text-muted)">São Paulo, SP</span>
+            <!-- Adaptive Light/Dark floating status pill -->
+            <div class="photo-badge absolute bottom-3 left-3 right-3 py-2 px-3.5 rounded-xl mono text-[10px] uppercase tracking-wider flex items-center justify-between z-20">
+              <span class="flex items-center gap-2 font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Disponível
+              </span>
+              <span class="font-medium" style="color: var(--color-text-muted)">São Paulo, SP</span>
             </div>
           </div>
         </div>
