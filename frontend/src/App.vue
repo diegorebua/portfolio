@@ -5,6 +5,7 @@ import InteractiveBackground from './components/InteractiveBackground.vue';
 import Navbar from './components/Navbar.vue';
 import PageLoader from './components/PageLoader.vue';
 import Footer from './components/Footer.vue';
+import CustomCursor from './components/CustomCursor.vue';
 
 const { initTheme } = useTheme();
 initTheme();
@@ -14,6 +15,9 @@ const isMobile = useMediaQuery('(max-width: 768px)');
 
 <template>
   <div class="min-h-screen bg-transparent flex flex-col justify-between" style="color: var(--color-text)">
+    <!-- Precision Custom Fluid Mouse Cursor -->
+    <CustomCursor />
+
     <!-- Canvas Interactive Ambient Dots & Lighting -->
     <InteractiveBackground :is-mobile="isMobile" />
 

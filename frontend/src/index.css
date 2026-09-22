@@ -787,3 +787,16 @@ html.light .hero-name-aura {
   }
   .hero-name-aura, .hero-name-last, .theme-shockwave-ring, .theme-wave-canvas-fallback { animation: none; }
 }
+
+/* ===================== CUSTOM FLUID MOUSE CURSOR ===================== */
+
+@media (pointer: fine) {
+  html, body, a, button, [role="button"], .cursor-pointer, .tech-badge, label {
+    cursor: none !important;
+  }
+
+  input, textarea, select {
+    cursor: text !important;
+  }
+}
+
