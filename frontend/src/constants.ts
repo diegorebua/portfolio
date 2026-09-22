@@ -43,12 +43,9 @@ export const EXPERIENCES: Experience[] = [
     role: 'Desenvolvedor Júnior',
     period: 'jun 2025 - presente',
     description: [
-      'Construção de novas funcionalidades no backend e frontend para sistemas internos e plataformas de clientes.',
-      'Desenvolvimento e manutenção diária de aplicações em Node.js, Vue.js, React e sustentação de serviços em Go.',
-      'Modelagem de dados, criação de tabelas e queries otimizadas em bancos relacionais (PostgreSQL) e não-relacionais (MongoDB).',
-      'Criação de scripts de automação e execução de testes funcionais antes de subir código para produção.',
-      'Configuração de containers Docker para desenvolvimento e deploy, além de gerenciamento de domínios, DNS e serviços AWS.',
-      'Administração de usuários, permissões e políticas de acesso corporativo via Microsoft Entra.',
+      'Desenvolvimento full stack de novas funcionalidades e plataformas com Node.js, Vue.js, React e Go.',
+      'Modelagem de dados e queries otimizadas em bancos relacionais (PostgreSQL) e não-relacionais (MongoDB).',
+      'Configuração de containers Docker para desenvolvimento e deploy, além de gerenciamento de infraestrutura AWS.',
     ]
   },
   {
@@ -56,9 +53,8 @@ export const EXPERIENCES: Experience[] = [
     role: 'Estagiário',
     period: 'fev 2025 - jun 2025',
     description: [
-      'Suporte técnico a usuários, manutenção e configuração de computadores e sistemas operacionais.',
-      'Apoio direto à equipe de desenvolvimento com pequenos ajustes e implementação de campos no sistema interno, iniciando a transição para engenharia de software.',
-      'Administração de contas, perfis e permissões de acesso corporativo no Microsoft Entra.'
+      'Suporte técnico especializado a usuários e sustentação de infraestrutura interna.',
+      'Apoio à equipe de desenvolvimento na implementação de novas rotinas em sistemas internos.',
     ]
   },
 ];
