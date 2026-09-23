@@ -15,7 +15,7 @@ useGsapMotion();
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div>
           <div class="tech-badge mb-4">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
             Histórico // Carreira
           </div>
           <h1 class="font-morganite uppercase font-bold tracking-[0.02em] text-5xl sm:text-7xl md:text-8xl leading-[0.88]">
@@ -40,13 +40,13 @@ useGsapMotion();
             <div class="lg:col-span-4">
               <span
                 class="mono text-xs tracking-wider inline-block mb-3 px-3.5 py-1 rounded-full font-medium"
-                style="background: var(--color-accent-sub); border: 1px solid var(--card-border); color: var(--color-accent)"
+                style="background: var(--color-accent-sub); border: 1px solid var(--card-border); color: var(--color-accent-text)"
               >
                 {{ exp.period }}
               </span>
               <h2 class="text-2xl sm:text-3xl font-bold mb-2">{{ exp.role }}</h2>
-              <p class="font-bold flex items-center gap-2 text-base" style="color: var(--color-accent)">
-                <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+              <p class="font-bold flex items-center gap-2 text-base" style="color: var(--color-accent-text)">
+                <span class="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
                 {{ exp.company }}
               </p>
             </div>

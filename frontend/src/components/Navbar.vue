@@ -65,12 +65,12 @@ const isActive = (path: string) => {
             background: isActive(link.path) ? 'var(--color-accent-sub)' : 'transparent',
             border: isActive(link.path) ? '1px solid var(--color-border-2)' : '1px solid transparent',
             fontWeight: isActive(link.path) ? '700' : '500',
-            boxShadow: isActive(link.path) ? '0 0 12px rgba(56, 189, 248, 0.15)' : 'none'
+            boxShadow: isActive(link.path) ? '0 0 12px rgba(58, 90, 107, 0.15)' : 'none'
           }"
         >
           <span
             v-if="isActive(link.path)"
-            class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse shrink-0"
+            class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse shrink-0"
           ></span>
           <span>{{ link.name }}</span>
         </router-link>
@@ -97,7 +97,7 @@ const isActive = (path: string) => {
           <svg
             v-if="isDark"
             class="w-4 h-4 transition-transform duration-300 hover:rotate-90"
-            style="color: var(--color-accent)"
+            style="color: var(--color-accent-text)"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -124,7 +124,7 @@ const isActive = (path: string) => {
           class="btn-primary inline-flex items-center justify-center font-mono text-[9px] sm:text-xs uppercase tracking-[0.2em] font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full active:scale-95 transition-all shrink-0"
           :style="{
             boxShadow: isActive('/contato') ? '0 0 20px var(--color-accent)' : undefined,
-            border: isActive('/contato') ? '1px solid #ffffff' : undefined
+            border: isActive('/contato') ? '1px solid #F5F5F3' : undefined
           }"
         >
           Contato

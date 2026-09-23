@@ -163,8 +163,8 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 9999px;
-  background: var(--color-accent, #38bdf8);
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.85);
+  background: var(--color-accent, #3A5A6B);
+  box-shadow: 0 0 10px rgba(58, 90, 107, 0.85);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s ease;
@@ -178,8 +178,8 @@ onUnmounted(() => {
   width: 32px;
   height: 32px;
   border-radius: 9999px;
-  border: 1.5px solid rgba(56, 189, 248, 0.45);
-  background: rgba(56, 189, 248, 0.02);
+  border: 1.5px solid rgba(58, 90, 107, 0.45);
+  background: rgba(58, 90, 107, 0.02);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
@@ -187,14 +187,14 @@ onUnmounted(() => {
 }
 
 .cursor-ring.is-hovering {
-  border-color: rgba(56, 189, 248, 0.9);
-  background: rgba(56, 189, 248, 0.12);
-  box-shadow: 0 0 22px rgba(56, 189, 248, 0.32), inset 0 0 10px rgba(56, 189, 248, 0.1);
+  border-color: rgba(58, 90, 107, 0.9);
+  background: rgba(58, 90, 107, 0.12);
+  box-shadow: 0 0 22px rgba(58, 90, 107, 0.32), inset 0 0 10px rgba(58, 90, 107, 0.1);
 }
 
 .cursor-ring.is-clicking {
-  border-color: var(--color-accent, #38bdf8);
-  background: rgba(56, 189, 248, 0.25);
-  box-shadow: 0 0 24px rgba(56, 189, 248, 0.5);
+  border-color: var(--color-accent, #3A5A6B);
+  background: rgba(58, 90, 107, 0.25);
+  box-shadow: 0 0 24px rgba(58, 90, 107, 0.5);
 }
 </style>

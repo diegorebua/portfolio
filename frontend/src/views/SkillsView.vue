@@ -23,7 +23,7 @@ const filteredSkills = computed(() => {
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
           <div class="tech-badge mb-4">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
             Stack // Arsenal
           </div>
           <h1 class="font-morganite uppercase font-bold tracking-[0.02em] text-5xl sm:text-7xl md:text-8xl leading-[0.88]">
@@ -43,7 +43,7 @@ const filteredSkills = computed(() => {
           class="mono text-xs uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
           :style="{
             background: activeFilter === 'all' ? 'var(--color-accent)' : 'var(--card-bg)',
-            color: activeFilter === 'all' ? '#040711' : 'var(--color-text-muted)',
+            color: activeFilter === 'all' ? '#0A0A0A' : 'var(--color-text-muted)',
             border: activeFilter === 'all' ? '1px solid var(--color-accent)' : '1px solid var(--card-border)',
             fontWeight: activeFilter === 'all' ? '700' : '500'
           }"
@@ -57,7 +57,7 @@ const filteredSkills = computed(() => {
           class="mono text-xs uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
           :style="{
             background: activeFilter === 'language' ? 'var(--color-accent)' : 'var(--card-bg)',
-            color: activeFilter === 'language' ? '#040711' : 'var(--color-text-muted)',
+            color: activeFilter === 'language' ? '#0A0A0A' : 'var(--color-text-muted)',
             border: activeFilter === 'language' ? '1px solid var(--color-accent)' : '1px solid var(--card-border)',
             fontWeight: activeFilter === 'language' ? '700' : '500'
           }"
@@ -71,7 +71,7 @@ const filteredSkills = computed(() => {
           class="mono text-xs uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
           :style="{
             background: activeFilter === 'framework' ? 'var(--color-accent)' : 'var(--card-bg)',
-            color: activeFilter === 'framework' ? '#040711' : 'var(--color-text-muted)',
+            color: activeFilter === 'framework' ? '#0A0A0A' : 'var(--color-text-muted)',
             border: activeFilter === 'framework' ? '1px solid var(--color-accent)' : '1px solid var(--card-border)',
             fontWeight: activeFilter === 'framework' ? '700' : '500'
           }"
@@ -85,7 +85,7 @@ const filteredSkills = computed(() => {
           class="mono text-xs uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
           :style="{
             background: activeFilter === 'tool' ? 'var(--color-accent)' : 'var(--card-bg)',
-            color: activeFilter === 'tool' ? '#040711' : 'var(--color-text-muted)',
+            color: activeFilter === 'tool' ? '#0A0A0A' : 'var(--color-text-muted)',
             border: activeFilter === 'tool' ? '1px solid var(--color-accent)' : '1px solid var(--card-border)',
             fontWeight: activeFilter === 'tool' ? '700' : '500'
           }"
@@ -105,7 +105,7 @@ const filteredSkills = computed(() => {
           <span
             v-if="skill.roleTag"
             class="mono text-[9px] uppercase tracking-[0.2em] px-2.5 py-0.5 rounded-full mb-4 border transition-colors duration-300"
-            style="background: var(--color-accent-sub); border-color: var(--color-border); color: var(--color-accent)"
+            style="background: var(--color-accent-sub); border-color: var(--color-border); color: var(--color-accent-text)"
           >
             {{ skill.roleTag }}
           </span>
@@ -122,7 +122,7 @@ const filteredSkills = computed(() => {
           </div>
 
           <!-- Skill Name -->
-          <span class="font-bold text-sm tracking-tight group-hover:text-sky-400 transition-colors duration-200 mb-1" style="color: var(--color-text)">
+          <span class="font-bold text-sm tracking-tight group-hover:text-[var(--color-accent-text)] transition-colors duration-200 mb-1" style="color: var(--color-text)">
             {{ skill.name }}
           </span>
 

@@ -12,14 +12,14 @@ const { isLoading, progress, targetLabel, statusMessage } = usePageLoader();
       :style="{
         width: progress + '%',
         opacity: progress > 0 ? 1 : 0,
-        background: 'linear-gradient(90deg, var(--color-accent-deep) 0%, var(--color-accent) 65%, #ffffff 100%)',
-        boxShadow: '0 0 16px var(--color-accent), 0 0 32px rgba(56, 189, 248, 0.8)'
+        background: 'linear-gradient(90deg, var(--color-accent-deep) 0%, var(--color-accent) 65%, #F5F5F3 100%)',
+        boxShadow: '0 0 16px var(--color-accent), 0 0 32px rgba(58, 90, 107, 0.8)'
       }"
     >
       <!-- Leading laser flare -->
       <div
-        class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white blur-[2px] opacity-95"
-        style="box-shadow: 0 0 12px #ffffff, 0 0 24px var(--color-accent);"
+        class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--text-inverse)] blur-[2px] opacity-95"
+        style="box-shadow: 0 0 12px #F5F5F3, 0 0 24px var(--color-accent);"
       ></div>
     </div>
 
@@ -28,7 +28,7 @@ const { isLoading, progress, targetLabel, statusMessage } = usePageLoader();
       <div
         v-if="isLoading"
         class="fixed inset-0 z-[999999] flex items-center justify-center pointer-events-none"
-        style="background: rgba(4, 7, 17, 0.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
+        style="background: rgba(10, 10, 10, 0.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
       >
         <!-- Horizontal Scanline Sweep -->
         <div class="absolute inset-0 cyber-scanline"></div>
@@ -45,7 +45,7 @@ const { isLoading, progress, targetLabel, statusMessage } = usePageLoader();
           style="
             background: var(--card-bg);
             border-color: var(--color-border-2);
-            box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(58, 90, 107, 0.2);
             min-width: 300px;
             max-width: 90vw;
           "
@@ -57,21 +57,21 @@ const { isLoading, progress, targetLabel, statusMessage } = usePageLoader();
           ></div>
 
           <!-- Module Name with Pulse Dot -->
-          <div class="flex items-center gap-2.5 mono text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold" style="color: var(--color-accent)">
+          <div class="flex items-center gap-2.5 mono text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold" style="color: var(--color-accent-text)">
             <span class="relative flex h-2.5 w-2.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-500"></span>
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-accent)] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--color-accent)]"></span>
             </span>
             <span>{{ targetLabel }}</span>
           </div>
 
           <!-- Cyber Progress Track -->
-          <div class="w-full bg-black/50 rounded-full h-2 overflow-hidden border border-sky-500/25 my-1 p-[1px]">
+          <div class="w-full bg-[var(--color-surface-2)] rounded-full h-2 overflow-hidden border border-[var(--color-border-2)] my-1 p-[1px]">
             <div
               class="h-full rounded-full transition-all duration-75 ease-out"
               :style="{
                 width: progress + '%',
-                background: 'linear-gradient(90deg, var(--color-accent-deep) 0%, var(--color-accent) 70%, #ffffff 100%)',
+                background: 'linear-gradient(90deg, var(--color-accent-deep) 0%, var(--color-accent) 70%, #F5F5F3 100%)',
                 boxShadow: '0 0 12px var(--color-accent)'
               }"
             ></div>
@@ -80,7 +80,7 @@ const { isLoading, progress, targetLabel, statusMessage } = usePageLoader();
           <!-- Subtext Info & Dynamic Stage Message -->
           <div class="mono text-[10px] uppercase tracking-[0.2em] flex items-center justify-between w-full" style="color: var(--color-text-muted)">
             <span class="flex items-center gap-1.5 font-medium">
-              <span class="inline-block w-1 h-1 rounded-full bg-sky-400"></span>
+              <span class="inline-block w-1 h-1 rounded-full bg-[var(--color-accent)]"></span>
               {{ statusMessage }}
             </span>
             <span class="font-bold text-xs" style="color: var(--color-text)">{{ progress }}%</span>
@@ -106,7 +106,7 @@ const { isLoading, progress, targetLabel, statusMessage } = usePageLoader();
   background: linear-gradient(
     to bottom,
     transparent 50%,
-    rgba(56, 189, 248, 0.05) 51%,
+    rgba(58, 90, 107, 0.05) 51%,
     transparent 52%
   );
   background-size: 100% 4px;

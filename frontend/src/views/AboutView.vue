@@ -14,7 +14,7 @@ useGsapMotion();
       <!-- Section Header Badge -->
       <div class="flex items-center justify-between mb-12">
         <div class="tech-badge">
-          <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
           Perfil // Sobre Mim
         </div>
         <span class="mono text-xs uppercase tracking-widest hidden sm:block" style="color: var(--color-text-dim)">
@@ -41,7 +41,7 @@ useGsapMotion();
             <!-- Adaptive Light/Dark floating status pill -->
             <div class="photo-badge absolute bottom-3 left-3 right-3 py-2 px-3.5 rounded-xl mono text-[10px] uppercase tracking-wider flex items-center justify-between z-20">
               <span class="flex items-center gap-2 font-semibold">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
                 Disponível
               </span>
               <span class="font-medium" style="color: var(--color-text-muted)">São Paulo, SP</span>
@@ -66,8 +66,8 @@ useGsapMotion();
           <!-- Core Specializations -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-8" style="border-top: 1px solid var(--color-border)">
             <div class="bio-card p-5 rounded-2xl border transition-all duration-300" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
-              <h3 class="mono text-xs uppercase tracking-[0.2em] mb-2.5 flex items-center gap-2 font-bold" style="color: var(--color-accent)">
-                <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+              <h3 class="mono text-xs uppercase tracking-[0.2em] mb-2.5 flex items-center gap-2 font-bold" style="color: var(--color-accent-text)">
+                <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
                 Frontend
               </h3>
               <p class="text-sm leading-relaxed" style="color: var(--color-text-muted)">
@@ -76,8 +76,8 @@ useGsapMotion();
             </div>
 
             <div class="bio-card p-5 rounded-2xl border transition-all duration-300" style="background: var(--card-bg); border-color: var(--card-border); box-shadow: var(--card-shadow)">
-              <h3 class="mono text-xs uppercase tracking-[0.2em] mb-2.5 flex items-center gap-2 font-bold" style="color: var(--color-accent)">
-                <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+              <h3 class="mono text-xs uppercase tracking-[0.2em] mb-2.5 flex items-center gap-2 font-bold" style="color: var(--color-accent-text)">
+                <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
                 Backend & Dados
               </h3>
               <p class="text-sm leading-relaxed" style="color: var(--color-text-muted)">

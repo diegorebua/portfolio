@@ -54,7 +54,7 @@ useGsapMotion();
 
         <router-link
           to="/contato"
-          class="mono text-xs uppercase tracking-widest px-6 py-3 rounded-full hover:text-sky-400 transition-colors duration-200"
+          class="mono text-xs uppercase tracking-widest px-6 py-3 rounded-full hover:text-[var(--color-accent-text)] transition-colors duration-200"
           style="color: var(--color-text-muted)"
         >
           Falar Comigo →

@@ -44,59 +44,54 @@
   font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-/* ===================== DESIGN TOKENS (TONS & SOBRETONS: PRETO, BRANCO & AZUL) ===================== */
+/* ===================== PALETA ===================== */
 
 :root,
-html.dark {
-  /* Tons e Sobretons de Preto (Obsidiana / Meia-Noite Profunda) */
-  --color-bg:            #040711;       /* Preto abissal com infusão midnight */
-  --color-surface:       #080e1d;       /* Grafite meia-noite suave */
-  --color-surface-2:     #0e172c;       /* Superfície secundária slate-navy */
-  --color-surface-hover: #13203c;       /* Superfície ao passar o mouse */
+html.light {
+  --background-primary: #F5F5F3;
+  --background-inverse: #0A0A0A;
+  --text-primary: #0A0A0A;
+  --text-secondary: #8A8A87;
+  --text-inverse: #F5F5F3;
+  --accent: #3A5A6B;
 
-  /* Bordas em sobretons frios */
-  --color-border:        rgba(56, 189, 248, 0.12); /* Borda translúcida azulada sutil */
-  --color-border-2:      rgba(56, 189, 248, 0.28); /* Borda azul ciano brilhante */
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-bg: var(--background-primary);
+  --color-surface: var(--background-primary);
+  --color-surface-2: rgba(10, 10, 10, 0.035);
+  --color-surface-hover: rgba(10, 10, 10, 0.065);
+  --color-border: rgba(10, 10, 10, 0.12);
+  --color-border-2: rgba(58, 90, 107, 0.35);
+  --color-border-subtle: rgba(10, 10, 10, 0.07);
 
-  /* Tons e Sobretons de Branco */
-  --color-text:          #ffffff;       /* Branco puro brilhante */
-  --color-text-frost:    #f0f6ff;       /* Branco gelo luminoso */
-  --color-text-muted:    #94a3b8;       /* Cinza ardósia claro / prateado */
-  --color-text-dim:      #4b5563;       /* Grafite suave discreto */
+  --color-text: var(--text-primary);
+  --color-text-frost: var(--text-primary);
+  --color-text-muted: var(--text-secondary);
+  --color-text-dim: var(--text-secondary);
 
-  /* Tons e Sobretons de Azul (Do Ciano Elétrico ao Cobalto Profundo) */
-  --color-accent:        #38bdf8;       /* Azul ciano elétrico / sky (alta personalidade) */
-  --color-accent-vibrant:#2563eb;       /* Azul cobalto real vivo */
-  --color-accent-deep:   #1d4ed8;       /* Azul marinho profundo */
-  --color-accent-ice:    #bae6fd;       /* Azul gelo para destaques delicados */
-  --color-accent-glow:   #60a5fa;       /* Azul brilhante de iluminação */
-  --color-accent-sub:    rgba(56, 189, 248, 0.08); /* Fundo suave com brilho ciano */
-  --color-accent-badge:  rgba(37, 99, 235, 0.18);  /* Fundo de tags estruturadas */
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent);
+  --color-accent-vibrant: var(--accent);
+  --color-accent-deep: var(--accent);
+  --color-accent-ice: var(--accent);
+  --color-accent-glow: var(--accent);
+  --color-accent-sub: rgba(58, 90, 107, 0.09);
+  --color-accent-badge: rgba(58, 90, 107, 0.12);
 
-  /* Navbar tokens */
-  --color-navbar-bg:     rgba(8, 14, 29, 0.84);
-  --color-navbar-bg-scrolled: rgba(4, 7, 17, 0.92);
-  --color-navbar-border: rgba(255, 255, 255, 0.1);
-  --color-navbar-border-scrolled: rgba(56, 189, 248, 0.22);
-  --color-navbar-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(56, 189, 248, 0.1);
-  --color-navbar-shadow-scrolled: 0 16px 40px -10px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(56, 189, 248, 0.2);
+  --color-navbar-bg: rgba(245, 245, 243, 0.88);
+  --color-navbar-bg-scrolled: rgba(245, 245, 243, 0.96);
+  --color-navbar-border: rgba(10, 10, 10, 0.12);
+  --color-navbar-border-scrolled: rgba(58, 90, 107, 0.3);
+  --color-navbar-shadow: 0 10px 30px -8px rgba(10, 10, 10, 0.1);
+  --color-navbar-shadow-scrolled: 0 16px 40px -10px rgba(10, 10, 10, 0.16);
 
-  /* Card tokens modo escuro */
-  --card-bg:             linear-gradient(150deg, rgba(14, 23, 44, 0.75) 0%, rgba(8, 14, 29, 0.92) 100%);
-  --card-border:         rgba(56, 189, 248, 0.15);
-  --card-border-hover:   rgba(56, 189, 248, 0.55);
-  --card-shadow:         inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 30px -8px rgba(0, 0, 0, 0.65);
-  --card-shadow-hover:   0 16px 38px -8px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  --color-section-glow:  rgba(56, 189, 248, 0.04);
-
-  /* Padrão de textura único */
-  --dot-color:           rgba(56, 189, 248, 0.09);
-
-  /* Iluminação atmosférica do fundo para modo escuro */
-  --ambient-bg-glow:     radial-gradient(circle 900px at 50% -80px, rgba(37, 99, 235, 0.12) 0%, rgba(56, 189, 248, 0.05) 45%, transparent 75%),
-                         radial-gradient(circle 700px at 90% 45%, rgba(29, 78, 216, 0.08) 0%, transparent 60%),
-                         radial-gradient(circle 800px at 10% 85%, rgba(37, 99, 235, 0.08) 0%, transparent 65%);
+  --card-bg: var(--background-primary);
+  --card-border: rgba(10, 10, 10, 0.13);
+  --card-border-hover: rgba(58, 90, 107, 0.55);
+  --card-shadow: 0 6px 24px -8px rgba(10, 10, 10, 0.1);
+  --card-shadow-hover: 0 14px 36px -10px rgba(58, 90, 107, 0.2);
+  --color-section-glow: rgba(58, 90, 107, 0.06);
+  --dot-color: rgba(58, 90, 107, 0.12);
+  --ambient-bg-glow: radial-gradient(circle 900px at 50% -80px, rgba(58, 90, 107, 0.06), transparent 75%);
 
   /* Spacing base: 4px */
   --space-1: 4px;
@@ -110,56 +105,40 @@ html.dark {
   --space-24: 96px;
 }
 
-html.light {
-  /* Tons e Sobretons Claros Harmoniosos (Branco Nobre / Azul Gelo / Ardósia Profunda) */
-  --color-bg:            #f4f8fc;       /* Fundo suave com leve infusão azul-gelo (não chapado) */
-  --color-surface:       #ffffff;       /* Branco puro para superfícies com relevo */
-  --color-surface-2:     #eef5fb;       /* Slate suave azulado para cartões e destaques */
-  --color-surface-hover: #e2eef8;       /* Slate suave no hover */
+html.dark {
+  --color-bg: var(--background-inverse);
+  --color-surface: var(--background-inverse);
+  --color-surface-2: rgba(245, 245, 243, 0.055);
+  --color-surface-hover: rgba(245, 245, 243, 0.085);
+  --color-border: rgba(245, 245, 243, 0.16);
+  --color-border-2: rgba(245, 245, 243, 0.32);
+  --color-border-subtle: rgba(245, 245, 243, 0.1);
 
-  /* Bordas em sobretons frios elegantes */
-  --color-border:        rgba(186, 230, 253, 0.65); /* Borda azul gelo sutil */
-  --color-border-2:      rgba(37, 99, 235, 0.28);  /* Borda azul cobalto de destaque */
-  --color-border-subtle: rgba(186, 230, 253, 0.4);
+  --color-text: var(--text-inverse);
+  --color-text-frost: var(--text-inverse);
+  --color-text-muted: var(--text-secondary);
+  --color-text-dim: var(--text-secondary);
+  --color-accent-text: var(--text-inverse);
+  --color-accent-ice: var(--text-inverse);
+  --color-accent-glow: var(--text-inverse);
+  --color-accent-sub: rgba(58, 90, 107, 0.28);
+  --color-accent-badge: rgba(58, 90, 107, 0.35);
 
-  /* Tipografia em Tons Escuros de Alto Contraste e Harmonia */
-  --color-text:          #0f172a;       /* Meia-noite profundo (suave aos olhos, não preto puro estéril) */
-  --color-text-frost:    #1e293b;       /* Ardósia escuro nobre */
-  --color-text-muted:    #475569;       /* Cinza ardósia equilibrado e legível */
-  --color-text-dim:      #64748b;       /* Cinza médio suave para metadados */
+  --color-navbar-bg: rgba(10, 10, 10, 0.88);
+  --color-navbar-bg-scrolled: rgba(10, 10, 10, 0.96);
+  --color-navbar-border: rgba(245, 245, 243, 0.16);
+  --color-navbar-border-scrolled: rgba(245, 245, 243, 0.3);
+  --color-navbar-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.55);
+  --color-navbar-shadow-scrolled: 0 16px 40px -10px rgba(0, 0, 0, 0.7);
 
-  /* Tons e Sobretons de Azul para Modo Claro */
-  --color-accent:        #0284c7;       /* Azul oceano vibrante */
-  --color-accent-vibrant:#2563eb;       /* Azul cobalto real */
-  --color-accent-deep:   #1d4ed8;       /* Azul marinho profundo */
-  --color-accent-ice:    #0369a1;       /* Azul profundo legível para tags */
-  --color-accent-glow:   #0284c7;       /* Azul de destaque */
-  --color-accent-sub:    rgba(224, 242, 254, 0.75); /* Fundo sutil azulado gelo */
-  --color-accent-badge:  rgba(224, 242, 254, 0.85);
-
-  /* Navbar tokens modo claro (vidro fosco acetinado) */
-  --color-navbar-bg:     rgba(255, 255, 255, 0.82);
-  --color-navbar-bg-scrolled: rgba(244, 248, 252, 0.94);
-  --color-navbar-border: rgba(186, 230, 253, 0.7);
-  --color-navbar-border-scrolled: rgba(37, 99, 235, 0.25);
-  --color-navbar-shadow: 0 10px 30px -8px rgba(37, 99, 235, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.7);
-  --color-navbar-shadow-scrolled: 0 16px 40px -10px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(37, 99, 235, 0.15);
-
-  /* Card tokens modo claro (elevados, com relevo e profundidade) */
-  --card-bg:             linear-gradient(150deg, #ffffff 0%, #f4f8fd 100%);
-  --card-border:         rgba(186, 230, 253, 0.8);
-  --card-border-hover:   rgba(37, 99, 235, 0.45);
-  --card-shadow:         0 6px 22px -4px rgba(37, 99, 235, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 1);
-  --card-shadow-hover:   0 16px 36px -10px rgba(37, 99, 235, 0.18), 0 4px 12px -2px rgba(37, 99, 235, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1);
-  --color-section-glow:  rgba(186, 230, 253, 0.35);
-
-  /* Padrão de textura micropontos para modo claro */
-  --dot-color:           rgba(56, 189, 248, 0.15);
-
-  /* Iluminação atmosférica do fundo (Camadas de aura azul suave que removem o aspecto chapado) */
-  --ambient-bg-glow:     radial-gradient(circle 900px at 50% -80px, rgba(186, 230, 253, 0.45) 0%, rgba(224, 242, 254, 0.2) 45%, transparent 75%),
-                         radial-gradient(circle 700px at 85% 45%, rgba(191, 219, 254, 0.25) 0%, transparent 60%),
-                         radial-gradient(circle 800px at 15% 85%, rgba(224, 242, 254, 0.3) 0%, transparent 65%);
+  --card-bg: var(--background-inverse);
+  --card-border: rgba(245, 245, 243, 0.17);
+  --card-border-hover: rgba(245, 245, 243, 0.42);
+  --card-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5);
+  --card-shadow-hover: 0 16px 38px -8px rgba(58, 90, 107, 0.25);
+  --color-section-glow: rgba(58, 90, 107, 0.12);
+  --dot-color: rgba(245, 245, 243, 0.1);
+  --ambient-bg-glow: radial-gradient(circle 900px at 50% -80px, rgba(58, 90, 107, 0.16), transparent 75%);
 }
 
 /* ===================== BASE ===================== */
@@ -258,10 +237,10 @@ h1, h2, h3, h4, h5, h6 {
 /* ===================== HOVER STATES ===================== */
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-accent-vibrant) 0%, var(--color-accent-deep) 100%);
-  color: #ffffff;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
+  background: var(--color-accent);
+  color: var(--text-inverse);
+  border: 1px solid var(--color-accent);
+  box-shadow: 0 4px 18px rgba(58, 90, 107, 0.22);
   transition:
     transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.3s ease,
@@ -269,8 +248,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  border-color: rgba(56, 189, 248, 0.7);
-  box-shadow: 0 8px 28px rgba(56, 189, 248, 0.45);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 28px rgba(58, 90, 107, 0.35);
 }
 
 .btn-outline {
@@ -283,8 +262,8 @@ h1, h2, h3, h4, h5, h6 {
 .btn-outline:hover {
   transform: translateY(-2px);
   border-color: var(--color-accent);
-  color: #ffffff;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.18);
+  color: var(--color-accent-text);
+  box-shadow: 0 0 20px rgba(58, 90, 107, 0.18);
 }
 
 .hover-lift {
@@ -298,9 +277,9 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   width: 32px;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-vibrant) 100%);
+  background: var(--color-accent);
   border-radius: 2px;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 10px rgba(58, 90, 107, 0.25);
 }
 
 /* ===================== HERO NAME SPECIAL EFFECTS ===================== */
@@ -319,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate(-50%, -50%);
   width: 105%;
   height: 115%;
-  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(56, 189, 248, 0.22) 0%, rgba(37, 99, 235, 0.1) 45%, transparent 75%);
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(58, 90, 107, 0.18) 0%, transparent 75%);
   filter: blur(55px);
   pointer-events: none;
   z-index: -1;
@@ -337,57 +316,48 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* "Diego": Radiant crystalline white with metallic frost sheen */
+/* Nome principal */
 .hero-name-first {
   display: inline-block;
-  background: linear-gradient(180deg, #ffffff 20%, #f0f6ff 55%, #94a3b8 100%);
+  background: var(--color-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 35px rgba(255, 255, 255, 0.15);
+  text-shadow: none;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.4s ease;
   will-change: transform;
 }
 
 .hero-name-first:hover {
   transform: translateY(-2px) scale(1.015);
-  text-shadow: 0 0 40px rgba(255, 255, 255, 0.45), 0 0 70px rgba(56, 189, 248, 0.3);
+  text-shadow: none;
 }
 
-/* "Rebuá": Multi-stage electric azure-to-cyan gradient with luminous glow & shimmer beam */
+/* Sobrenome em azul da paleta */
 .hero-name-last {
   position: relative;
   display: inline-block;
-  background: linear-gradient(135deg, #bae6fd 0%, #38bdf8 38%, #2563eb 80%, #60a5fa 100%);
-  background-size: 200% auto;
+  background: var(--color-accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.45));
-  animation: nameShimmer 8s linear infinite;
+  filter: drop-shadow(0 0 20px rgba(58, 90, 107, 0.25));
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
   will-change: transform, filter;
 }
 
 .hero-name-last:hover {
   transform: translateY(-2px) scale(1.02);
-  filter: drop-shadow(0 0 50px rgba(56, 189, 248, 0.75)) drop-shadow(0 0 85px rgba(37, 99, 235, 0.5));
+  filter: drop-shadow(0 0 30px rgba(58, 90, 107, 0.35));
 }
 
-@keyframes nameShimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+html.dark .hero-name-last {
+  background: var(--text-inverse);
+  -webkit-background-clip: text;
 }
 
 /* ===================== UTILITY & ATMOSPHERIC CLASSES ===================== */
 
 .text-gradient-blue {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-vibrant) 100%);
+  background: var(--color-accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -418,14 +388,14 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 9999px;
   background: var(--color-accent-sub);
   border: 1px solid var(--color-border-2);
-  color: var(--color-accent);
-  box-shadow: 0 2px 10px rgba(56, 189, 248, 0.08);
+  color: var(--color-accent-text);
+  box-shadow: 0 2px 10px rgba(58, 90, 107, 0.08);
   transition: all 0.3s ease;
 }
 
 .tech-badge:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.22);
+  box-shadow: 0 0 16px rgba(58, 90, 107, 0.22);
 }
 
 /* ===================== SKILL CARDS ===================== */
@@ -481,7 +451,7 @@ h1, h2, h3, h4, h5, h6 {
 .skill-card:hover .skill-icon-wrap {
   transform: scale(1.1);
   border-color: var(--color-accent);
-  box-shadow: 0 0 22px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 22px rgba(58, 90, 107, 0.25);
 }
 
 /* ===================== CARDS & EXPERIENCE ITEMS ===================== */
@@ -533,7 +503,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-media:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 8px 30px -6px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 8px 30px -6px rgba(58, 90, 107, 0.25);
 }
 
 .bio-card {
@@ -666,38 +636,8 @@ html.light .photo-card:hover .photo-img {
 
 .theme-toggle-btn:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 16px rgba(58, 90, 107, 0.25);
   transform: scale(1.06);
-}
-
-/* ===================== LIGHT MODE OVERRIDES ===================== */
-
-html.light .hero-name-first {
-  background: linear-gradient(180deg, #090d16 15%, #1e293b 60%, #475569 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-}
-
-html.light .hero-name-first:hover {
-  text-shadow: 0 0 35px rgba(37, 99, 235, 0.25);
-}
-
-html.light .hero-name-last {
-  background: linear-gradient(135deg, #0284c7 0%, #2563eb 45%, #1d4ed8 85%, #0369a1 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 25px rgba(37, 99, 235, 0.35));
-}
-
-html.light .hero-name-last:hover {
-  filter: drop-shadow(0 0 40px rgba(37, 99, 235, 0.6));
-}
-
-html.light .hero-name-aura {
-  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(56, 189, 248, 0.14) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 75%);
-  filter: blur(50px);
 }
 
 /* ===================== VIEW TRANSITIONS & THEME WAVE ===================== */
@@ -716,6 +656,8 @@ html.light .hero-name-aura {
   z-index: 999999;
 }
 
+
+
 /* Anel da Onda de Choque Luminosa que se expande do ponto do clique */
 .theme-shockwave-ring {
   position: fixed;
@@ -725,11 +667,11 @@ html.light .hero-name-aura {
   transform: translate(-50%, -50%);
   width: 0;
   height: 0;
-  border: 3px solid var(--wave-glow, #38bdf8);
+  border: 3px solid var(--wave-glow, #3A5A6B);
   box-shadow:
-    0 0 35px var(--wave-glow, #38bdf8),
-    0 0 80px rgba(56, 189, 248, 0.6),
-    inset 0 0 30px rgba(56, 189, 248, 0.35);
+    0 0 35px var(--wave-glow, #3A5A6B),
+    0 0 80px rgba(58, 90, 107, 0.6),
+    inset 0 0 30px rgba(58, 90, 107, 0.35);
   animation: shockwaveExpand 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -799,4 +741,3 @@ html.light .hero-name-aura {
     cursor: text !important;
   }
 }
-

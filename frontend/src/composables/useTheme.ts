@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 export type Theme = 'dark' | 'light';
 
 // Estado global reativo compartilhado entre componentes
-const isDark = ref<boolean>(true);
+const isDark = ref<boolean>(false);
 
 export function useTheme() {
   const updateThemeMeta = (color: string) => {
@@ -24,13 +24,13 @@ export function useTheme() {
       root.classList.add('dark');
       root.classList.remove('light');
       root.setAttribute('data-theme', 'dark');
-      updateThemeMeta('#040711');
+      updateThemeMeta('#0A0A0A');
       localStorage.setItem('theme', 'dark');
     } else {
       root.classList.add('light');
       root.classList.remove('dark');
       root.setAttribute('data-theme', 'light');
-      updateThemeMeta('#f4f8fc');
+      updateThemeMeta('#F5F5F3');
       localStorage.setItem('theme', 'light');
     }
     isDark.value = dark;
@@ -39,12 +39,7 @@ export function useTheme() {
   const initTheme = () => {
     if (typeof window === 'undefined') return;
     const saved = localStorage.getItem('theme') as Theme | null;
-    if (saved === 'light') {
-      applyTheme(false);
-    } else {
-      // Padrão escuro com personalidade de Diego Rebuá
-      applyTheme(true);
-    }
+    applyTheme(saved === 'dark');
   };
 
   // Cria o anel de onda de choque luminoso
@@ -55,7 +50,7 @@ export function useTheme() {
     ring.style.left = `${x}px`;
     ring.style.top = `${y}px`;
     ring.style.setProperty('--end-diameter', `${Math.ceil(radius * 2.2)}px`);
-    ring.style.setProperty('--wave-glow', toLight ? '#38bdf8' : '#2563eb');
+    ring.style.setProperty('--wave-glow', '#3A5A6B');
     document.body.appendChild(ring);
     ring.addEventListener('animationend', () => {
       ring.remove();
@@ -70,7 +65,7 @@ export function useTheme() {
     fill.style.left = `${x}px`;
     fill.style.top = `${y}px`;
     fill.style.setProperty('--end-diameter', `${Math.ceil(radius * 2.2)}px`);
-    fill.style.backgroundColor = toLight ? '#f4f8fc' : '#040711';
+    fill.style.backgroundColor = toLight ? '#F5F5F3' : '#0A0A0A';
     document.body.appendChild(fill);
 
     // Aplica o tema na metade da expansão da onda
@@ -153,7 +148,7 @@ export function useTheme() {
   onMounted(() => {
     // Sincroniza estado se montado no client
     const saved = localStorage.getItem('theme');
-    isDark.value = saved !== 'light';
+    isDark.value = saved === 'dark';
   });
 
   return {

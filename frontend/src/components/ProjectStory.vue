@@ -107,7 +107,7 @@ const activeImage = computed(() => images.value[activeIndex.value] ?? props.proj
 .story-index,
 .story-detail-label,
 .story-gallery-label {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -155,7 +155,7 @@ const activeImage = computed(() => images.value[activeIndex.value] ?? props.proj
 .story-link:hover,
 .story-link:focus-visible {
   border-color: var(--color-accent);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   transform: translateY(-2px);
 }
 

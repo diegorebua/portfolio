@@ -105,7 +105,7 @@ onUnmounted(() => {
       <header class="mb-16 lg:mb-24">
         <div class="flex items-center justify-between gap-6 mb-7">
           <div class="tech-badge">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
             Projetos // Em Produção
           </div>
           <span class="mono hidden sm:block text-xs uppercase tracking-widest" style="color: var(--color-text-dim)">
