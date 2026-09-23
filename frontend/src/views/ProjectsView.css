@@ -1,0 +1,4 @@
+.projects-list {
+  display: grid;
+  gap: clamp(5rem, 10vw, 9rem);
+}

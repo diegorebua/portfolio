@@ -1,94 +1,3 @@
-<script setup lang="ts">
-import { computed, ref } from 'vue';
-import type { Project } from '../types';
-
-const props = defineProps<{
-  project: Project;
-  index: number;
-  total: number;
-}>();
-
-const images = computed(() => props.project.images?.length ? props.project.images : [props.project.image]);
-const activeIndex = ref(0);
-const activeImage = computed(() => images.value[activeIndex.value] ?? props.project.image);
-</script>
-
-<template>
-  <article class="project-story" :aria-label="project.title">
-    <div class="story-heading">
-      <div>
-        <p class="story-index mono">
-          {{ String(index + 1).padStart(2, '0') }} / {{ String(total).padStart(2, '0') }}
-          <span class="story-index-divider" aria-hidden="true"></span>
-          PROJETO EM PRODUÇÃO
-        </p>
-        <h2 class="story-title font-morganite uppercase">{{ project.title }}</h2>
-      </div>
-
-      <a
-        v-if="project.link"
-        :href="project.link"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="story-link mono"
-        :aria-label="`Visitar ${project.title} em nova aba`"
-      >
-        VER PROJETO <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-
-    <div class="story-visual">
-      <div class="story-backdrop" aria-hidden="true"></div>
-      <Transition name="story-switch">
-        <img
-          :key="activeImage"
-          :src="activeImage"
-          :alt="images.length > 1
-            ? `Captura ${activeIndex + 1} de ${images.length} de ${project.title}`
-            : `Captura de tela de ${project.title}`"
-          class="story-image"
-          loading="lazy"
-        />
-      </Transition>
-      <span class="story-image-count mono" aria-hidden="true">
-        {{ String(activeIndex + 1).padStart(2, '0') }} / {{ String(images.length).padStart(2, '0') }}
-      </span>
-    </div>
-
-    <div v-if="images.length > 1" class="story-gallery" role="group" :aria-label="`Capturas de ${project.title}`">
-      <span class="story-gallery-label mono">CAPTURAS DO PROJETO</span>
-      <div class="story-thumbnails">
-        <button
-          v-for="(src, imageIndex) in images"
-          :key="src"
-          type="button"
-          class="story-thumbnail"
-          :class="{ 'is-active': activeIndex === imageIndex }"
-          :aria-label="`Mostrar captura ${imageIndex + 1} de ${project.title}`"
-          :aria-pressed="activeIndex === imageIndex"
-          @click="activeIndex = imageIndex"
-        >
-          <img :src="src" alt="" loading="lazy" />
-        </button>
-      </div>
-    </div>
-
-    <div class="story-details">
-      <div>
-        <span class="story-detail-label mono">SOBRE O PROJETO</span>
-        <p class="story-description">{{ project.description }}</p>
-      </div>
-      <div>
-        <span class="story-detail-label mono">TECNOLOGIAS</span>
-        <div class="story-tech">
-          <span v-for="technology in project.tech" :key="technology" class="mono">{{ technology }}</span>
-        </div>
-      </div>
-    </div>
-  </article>
-</template>
-
-<style scoped>
 .project-story {
   min-width: 0;
   padding-top: 1.5rem;
@@ -185,15 +94,8 @@ const activeImage = computed(() => images.value[activeIndex.value] ?? props.proj
   object-position: center;
 }
 
-.story-switch-enter-active,
-.story-switch-leave-active {
-  transition: opacity 0.35s ease;
-}
-
-.story-switch-enter-from,
-.story-switch-leave-to {
-  opacity: 0;
-}
+.story-image { animation: story-image-enter 0.35s ease both; }
+@keyframes story-image-enter { from { opacity: 0; } to { opacity: 1; } }
 
 .story-image-count {
   position: absolute;
@@ -308,9 +210,5 @@ const activeImage = computed(() => images.value[activeIndex.value] ?? props.proj
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .story-switch-enter-active,
-  .story-switch-leave-active {
-    transition: none;
-  }
+  .story-image { animation: none; }
 }
-</style>

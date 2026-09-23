@@ -143,6 +143,15 @@ html.dark {
 
 /* ===================== BASE ===================== */
 
+.page-enter {
+  animation: page-enter 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -640,23 +649,7 @@ html.light .photo-card:hover .photo-img {
   transform: scale(1.06);
 }
 
-/* ===================== VIEW TRANSITIONS & THEME WAVE ===================== */
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-::view-transition-old(root) {
-  z-index: 1;
-}
-
-::view-transition-new(root) {
-  z-index: 999999;
-}
-
-
+/* ===================== THEME WAVE ===================== */
 
 /* Anel da Onda de Choque Luminosa que se expande do ponto do clique */
 .theme-shockwave-ring {
@@ -691,34 +684,6 @@ html.light .photo-card:hover .photo-img {
   }
 }
 
-/* Preenchimento de onda para navegadores sem View Transitions nativo */
-.theme-wave-canvas-fallback {
-  position: fixed;
-  pointer-events: none;
-  z-index: 999998;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  width: 0;
-  height: 0;
-  animation: waveFillExpand 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes waveFillExpand {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    width: var(--end-diameter, 2600px);
-    height: var(--end-diameter, 2600px);
-    opacity: 0;
-  }
-}
-
 /* ===================== REDUCED MOTION ===================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -727,7 +692,7 @@ html.light .photo-card:hover .photo-img {
     transform: none;
     transition: none;
   }
-  .hero-name-aura, .hero-name-last, .theme-shockwave-ring, .theme-wave-canvas-fallback { animation: none; }
+  .hero-name-aura, .hero-name-last, .theme-shockwave-ring { animation: none; }
 }
 
 /* ===================== CUSTOM FLUID MOUSE CURSOR ===================== */

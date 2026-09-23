@@ -1,0 +1,9 @@
+.bg-textured-dots {
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.bg-ambient-glow {
+  background: var(--ambient-bg-glow);
+  transition: background 0.6s ease;
+}
