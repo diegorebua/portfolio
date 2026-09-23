@@ -1,133 +1,148 @@
 <script setup lang="ts">
+import { nextTick, onMounted, onUnmounted, ref } from 'vue';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ProjectStory from '../components/ProjectStory.vue';
 import { PROJECTS } from '../constants';
-import { useGsapMotion } from '../composables/useGsapMotion';
 
-useGsapMotion();
+gsap.registerPlugin(ScrollTrigger);
+
+const root = ref<HTMLElement | null>(null);
+let media: gsap.MatchMedia | null = null;
+
+onMounted(async () => {
+  await nextTick();
+  if (!root.value) return;
+
+  const page = root.value;
+  media = gsap.matchMedia();
+
+  media.add('(prefers-reduced-motion: no-preference)', () => {
+    const context = gsap.context(() => {
+      page.querySelectorAll<HTMLElement>('.project-story').forEach((story, index) => {
+        if (index === 0) return;
+
+        const visual = story.querySelector<HTMLElement>('.story-visual');
+        const heading = story.querySelector<HTMLElement>('.story-heading');
+        const details = story.querySelector<HTMLElement>('.story-details');
+
+        if (visual) {
+          gsap.fromTo(visual,
+            { clipPath: 'inset(9% 5% 9% 5% round 24px)', y: 32, autoAlpha: 0.55 },
+            {
+              clipPath: 'inset(0% 0% 0% 0% round 24px)',
+              y: 0,
+              autoAlpha: 1,
+              duration: 1,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: story, start: 'top 80%', once: true }
+            }
+          );
+        }
+
+        if (heading) {
+          gsap.fromTo(heading.children, { y: 20, autoAlpha: 0 }, {
+            y: 0,
+            autoAlpha: 1,
+            stagger: 0.08,
+            duration: 0.7,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: story, start: 'top 85%', once: true }
+          });
+        }
+
+        if (details) {
+          gsap.fromTo(details.children, { y: 20, autoAlpha: 0 }, {
+            y: 0,
+            autoAlpha: 1,
+            stagger: 0.1,
+            duration: 0.7,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: details, start: 'top 88%', once: true }
+          });
+        }
+      });
+    }, page);
+
+    return () => context.revert();
+  });
+
+  media.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', () => {
+    const context = gsap.context(() => {
+      page.querySelectorAll<HTMLElement>('.story-backdrop').forEach((backdrop) => {
+        gsap.fromTo(backdrop, { yPercent: -3, scale: 1.1 }, {
+          yPercent: 3,
+          scale: 1.1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: backdrop.closest('.story-visual'),
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 0.8
+          }
+        });
+      });
+    }, page);
+
+    return () => context.revert();
+  });
+
+  document.fonts.ready.then(() => {
+    if (root.value) ScrollTrigger.refresh();
+  });
+});
+
+onUnmounted(() => {
+  media?.revert();
+});
 </script>
 
 <template>
-  <div id="projects" class="relative min-h-[calc(100vh-80px)] pt-32 pb-24">
-    <!-- Ambient Lighting Glow -->
+  <section id="projects" ref="root" class="relative pt-32 pb-24">
     <div class="section-ambient-glow" aria-hidden="true"></div>
 
     <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-        <div>
-          <div class="tech-badge mb-4">
+      <header class="mb-16 lg:mb-24">
+        <div class="flex items-center justify-between gap-6 mb-7">
+          <div class="tech-badge">
             <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
             Projetos // Em Produção
           </div>
-          <h1 class="font-morganite uppercase font-bold tracking-[0.02em] text-5xl sm:text-7xl md:text-8xl leading-[0.88]">
-            Projetos em <span class="text-gradient-blue">Destaque</span>
+          <span class="mono hidden sm:block text-xs uppercase tracking-widest" style="color: var(--color-text-dim)">
+            {{ String(PROJECTS.length).padStart(2, '0') }} projetos selecionados
+          </span>
+        </div>
+
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-7">
+          <h1 class="font-morganite uppercase font-bold tracking-[0.02em] leading-[0.84] text-[clamp(5rem,13vw,11rem)]">
+            Projetos em<br /><span class="text-gradient-blue">Destaque</span>
           </h1>
+          <p class="max-w-xs text-base leading-relaxed lg:pb-2" style="color: var(--color-text-muted)">
+            Produtos reais, com decisões de design e engenharia em cada detalhe.
+          </p>
         </div>
-        <p class="mono text-xs uppercase tracking-widest max-w-sm" style="color: var(--color-text-dim)">
-          Aplicações desenvolvidas, entregues e rodando na web
-        </p>
-      </div>
+      </header>
 
-      <!-- Featured Projects List -->
-      <div class="space-y-20">
-        <div
-          v-for="project in PROJECTS"
+      <div class="projects-list">
+        <ProjectStory
+          v-for="(project, index) in PROJECTS"
           :key="project.id"
-          class="project-card p-6 sm:p-8 lg:p-10 rounded-3xl"
-        >
-          <!-- Media Showcase Wrapper -->
-          <component
-            :is="project.link ? 'a' : 'div'"
-            :href="project.link"
-            :target="project.link ? '_blank' : null"
-            rel="noopener noreferrer"
-            class="project-media block relative aspect-[16/9] sm:aspect-[21/10] rounded-2xl overflow-hidden mb-8 group outline-none"
-          >
-            <img
-              v-if="project.image"
-              :src="project.image"
-              :alt="project.title"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              loading="lazy"
-            />
-            <div
-              v-else
-              class="w-full h-full flex flex-col items-center justify-center text-center p-8"
-              style="background: var(--card-bg); border: 1px solid var(--card-border)"
-            >
-              <div
-                class="w-14 h-14 rounded-full flex items-center justify-center mb-4"
-                style="background: var(--color-accent-sub); border: 1px solid var(--color-border-2); color: var(--color-accent)"
-              >
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-              </div>
-              <span class="mono text-xs uppercase tracking-widest font-semibold" style="color: var(--color-text-muted)">Em Breve</span>
-            </div>
-
-            <div
-              v-if="project.image"
-              class="absolute inset-0 bg-black/40 group-hover:bg-black/15 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100"
-            >
-              <span
-                class="px-7 py-3.5 rounded-full font-bold text-sm shadow-2xl transition-transform duration-300 group-hover:scale-105"
-                style="background: var(--color-accent); color: #040711"
-              >
-                {{ project.link ? 'Abrir Projeto ↗' : 'Em Breve' }}
-              </span>
-            </div>
-          </component>
-
-          <!-- Project Information -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-            <div class="lg:col-span-5">
-              <div class="inline-flex items-center gap-2 mb-3">
-                <span
-                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider font-semibold"
-                  style="background: rgba(34, 197, 94, 0.12); border: 1px solid rgba(34, 197, 94, 0.3); color: #4ade80"
-                >
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  Em Produção
-                </span>
-              </div>
-              <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">{{ project.title }}</h2>
-
-              <a
-                v-if="project.link"
-                :href="project.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 mono text-xs uppercase tracking-wider font-bold hover:underline"
-                style="color: var(--color-accent)"
-              >
-                Acessar Site
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-            </div>
-
-            <div class="lg:col-span-7">
-              <p class="text-sm sm:text-base leading-[1.8] mb-6" style="color: var(--color-text-muted)">
-                {{ project.description }}
-              </p>
-              <div v-if="project.tech && project.tech.length" class="flex flex-wrap gap-2">
-                <span
-                  v-for="t in project.tech"
-                  :key="t"
-                  class="mono px-3 py-1 rounded-md text-[10px] uppercase tracking-wider font-medium"
-                  style="background: var(--color-accent-sub); border: 1px solid var(--card-border); color: var(--color-accent-ice)"
-                >
-                  {{ t }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+          :project="project"
+          :index="index"
+          :total="PROJECTS.length"
+        />
       </div>
 
-      <!-- Future Projects Status Note -->
-      <div class="mt-8 sm:mt-10 px-2 sm:px-4 flex items-center">
-        <span class="mono text-sm sm:text-base tracking-wider opacity-40 font-normal select-none" style="color: var(--color-text-muted)">
-          — Mais projetos sendo desenvolvidos
-        </span>
-      </div>
+      <p class="mt-20 mono text-sm tracking-wider opacity-50" style="color: var(--color-text-muted)">
+        — Mais projetos sendo desenvolvidos
+      </p>
     </div>
-  </div>
+  </section>
 </template>
+
+<style scoped>
+.projects-list {
+  display: grid;
+  gap: clamp(5rem, 10vw, 9rem);
+}
+</style>

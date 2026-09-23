@@ -23,6 +23,16 @@ export const PROJECTS: Project[] = [
     image: '/dramilenatakenaka.jpeg',
     link: 'https://dramilenatakenaka.com',
     category: 'fullstack'
+  },
+  {
+    id: '2',
+    title: 'Nozzle Lab',
+    description: 'Plataforma de gestão para negócios de impressão 3D. Reúne pedidos, clientes, estoque de filamentos, impressoras e despesas em um só lugar, com indicadores para acompanhar a operação.',
+    tech: ['React', 'NestJS', 'TypeScript', 'PostgreSQL', 'Prisma', 'Docker'],
+    image: '/nozzle-1.png',
+    images: ['/nozzle-1.png', '/nozzle-2.png', '/nozzle-3.png', '/nozzle-4.png'],
+    link: 'https://nozzle-qmu.pages.dev',
+    category: 'fullstack'
   }
 ];
 
