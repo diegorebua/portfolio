@@ -1,12 +1,11 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite';
 
 const isProd = process.env.NODE_ENV === 'production';
 
 export default defineConfig(async () => {
-  const plugins = [react(), tailwindcss()];
+  const plugins = [react()];
 
   // Plugin do Cloudflare só no build de produção (requer binários nativos do workerd)
   if (isProd) {

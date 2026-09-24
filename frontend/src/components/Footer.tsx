@@ -1,50 +1,25 @@
-import SocialIcon from './SocialIcon';
+import { Link } from 'react-router-dom';
+import { EMAIL } from '../constants';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
   return (
-<footer className="py-12 md:py-16 relative z-10" style={{ borderTop: '1px solid var(--color-border)' }}>
-    <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div className="flex items-center gap-3">
-        <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
-        <p className="mono text-xs uppercase tracking-wider" style={{ color: 'var(--color-text-dim)' }}>
-          &copy; {currentYear} Diego Rebuá · Todos os direitos reservados
-        </p>
+    <footer className="site-footer">
+      <div className="container footer-main">
+        <div>
+          <p className="eyebrow">TEM ALGO EM MENTE?</p>
+          <Link className="footer-title" to="/contato">Vamos criar algo<br />que faça sentido <span aria-hidden="true">↗</span></Link>
+        </div>
+        <a className="footer-email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
       </div>
-
-      <div className="flex items-center gap-6">
-        <a
-          href="https://github.com/diegorebua"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          className="transition-all duration-300 hover:scale-110 hover:text-[var(--color-accent-text)]"
-          style={{ color: 'var(--color-text-muted)' }}
-        >
-          <SocialIcon name="GitHub" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/diegorebu%C3%A1/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="transition-all duration-300 hover:scale-110 hover:text-[var(--color-accent-text)]"
-          style={{ color: 'var(--color-text-muted)' }}
-        >
-          <SocialIcon name="LinkedIn" />
-        </a>
-        <a
-          href="https://www.instagram.com/diegorebua/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          className="transition-all duration-300 hover:scale-110 hover:text-[var(--color-accent-text)]"
-          style={{ color: 'var(--color-text-muted)' }}
-        >
-          <SocialIcon name="Instagram" />
-        </a>
+      <div className="container footer-bottom">
+        <span>© {new Date().getFullYear()} Diego Rebuá</span>
+        <span>Desenvolvido com atenção aos detalhes.</span>
+        <div className="footer-socials">
+          <a href="https://github.com/diegorebua" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/diegorebu%C3%A1/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://www.instagram.com/diegorebua/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   );
 }

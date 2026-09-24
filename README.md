@@ -5,8 +5,7 @@ This is a portfolio web application designed to showcase projects, skills, and p
 
 ## Tech Stack
 * React 18 + TypeScript
-* Vite + Tailwind CSS
-* GSAP
+* Vite + CSS
 
 ## Getting Started
 

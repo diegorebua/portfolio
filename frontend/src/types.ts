@@ -12,7 +12,6 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  icon: string;
   category: 'language' | 'framework' | 'tool';
   roleTag?: string;
 }
@@ -22,9 +21,4 @@ export interface Experience {
   role: string;
   period: string;
   description: string[];
-}
-
-export interface ChatMessage {
-  role: 'user' | 'model';
-  text: string;
 }
