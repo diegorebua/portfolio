@@ -24,14 +24,14 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  { name: 'Java', category: 'language', roleTag: 'Backend' },
-  { name: 'Node.js', category: 'framework', roleTag: 'APIs' },
-  { name: 'TypeScript', category: 'language', roleTag: 'Full Stack' },
-  { name: 'JavaScript', category: 'language', roleTag: 'Frontend' },
-  { name: 'React', category: 'framework', roleTag: 'Frontend' },
-  { name: 'Vue', category: 'framework', roleTag: 'Frontend' },
-  { name: 'Docker', category: 'tool', roleTag: 'Deploy' },
-  { name: 'PostgreSQL', category: 'tool', roleTag: 'Banco' },
+  { name: 'Java', icon: '/assets/tech-icons/java.svg', category: 'language', roleTag: 'Backend' },
+  { name: 'Node.js', icon: '/assets/tech-icons/nodejs.svg', category: 'framework', roleTag: 'APIs' },
+  { name: 'TypeScript', icon: '/assets/tech-icons/typescript.svg', category: 'language', roleTag: 'Full Stack' },
+  { name: 'JavaScript', icon: '/assets/tech-icons/javascript.svg', category: 'language', roleTag: 'Frontend' },
+  { name: 'React', icon: '/assets/tech-icons/react.svg', category: 'framework', roleTag: 'Frontend' },
+  { name: 'Vue', icon: '/assets/tech-icons/vuejs.svg', category: 'framework', roleTag: 'Frontend' },
+  { name: 'Docker', icon: '/assets/tech-icons/docker.svg', category: 'tool', roleTag: 'Deploy' },
+  { name: 'PostgreSQL', icon: '/assets/tech-icons/postgresql.svg', category: 'tool', roleTag: 'Banco' },
 ];
 
 export const EXPERIENCES: Experience[] = [

@@ -125,9 +125,10 @@ img { display: block; max-width: 100%; }
 .skill-group-intro h2 { margin: 0.9rem 0 0.7rem; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 600; letter-spacing: -0.06em; }
 .skill-group-intro > p:last-child { max-width: 310px; margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
 .skill-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; align-content: start; }
-.skill-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
-.skill-row span:first-child { font-size: 1rem; font-weight: 600; }
-.skill-row span:last-child { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; text-align: right; }
+.skill-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+.skill-name { display: inline-flex; align-items: center; gap: 0.75rem; min-width: 0; font-size: 1rem; font-weight: 600; }
+.skill-icon { flex: none; width: 27px; height: 27px; object-fit: contain; filter: grayscale(1) brightness(1.5); }
+.skill-role { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; text-align: right; }
 
 /* Experience */
 .experience-list { border-top: 1px solid var(--line); }
