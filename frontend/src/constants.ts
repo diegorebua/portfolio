@@ -36,7 +36,7 @@ export const SKILLS: Skill[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: 'SX&CO',
+    company: 'Suprema Gaming',
     role: 'Desenvolvedor Júnior',
     period: 'jun 2025 - presente',
     description: [
@@ -46,7 +46,7 @@ export const EXPERIENCES: Experience[] = [
     ]
   },
   {
-    company: 'SX&CO',
+    company: 'Suprema Gaming',
     role: 'Estagiário',
     period: 'fev 2025 - jun 2025',
     description: [
