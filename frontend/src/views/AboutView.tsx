@@ -10,7 +10,10 @@ export default function AboutView() {
         <p>Gosto de transformar ideias em ferramentas que as pessoas realmente queiram usar.</p>
       </header>
       <div className="about-grid">
-        <figure className="about-portrait"><img src="/assets/profile.jpeg" alt="Retrato de Diego Rebuá" width="485" height="647" /><figcaption>Diego Rebuá · São Paulo, Brasil</figcaption></figure>
+        <figure className="about-portrait">
+          <div className="about-portrait-frame"><img src="/assets/profile.jpeg" alt="Retrato de Diego Rebuá" width="960" height="1280" /></div>
+          <figcaption>Diego Rebuá · São Paulo, Brasil</figcaption>
+        </figure>
         <div className="about-content">
           <p className="eyebrow">SOBRE MIM</p>
           <h2>Clareza no processo. Cuidado no resultado.</h2>
