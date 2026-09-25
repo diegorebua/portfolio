@@ -1,7 +1,7 @@
 {
   "$schema": "frontend/node_modules/wrangler/config-schema.json",
   "name": "portfolio",
-  "compatibility_date": "2026-06-21",
+  "compatibility_date": "2026-09-24",
   "observability": {
     "enabled": true
   },
