@@ -2,34 +2,22 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-const isProd = process.env.NODE_ENV === 'production';
-
-export default defineConfig(async () => {
-  const plugins = [react()];
-
-  // Plugin do Cloudflare só no build de produção (requer binários nativos do workerd)
-  if (isProd) {
-    const { cloudflare } = await import('@cloudflare/vite-plugin');
-    plugins.push(cloudflare());
-  }
-
-  return {
-    server: {
-      port: 3000,
-      host: '0.0.0.0',
-      hmr: {
-        clientPort: Number(process.env.HMR_CLIENT_PORT ?? 3000)
-      },
-      watch: {
-        usePolling: true,
-        interval: 100
-      }
+export default defineConfig({
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+    hmr: {
+      clientPort: Number(process.env.HMR_CLIENT_PORT ?? 3000)
     },
-    plugins,
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, './src'),
-      }
+    watch: {
+      usePolling: true,
+      interval: 100
     }
-  };
+  },
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    }
+  }
 });
