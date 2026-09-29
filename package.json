@@ -2,7 +2,11 @@
   "name": "portfolio-root",
   "private": true,
   "scripts": {
+    "dev": "npm run dev --prefix frontend",
     "build": "npm run build --prefix frontend",
+    "lint": "npm run lint --prefix frontend",
+    "test": "npm run test --prefix frontend",
+    "typecheck": "npm run typecheck --prefix frontend",
     "deploy": "npm run deploy --prefix frontend"
   }
 }
