@@ -6,7 +6,7 @@ export default function HomeView() {
   return (
     <>
       <section className="home-hero" aria-labelledby="home-title">
-        <div className="hero-portrait" aria-hidden="true"><img src="/assets/profile.jpeg" alt="" fetchPriority="high" /></div>
+        <div className="hero-portrait" aria-hidden="true"><img src="/assets/profile.jpeg" alt="" /></div>
         <div className="container hero-inner">
           <div className="hero-copy">
             <p className="eyebrow hero-intro">DESENVOLVEDOR FULL STACK <span aria-hidden="true">⟶</span></p>
