@@ -9,7 +9,7 @@ const socials = [
 
 export default function ContactView() {
   const [copied, setCopied] = useState(false);
-  const timer = useRef<ReturnType<typeof setTimeout>>();
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
 
