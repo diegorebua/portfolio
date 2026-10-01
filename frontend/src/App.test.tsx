@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom/server';
+import { StaticRouter } from 'react-router-dom';
 import App from './App';
 import { PROJECTS, SKILLS } from './constants';
 
