@@ -1,3 +1,4 @@
+import ArrowIcon from './ArrowIcon';
 import { useState } from 'react';
 import type { Project } from '../types';
 
@@ -16,7 +17,7 @@ export default function ProjectCard({ project, index, compact = false }: Props) 
       <div className="work-card-meta"><span>{String(index + 1).padStart(2, '0')} / PROJETO</span><span>FULL STACK</span></div>
       <a className="work-visual" href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`Abrir ${project.title} em nova aba`}>
         <img src={images[activeImage]} alt={`Captura ${activeImage + 1} de ${images.length} do projeto ${project.title}`} loading={index === 0 ? 'eager' : 'lazy'} />
-        <span className="work-visual-arrow" aria-hidden="true">↗</span>
+        <span className="work-visual-arrow" aria-hidden="true"><ArrowIcon /></span>
       </a>
       <div className="work-card-heading">
         <h3>{project.title}</h3>

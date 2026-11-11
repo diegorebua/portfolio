@@ -1,3 +1,4 @@
+import ArrowIcon from '../components/ArrowIcon';
 import { Link } from 'react-router-dom';
 import { BIO } from '../constants';
 
@@ -24,7 +25,7 @@ export default function AboutView() {
             <div><span>02</span><p>Sistemas sólidos, preparados para evoluir.</p></div>
             <div><span>03</span><p>Comunicação clara do início à entrega.</p></div>
           </div>
-          <Link className="text-link" to="/trajetoria">Veja minha trajetória ↗</Link>
+          <Link className="text-link" to="/trajetoria">Veja minha trajetória <ArrowIcon /></Link>
         </div>
       </div>
     </section>

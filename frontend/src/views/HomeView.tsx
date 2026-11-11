@@ -1,3 +1,4 @@
+import ArrowIcon from '../components/ArrowIcon';
 import { Link } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
 import { PROJECTS } from '../constants';
@@ -9,7 +10,7 @@ export default function HomeView() {
         <div className="hero-portrait" aria-hidden="true"><img src="/assets/profile.jpeg" alt="" /></div>
         <div className="container hero-inner">
           <div className="hero-copy">
-            <p className="eyebrow hero-intro">DESENVOLVEDOR FULL STACK <span aria-hidden="true">⟶</span></p>
+            <p className="eyebrow hero-intro">DESENVOLVEDOR FULL STACK <span aria-hidden="true"><ArrowIcon direction="right" /></span></p>
             <div className="hero-heading">
               <h1 id="home-title" className="hero-title"><span>Diego</span><span>Rebuá</span></h1>
             </div>
@@ -25,14 +26,14 @@ export default function HomeView() {
             <h2 id="selected-work-title">Projetos que<br />geram resultado.</h2>
           </div>
           <div className="work-grid layout-grid layout-grid--cards">{PROJECTS.map((project, index) => <ProjectCard key={project.id} project={project} index={index} compact />)}</div>
-          <div className="home-projects-action"><Link className="text-link" to="/projetos">Ver todos os projetos <span aria-hidden="true">↗</span></Link></div>
+          <div className="home-projects-action"><Link className="text-link" to="/projetos">Ver todos os projetos <span aria-hidden="true"><ArrowIcon /></span></Link></div>
         </div>
       </section>
 
       <section className="statement-section">
         <div className="container statement-grid layout-grid layout-grid--pair">
           <p className="eyebrow">02 / MINHA ABORDAGEM</p>
-          <div><p className="statement-text">Boa tecnologia é aquela que resolve o problema e deixa a experiência mais leve.</p><Link className="text-link" to="/trajetoria">Conheça minha trajetória ↗</Link></div>
+          <div><p className="statement-text">Boa tecnologia é aquela que resolve o problema e deixa a experiência mais leve.</p><Link className="text-link" to="/trajetoria">Conheça minha trajetória <ArrowIcon /></Link></div>
         </div>
       </section>
     </>

@@ -19,6 +19,8 @@ button, input { font: inherit; }
 button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
+.icon-arrow { display: inline-block; width: 1em; height: 1em; flex: none; vertical-align: -0.12em; }
+.footer-title .icon-arrow { stroke-width: 1; }
 ::selection { background: var(--accent); color: #fff; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
@@ -183,7 +185,7 @@ img { display: block; max-width: 100%; }
 .contact-bottom { display: flex; flex-direction: column; align-items: start; justify-content: space-between; gap: 2rem; padding-top: 2rem; }
 .contact-bottom p { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .contact-bottom div { display: flex; flex-wrap: wrap; gap: 1.5rem; }
-.contact-bottom a { font-size: 0.84rem; font-weight: 600; }
+.contact-bottom a { gap: 0.3em; font-size: 0.84rem; font-weight: 600; }
 .contact-bottom a:hover { color: var(--accent); }
 
 /* Footer */
@@ -197,6 +199,7 @@ img { display: block; max-width: 100%; }
 .footer-email:hover { color: #9AB7C7; }
 .footer-bottom { padding-block: 1.5rem; border-top: 1px solid #383838; color: #AAAAAA; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; }
 .footer-socials { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.footer-socials a { gap: 0.3em; }
 .footer-socials a:hover { color: #F5F5F3; }
 
 @media (prefers-reduced-motion: reduce) {

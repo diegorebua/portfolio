@@ -1,3 +1,4 @@
+import ArrowIcon from '../components/ArrowIcon';
 import { useEffect, useRef, useState } from 'react';
 import { EMAIL } from '../constants';
 
@@ -33,10 +34,10 @@ export default function ContactView() {
       </header>
       <div className="contact-panel">
         <p className="eyebrow">MEU E-MAIL</p>
-        <a className="contact-email" href={`mailto:${EMAIL}`}>{EMAIL}<span aria-hidden="true">↗</span></a>
-        <button className="copy-button" type="button" onClick={copyEmail} aria-live="polite">{copied ? 'E-mail copiado ✓' : 'Copiar endereço ↗'}</button>
+        <a className="contact-email" href={`mailto:${EMAIL}`}>{EMAIL}<span aria-hidden="true"><ArrowIcon /></span></a>
+        <button className="copy-button" type="button" onClick={copyEmail} aria-live="polite">{copied ? 'E-mail copiado ✓' : <>Copiar endereço <ArrowIcon /></>}</button>
       </div>
-      <div className="contact-bottom"><p>Também estou por aqui:</p><div>{socials.map(social => <a key={social.label} href={social.url} target="_blank" rel="noopener noreferrer">{social.label} ↗</a>)}</div></div>
+      <div className="contact-bottom"><p>Também estou por aqui:</p><div>{socials.map(social => <a key={social.label} href={social.url} target="_blank" rel="noopener noreferrer">{social.label} <ArrowIcon /></a>)}</div></div>
     </section>
   );
 }
