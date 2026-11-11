@@ -13,7 +13,6 @@ export default function HomeView() {
             <div className="hero-heading">
               <h1 id="home-title" className="hero-title"><span>Diego</span><span>Rebuá</span></h1>
             </div>
-            <br />
             <p className="hero-detail">Desenvolvo sites, sistemas e experiências digitais que unem funcionalidade, estética e resultado.</p>
           </div>
         </div>
