@@ -9,7 +9,7 @@ export default function AboutView() {
         <h1 id="about-title">Prazer, Diego<span className="accent-period">.</span></h1>
         <p>Gosto de transformar ideias em ferramentas que as pessoas realmente queiram usar.</p>
       </header>
-      <div className="about-grid">
+      <div className="about-grid layout-grid layout-grid--about">
         <figure className="about-portrait">
           <div className="about-portrait-frame"><img src="/assets/profile.jpeg" alt="Retrato de Diego Rebuá" width="960" height="1280" /></div>
           <figcaption>Diego Rebuá · São Paulo, Brasil</figcaption>

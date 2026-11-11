@@ -24,13 +24,13 @@ export default function HomeView() {
           <div className="section-heading">
             <h2 id="selected-work-title">Projetos que<br />geram resultado.</h2>
           </div>
-          <div className="work-grid">{PROJECTS.map((project, index) => <ProjectCard key={project.id} project={project} index={index} compact />)}</div>
+          <div className="work-grid layout-grid layout-grid--cards">{PROJECTS.map((project, index) => <ProjectCard key={project.id} project={project} index={index} compact />)}</div>
           <div className="home-projects-action"><Link className="text-link" to="/projetos">Ver todos os projetos <span aria-hidden="true">↗</span></Link></div>
         </div>
       </section>
 
       <section className="statement-section">
-        <div className="container statement-grid">
+        <div className="container statement-grid layout-grid layout-grid--pair">
           <p className="eyebrow">02 / MINHA ABORDAGEM</p>
           <div><p className="statement-text">Boa tecnologia é aquela que resolve o problema e deixa a experiência mais leve.</p><Link className="text-link" to="/trajetoria">Conheça minha trajetória ↗</Link></div>
         </div>

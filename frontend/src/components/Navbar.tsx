@@ -9,7 +9,7 @@ const links = [
   { label: 'Stack', to: '/stack' },
   { label: 'Trajetória', to: '/trajetoria' },
 ];
-const mobileLinks = [...links, { label: 'Contato', to: '/contato' }];
+const navigationLinks = [...links, { label: 'Contato', to: '/contato' }];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,13 +18,6 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   useEffect(() => setMenuOpen(false), [pathname]);
-
-  useEffect(() => {
-    const desktop = window.matchMedia('(min-width: 801px)');
-    const closeOnDesktop = () => { if (desktop.matches) setMenuOpen(false); };
-    desktop.addEventListener('change', closeOnDesktop);
-    return () => desktop.removeEventListener('change', closeOnDesktop);
-  }, []);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -74,23 +67,18 @@ export default function Navbar() {
       <header className={`site-header${pathname === '/' ? ' is-home' : ''}`}>
         <div className="container nav-inner">
           <Link className="brand" to="/" aria-label="Diego Rebuá, início"><span className="brand-mark" aria-hidden="true" /></Link>
-          <nav className="nav-links" aria-label="Navegação principal">
-            {links.map(link => <NavLink key={link.to} to={link.to} end={link.to === '/'} className={({ isActive }) => `nav-link${isActive ? ' is-active' : ''}`}>{link.label}</NavLink>)}
-            <NavLink to="/contato" className={({ isActive }) => `nav-link nav-contact-mobile${isActive ? ' is-active' : ''}`}>Contato</NavLink>
-          </nav>
-          <div className="nav-actions">
-            <Link to="/contato" className="nav-contact">Vamos conversar <span aria-hidden="true">↗</span></Link>
-            <button ref={triggerRef} className="menu-button" type="button" onClick={() => setMenuOpen(true)} aria-controls="mobile-navigation" aria-haspopup="dialog" aria-expanded={menuOpen} aria-label="Abrir menu">
+          <nav className="nav-actions" aria-label="Navegação principal">
+            <button ref={triggerRef} className="menu-button" type="button" onClick={() => setMenuOpen(true)} aria-controls="site-navigation" aria-haspopup="dialog" aria-expanded={menuOpen} aria-label="Abrir menu">
               <span /><span />
             </button>
-          </div>
+          </nav>
         </div>
       </header>
       {typeof document !== 'undefined' && createPortal(
-        <div ref={overlayRef} id="mobile-navigation" className={`mobile-menu${menuOpen ? ' is-open' : ''}`} role="dialog" aria-modal={menuOpen ? true : undefined} aria-label="Menu de navegação" aria-hidden={!menuOpen} inert={!menuOpen}>
-          <button className="menu-button mobile-menu-close" type="button" onClick={() => setMenuOpen(false)} aria-label="Fechar menu"><span /><span /></button>
-          <nav className="mobile-menu-links" aria-label="Navegação mobile">
-            {mobileLinks.map(link => <NavLink key={link.to} to={link.to} end={link.to === '/'} onClick={() => setMenuOpen(false)} className={({ isActive }) => `mobile-menu-link${isActive ? ' is-active' : ''}`}>{link.label}</NavLink>)}
+        <div ref={overlayRef} id="site-navigation" className={`overlay-menu${menuOpen ? ' is-open' : ''}`} role="dialog" aria-modal={menuOpen ? true : undefined} aria-label="Menu de navegação" aria-hidden={!menuOpen} inert={!menuOpen}>
+          <button className="menu-button overlay-menu-close" type="button" onClick={() => setMenuOpen(false)} aria-label="Fechar menu"><span /><span /></button>
+          <nav className="overlay-menu-links" aria-label="Links de navegação">
+            {navigationLinks.map(link => <NavLink key={link.to} to={link.to} end={link.to === '/'} onClick={() => setMenuOpen(false)} className={({ isActive }) => `overlay-menu-link${isActive ? ' is-active' : ''}`}>{link.label}</NavLink>)}
           </nav>
         </div>, document.body,
       )}

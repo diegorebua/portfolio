@@ -11,7 +11,7 @@ export default function Footer() {
         </div>
         <a className="footer-email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
       </div>
-      <div className="container footer-bottom">
+      <div className="container footer-bottom layout-cluster">
         <span>© {new Date().getFullYear()} Diego Rebuá</span>
         <span>Desenvolvido com atenção aos detalhes.</span>
         <div className="footer-socials">

@@ -16,9 +16,9 @@ export default function SkillsView() {
         <p>Escolho tecnologias pelo problema que resolvem. Estas são as que uso com mais frequência para criar produtos completos.</p>
       </header>
       <div className="skill-groups">
-        {groups.map((group, index) => <section className="skill-group" key={group.category} aria-labelledby={`skill-${group.category}`}>
+        {groups.map((group, index) => <section className="skill-group layout-grid layout-grid--skill-group" key={group.category} aria-labelledby={`skill-${group.category}`}>
           <div className="skill-group-intro"><span className="eyebrow">0{index + 1} / STACK</span><h2 id={`skill-${group.category}`}>{group.title}</h2><p>{group.description}</p></div>
-          <div className="skill-list">{SKILLS.filter(skill => skill.category === group.category).map(skill => <div className="skill-row" key={skill.name}><span className="skill-name"><img className="skill-icon" src={skill.icon} alt="" aria-hidden="true" /><span>{skill.name}</span></span><span className="skill-role">{skill.roleTag ?? 'Tecnologia'}</span></div>)}</div>
+          <div className="skill-list layout-grid layout-grid--skills">{SKILLS.filter(skill => skill.category === group.category).map(skill => <div className="skill-row" key={skill.name}><span className="skill-name"><img className="skill-icon" src={skill.icon} alt="" aria-hidden="true" /><span>{skill.name}</span></span><span className="skill-role">{skill.roleTag ?? 'Tecnologia'}</span></div>)}</div>
         </section>)}
       </div>
     </section>

@@ -9,7 +9,7 @@ export default function ProjectsView() {
         <h1 id="projects-title">Projetos<span className="accent-period">.</span></h1>
         <p>Uma seleção de produtos que construí, do conceito à entrega. Interfaces claras, sistemas confiáveis e atenção ao que importa.</p>
       </header>
-      <div className="project-list">{PROJECTS.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div>
+      <div className="project-list layout-stack">{PROJECTS.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div>
     </section>
   );
 }

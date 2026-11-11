@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import useScrollReveal from './hooks/useScrollReveal';
 import HomeView from './views/HomeView';
 import AboutView from './views/AboutView';
 import SkillsView from './views/SkillsView';
@@ -20,14 +21,17 @@ const titles: Record<string, string> = {
 
 function Site() {
   const { pathname } = useLocation();
+  const shellRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.title = titles[pathname] ?? 'Diego Rebuá';
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  useScrollReveal(shellRef, pathname);
+
   return (
-    <div className="site-shell">
+    <div ref={shellRef} className="site-shell">
       <Navbar />
       <main id="main-content">
         <Routes>

@@ -1,0 +1,60 @@
+/* Mobile first: tablet >= 40rem, desktop >= 64rem.
+   Breakpoints are shared by all grid modifiers and the hero in index.css. */
+:root {
+  --content-width: 80rem;
+  --heading-width: 64rem;
+  --reading-width: 40.625rem;
+  --gutter: clamp(1.25rem, 4vw, 2rem);
+  --gutter-left: max(var(--gutter), env(safe-area-inset-left));
+  --gutter-right: max(var(--gutter), env(safe-area-inset-right));
+  --header-height: clamp(4rem, 5.5vw, 4.75rem);
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --layout-gap: clamp(1.5rem, 4vw, 3rem);
+  --section-space: clamp(3.5rem, 8vw, 8rem);
+  --section-gap: clamp(3.5rem, 8vw, 9rem);
+  --heading-gap: clamp(2.5rem, 6vw, 6.5rem);
+  --page-start: clamp(3rem, 7vw, 8rem);
+  --page-end: clamp(4rem, 9vw, 10rem);
+  --row-space: clamp(2rem, 4vw, 3rem);
+  --type-page: clamp(2.25rem, 0.8rem + 7vw, 8rem);
+  --type-section: clamp(2rem, 0.9rem + 5vw, 5.75rem);
+  --type-subheading: clamp(2rem, 1rem + 3vw, 4.2rem);
+  --type-card: clamp(1.35rem, 2.8vw, 2.3rem);
+  --type-intro: clamp(0.95rem, 1.4vw, 1.125rem);
+  --ratio-portrait: 3 / 4;
+  --ratio-preview: 16 / 8.5;
+  --ratio-card: 16 / 9.5;
+  --ratio-thumbnail: 16 / 9;
+}
+
+/* Containers share an edge at every viewport size, including safe areas. */
+.container {
+  width: min(calc(100% - var(--gutter-left) - var(--gutter-right)), var(--content-width));
+  margin-inline: auto;
+}
+:where(.container, .layout-grid, .layout-stack, .layout-cluster) > * { min-width: 0; }
+.section { padding-block: var(--section-space); }
+.page { padding-block: var(--page-start) var(--page-end); }
+.page-heading { max-width: var(--heading-width); padding-bottom: var(--heading-gap); }
+
+.layout-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--grid-gap, var(--layout-gap)); }
+.layout-grid--pair { --grid-gap: var(--space-lg); }
+.layout-grid--about { --grid-gap: clamp(2rem, 5vw, 5rem); }
+.layout-grid--skills { --grid-gap: clamp(1rem, 3vw, 2rem); row-gap: 0; }
+.layout-grid--cards { --grid-gap: clamp(2.5rem, 5vw, 3.5rem); }
+.layout-stack { display: grid; gap: var(--stack-gap, var(--section-gap)); }
+.layout-cluster { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--cluster-gap, var(--space-md)); }
+
+@media (min-width: 40rem) {
+  .layout-grid--skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 64rem) {
+  .layout-grid--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); --grid-gap: var(--space-lg); }
+  .layout-grid--pair { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+  .layout-grid--about { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); }
+  .layout-grid--skill-group { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); }
+  .layout-grid--experience { grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr); }
+}
