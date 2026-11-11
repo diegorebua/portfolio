@@ -16,7 +16,7 @@ export default function ProjectCard({ project, index, compact = false }: Props) 
     <article className={`work-card${compact ? ' work-card-compact' : ''}`}>
       <div className="work-card-meta"><span>{String(index + 1).padStart(2, '0')} / PROJETO</span><span>FULL STACK</span></div>
       <a className="work-visual" href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`Abrir ${project.title} em nova aba`}>
-        <img src={images[activeImage]} alt={`Captura ${activeImage + 1} de ${images.length} do projeto ${project.title}`} loading={index === 0 ? 'eager' : 'lazy'} />
+        <img key={images[activeImage]} className={!compact && images.length > 1 ? 'work-gallery-image' : undefined} src={images[activeImage]} alt={`Captura ${activeImage + 1} de ${images.length} do projeto ${project.title}`} loading={index === 0 ? 'eager' : 'lazy'} />
         <span className="work-visual-arrow" aria-hidden="true"><ArrowIcon /></span>
       </a>
       <div className="work-card-heading">

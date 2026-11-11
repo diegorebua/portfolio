@@ -19,7 +19,7 @@ export default function useScrollReveal(root: RefObject<HTMLDivElement | null>, 
     if (!container || motion.matches || !('IntersectionObserver' in window) || !Element.prototype.animate) return;
 
     const candidates = Array.from(container.querySelectorAll<HTMLElement>(targets))
-      .filter(element => element.closest('main, footer'));
+      .filter(element => element.closest('main, footer') && !element.matches('.hero-title, .hero-portrait'));
     const candidateSet = new Set(candidates);
     const elements = candidates.filter(element => {
       if (revealed.current.has(element)) return false;
