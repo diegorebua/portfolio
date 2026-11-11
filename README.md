@@ -27,6 +27,24 @@ npm run build
 
 Os testes verificam as rotas e os arquivos de mídia referenciados pelo portfólio. O CI executa essas verificações, audita secrets e compila a imagem Docker em cada pull request e push para `main`.
 
+## Regressão visual
+
+Com o Docker iniciado, execute na raiz:
+
+```bash
+npm run visual:review  # capturas para revisão; não cria baselines
+npm run test:visual    # compara com referências aprovadas e verifica o layout
+npm run visual:report # abre o relatório de comparação
+```
+
+A suíte cobre todas as páginas em quatro resoluções. Baselines só são promovidos
+após revisão visual explicitamente autorizada, pelo comando `visual:approve` com
+o hash do manifesto revisado. O histórico da validação fica em
+[VALIDATION.md](frontend/tests/visual/VALIDATION.md); o fluxo obrigatório para
+agentes está em [AGENTS.md](AGENTS.md). Não há aprovação automática do layout atual.
+Veja [o guia de testes visuais](frontend/tests/visual/README.md) para aprovação,
+atualização, investigação de diferenças e manutenção.
+
 ## Deploy
 
 Para publicar na Cloudflare com a configuração em `frontend/wrangler.jsonc`:

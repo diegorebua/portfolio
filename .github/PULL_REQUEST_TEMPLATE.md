@@ -51,3 +51,6 @@ Closes #
 - [ ] PR has a focused scope (one feature or fix per PR)
 - [ ] Documentation updated where applicable
 - [ ] No sensitive data or hardcoded secrets exposed
+
+- [ ] For visual changes: ran `npm run test:visual` and reviewed any differences
+- [ ] For baseline changes: recorded explicit visual approval (reviewer and manifest SHA-256); did not update references merely to pass tests

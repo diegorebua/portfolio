@@ -7,6 +7,11 @@
     "lint": "npm run lint --prefix frontend",
     "test": "npm run test --prefix frontend",
     "typecheck": "npm run typecheck --prefix frontend",
-    "deploy": "npm run deploy --prefix frontend"
+    "deploy": "npm run deploy --prefix frontend",
+    "test:visual": "node frontend/scripts/visual.mjs test",
+    "visual:review": "node frontend/scripts/visual.mjs review",
+    "visual:approve": "node frontend/scripts/visual.mjs approve",
+    "visual:report": "node frontend/scripts/visual.mjs report",
+    "test:visual:workflow": "npm run test:visual:workflow --prefix frontend"
   }
 }

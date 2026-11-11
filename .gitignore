@@ -2,3 +2,8 @@
 node_modules
 .wrangler
 dist_backup
+
+# Disposable visual test artifacts; approved baselines are versioned.
+frontend/test-results/
+frontend/playwright-report/
+frontend/visual-review/
