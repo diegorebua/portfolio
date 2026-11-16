@@ -59,7 +59,7 @@ jobs:
         run: npm run test:visual --prefix frontend
       - name: Upload visual report, actual images, diffs and traces
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: visual-regression-report
           path: |
